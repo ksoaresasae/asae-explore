@@ -20,7 +20,7 @@ Add ASAE EXPLORE to any site on a per-page, per-site, or per-property basis.
 
 Usage:
 ------
-<script type="text/javascript" src="https://accessassociations.org/asae-explore/asae-explore.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore/asae-explore.js"></script>
 
 Note: if ebBaseURL is changed, this src will change, too.
 
@@ -54,7 +54,7 @@ var showPB = true;
 
 //////////////////////////////////////////////
 // MASTER BASE URL
-var thisBaseURL = "https://accessassociations.org/asae-explore/";
+var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore/";
 //////////////////////////////////////////////
 
 // placeholders for HTML contents
