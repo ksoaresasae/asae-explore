@@ -1,10 +1,14 @@
 /* 
-**************************************************
+******************************************************
 ASAE EXPLORE
-Copyright 2024 ASAE
-Version 5.0 : 2024-05-15
-Keith M. Soares
-**************************************************
+GNU GENERAL PUBLIC LICENSE
+ASAE:       https://www.asaecenter.org
+Developer:  Keith M. Soares - https://keithmsoares.com
+******************************************************
+
+Version: 
+------------
+5.0         2024-05-15
 
 Last Update:
 ------------
