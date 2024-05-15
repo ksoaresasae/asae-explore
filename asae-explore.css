@@ -1,0 +1,590 @@
+/* 
+**************************************************
+ASAE EXPLORE
+Copyright 2024 ASAE
+Keith M. Soares
+**************************************************
+See asae-explore.js for details and usage
+**************************************************
+*/
+
+@media print {
+    /* Hide all for print */
+    #asae-eb-id {
+        display: none;
+    }
+    #asae-pb-id {
+        display: none;
+    }
+}
+body {
+    margin: 0 !important;
+}
+
+/* --- EB --- */
+#asae-eb-id {
+    width: 100% !important;
+    margin: 0 !important;
+    position: relative !important;
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1em !important;
+}
+#asae-eb-id a:visited {
+    color: #333;
+}
+#asae-colorband {
+    width: 100%;
+    background-color: #d15007;
+    line-height: 0.25em;
+    max-height: 0.25em;
+}
+#asae-eb-section {
+    width: 100%;
+    background-color: #000 !important;
+    position: relative !important;
+}
+#asae-eb-row {
+    display: flex;
+    flex-flow: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+.asae-eb-break {
+    flex-basis: 100%;
+    width: 100%;
+    height: 0;
+    margin: 0;
+}
+#asae-eb-left {
+    display: flex;
+    min-width: 50%;
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 600 !important;
+}
+#asae-eb-right {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 50%;
+    color: #fff;
+    font-size: 1em !important;
+    font-weight: 600 !important;
+}
+#asae-eb-star {
+    height: 1em;
+    vertical-align: text-bottom;
+    padding: 0 0 0.1em 0.5em;
+}
+#asae-eb-explore-asae {
+    color: #fff;
+    font-size: 0.75em;
+    padding: 0 0 0 0.25em;
+    text-transform: uppercase;
+}
+#asae-eb-explore-asae.active {
+    color: #000;
+}
+#asae-eb-explore-asae::after {
+    color: #fff;
+    opacity: 75%;
+    content: '\25BC';
+    cursor: pointer;
+    font-size: 0.75em;
+    padding: 0 0 0 0.5em;
+    vertical-align: middle;
+}
+#asae-eb-explore-asae.active::after {
+    color: #000;
+    opacity: 75%;
+    content: '\25B2';
+}
+#asae-eb-left-nav {
+    padding: 0.75em 0.75em 0em 0.25em;
+    cursor: pointer;
+    background-color: #000;
+}
+#asae-eb-left-nav.active {
+    background-color: #eeeeee;
+}
+#asae-eb-right-search {
+    padding: 0.5em 0.4em;
+    cursor: pointer;
+}
+#asae-eb-right-search.active {
+    background-color: #eeeeee;
+}
+#asae-eb-mag {
+    width: 2.2em;
+    height: 2.2em;
+}
+.asae-eb-mag-icon {
+    color: #fff;
+}
+.asae-eb-mag-icon.active {
+    color: #000;
+}
+#asae-eb-right-chatbot {
+    padding: 0.5em 0.4em;
+    cursor: pointer;
+}
+#asae-eb-right-chatbot.active {
+    background-color: #eeeeee;
+}
+#asae-eb-chatbot {
+    width: 2.2em;
+    height: 2.2em;
+}
+.asae-eb-chatbot-icon {
+    color: #fff;
+}
+.asae-eb-chatbot-icon.active {
+    color: #000;
+}
+#asae-eb-right-user {
+    padding: 0.5em 0.4em;
+    cursor: pointer;
+}
+#asae-eb-right-user.active {
+    background-color: #eeeeee;
+}
+#asae-eb-user {
+    width: 2.2em;
+    height: 2.2em;
+}
+.asae-eb-user-icon {
+    color: #fff;
+}
+.asae-eb-user-icon.active {
+    color: #000;
+}
+#asae-eb-modals {
+    background-color: #333;
+    width: 100%;
+}
+.asae-eb-modal-shadow {
+    width: 100%;
+    height: 4px;
+    margin: 0;
+    background-color: #d15007;
+    position: relative;
+}
+/* NAV */
+#asae-eb-modal-nav-container {
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+    max-height: 0px;
+    overflow: hidden;
+}
+#asae-eb-modal-nav-container.active {
+    max-height: 100em;
+}
+#asae-eb-modal-nav {
+    max-width: 1200px;
+    float: left;
+    display: flex;
+    flex-flow: wrap;
+    background-color: #eee;
+    color: #000;
+    text-align: left;
+}
+#asae-eb-showdesc {
+    width: 100%;
+    padding: 1em 1.25em 1em 1.25em;
+    font-size: 0.75em;
+    font-weight: 200;
+    text-align: right;
+    vertical-align: middle;
+}
+#asae-eb-showdesc a:link {
+    border-bottom: 0px solid;
+    color: #333;
+}
+#asae-eb-showdesc-toggle {
+    margin: 0 0.75em;
+}
+#asae-eb-showdesc-toggle:before {
+    content: 'Show Descriptions';
+}
+#asae-eb-showdesc-toggle.active:before {
+    content: 'Hide Descriptions';
+}
+.asae-eb-link {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    padding: 0.75em;
+    border-top: 2px dotted #fff;
+}
+.asae-eb-link-name {
+    width: 100%;
+}
+.asae-eb-link-name a:link {
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid;
+    border-color: #d15007;
+    font-size: 1em;
+    line-height: 1.25em;
+    font-weight: 600;
+}
+.asae-eb-link-desc {
+    font-size: 0.75em;
+    line-height: 2em;
+    font-weight: 300;
+    width: 100%;
+    height: auto;
+    max-height: 0px;
+    overflow: hidden;
+}
+.asae-eb-link-desc.active {
+    max-height: 100%;
+}
+#asae-eb-join-button {
+    background-color: #d15007;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.2em 1em 0.2em 1em;
+}
+#asae-eb-join-button:hover {
+    background-color: #fff;
+    color: #d15007;
+}
+.asae-eb-showdesc-switch {
+    position: relative;
+    display: inline-block;
+    width: 2.2em;
+    height: 1.2em;
+    background-color: #333;
+    border-radius: 0.6em;
+    margin: 0;
+    vertical-align: middle;
+}
+.asae-eb-showdesc-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.asae-eb-showdesc-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.asae-eb-showdesc-slider:before {
+    position: absolute;
+    content: "";
+    height: 1em;
+    width: 1em;
+    left: 0.1em;
+    bottom: 0.1em;
+    background-color: white;
+    -webkit-transition: .25s;
+    transition: .25s;
+}
+.asae-eb-showdesc-input:checked + .asae-eb-showdesc-slider {
+    background: none;
+    background-color: #d15007;
+    width: 2.2em;
+    height: 1.2em;
+    border-radius: 0.6em;
+}
+.asae-eb-showdesc-input:focus + .asae-eb-showdesc-slider {
+    box-shadow: 0 0 1px #d15007;
+    background-image: none;
+  }
+.asae-eb-showdesc-input:checked + .asae-eb-showdesc-slider:before {
+    -webkit-transform: translateX(1em);
+    -ms-transform: translateX(1em);
+    transform: translateX(1em);
+}
+.asae-eb-showdesc-slider.round {
+    border-radius: 1em;
+    background: none;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    margin: 0;
+}
+.asae-eb-showdesc-slider.round:before {
+    border-radius: 50%;
+}
+/* SEARCH */
+#asae-eb-modal-search-container {
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+    max-height: 0px;
+    overflow: hidden;
+    /* --- transition effects --- */
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    /* --- transition effects --- */
+}
+#asae-eb-modal-search-container.active {
+    max-height: 10em;
+}
+#asae-eb-modal-search {
+    max-width: 1200px;
+    width: 100%;
+    float: right;
+    display: flex;
+    flex-flow: wrap;
+    background-color: #eee;
+    color: #000;
+    text-align: left;
+}
+#asae-eb-search-form {
+    width: 100%;
+    margin: 0em;
+    border-radius: 0%;
+}
+#asae-eb-search-terms {
+    margin: 1em 0.5em 0.5em 1em;
+    padding: 0.25em 0.5em;
+    border: 1px #666 solid;
+    border-radius: 0%;
+    background-color: #fff;
+    color: #000;
+    height: 2.5em;
+    width: 75%;
+    float: left;
+}
+#asae-eb-search-terms:active, #asae-eb-search-terms:focus {
+    margin: 1em 0.5em 0.5em 1em;
+    padding: 0.25em 0.5em;
+    border: 2px #d15007 solid !important;
+    border-radius: 0% !important;
+    background-color: #fff;
+    color: #000;
+    height: 2.5em;
+    width: 75%;
+    float: left;
+}
+#asae-eb-search-terms-alert {
+    color: #ff0000;
+    margin: 0.5em 0 0.5em 1.2em;
+    font-size: 0.75em;
+    display: none;
+}
+#asae-eb-search-submit {
+    margin: 1em 1em 0.5em 0em;
+    padding: 0em 0.25em;
+    background-color: #d15007 !important;
+    border: 0px;
+    border-radius: 0%;
+    color: #fff;
+    content: '\25BA';
+    height: 2.5em;
+    width: 2.5em;
+}
+#asae-eb-search-submit:hover {
+    background-color: #000 !important;
+}
+#asae-eb-search-partner {
+    width: 100%;
+    padding: 0em 1em 1.5em 2em;
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-size: 0.5em;
+}
+#asae-eb-search-partner-text {
+    opacity: 75%;
+    float: left;
+    padding: 0.2em 0 0 0;
+}
+#asae-eb-search-partner-logo {
+    height: 2.5em;
+}
+/* CHATBOT */
+#asae-eb-modal-chatbot-container {
+    max-width: 1200px;
+    margin: auto;
+    height: auto;
+    max-height: 0px;
+    overflow: hidden;
+    /* --- transition effects --- */
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    /* --- transition effects --- */
+}
+#asae-eb-modal-chatbot-container.active {
+    max-height: 30em;
+}
+#asae-eb-modal-chatbot {
+    max-width: 1200px;
+    width: 100%;
+    float: right;
+    display: flex;
+    flex-flow: wrap;
+    background-color: #eee;
+    color: #000;
+    text-align: left;
+}
+#asae-eb-chatbot-form {
+    width: 100%;
+}
+#asae-eb-chatbot-terms {
+    margin: 1em 0.25em 0.5em 1em;
+    padding: 0.25em 0.5em;
+    border: 1px #666 solid;
+    border-radius: 0%;
+    background-color: #fff;
+    color: #000;
+    height: 2em;
+    width: 90%;
+    float: left;
+}
+#asae-eb-chatbot-terms:active, #asae-eb-chatbot-terms:focus {
+    margin: 1em 0.25em 0.5em 1em;
+    padding: 0.25em 0.5em;
+    border: 2px #d15007 solid !important;
+    border-radius: 0% !important;
+    background-color: #fff;
+    color: #000;
+    height: 2em;
+    width: 90%;
+    float: left;
+}
+#asae-eb-chatbot-terms-alert {
+    color: #ff0000;
+    margin: 0.5em 0 0.5em 1.2em;
+    font-size: 0.75em;
+    display: none;
+}
+#asae-eb-chatbot-hi {
+    width: 100%;
+    padding: 1em 1em 0em 2em;
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-size: 0.5em;
+}
+#asae-eb-chatbot-hi-text {
+    font-size: 2em;
+    vertical-align: bottom;
+    line-height: 2;
+    padding: 0 0 0 0.5em;
+}
+#asae-eb-chatbot-hi-image {
+    height: 4em;
+    float: left;
+}
+#asae-eb-chatbot-partner {
+    width: 100%;
+    padding: 0 1em 1.5em 2em;
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-size: 0.5em;
+}
+#asae-eb-chatbot-partner-text {
+    opacity: 75%;
+    vertical-align: middle;
+}
+#asae-eb-chatbot-partner-logo {
+    height: 2em;
+}
+/* --- PB --- */
+#asae-pb-id {
+    width: 100% !important;
+    margin: 0 !important;
+    position: relative !important;
+    font-family: Arial,Helvetica,sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1em !important;
+}
+#asae-pb-id a:visited {
+    color: #ccc;
+}
+#asae-pb-section {
+    width: 100%;
+    position: relative !important;
+    padding: 2px;
+    background-color: #eee !important;
+}
+#asae-pb-row {
+    background-color: #ecdfff !important;
+    display: flex;
+    flex-flow: wrap;
+    max-width: 500px;
+    margin: auto;
+    padding: 0.25em 0.5em 0.25em 0.75em;
+}
+#asae-pb-left {
+    display: flex;
+    flex-flow: wrap;
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 1em;
+}
+#asae-pb-title {
+    width: 100%;
+    font-size: 0.75em;
+    font-weight: 800;
+}
+#asae-pb-text {
+    width: 100%;
+    font-size: 0.65em;
+    font-weight: 400;
+}
+#asae-pb-right {
+    display: flex;
+    flex-flow: wrap;
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#asae-pb-cta {
+    background-color: #d15007;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.25em;
+    padding: 0.2em 1em;
+    margin: auto 0.5em auto auto;
+}
+#asae-pb-cta a {
+    text-decoration: none;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+}
+#asae-pb-cta:hover {
+    background-color: #fff;
+}
+#asae-pb-cta a:hover {
+    text-decoration: none;
+    color: #d15007;
+}
+#asae-pb-x {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #333;
+    text-align: right;
+    margin: auto 0.25em;
+}
+#asae-pb-x a {
+    color: #333;
+    text-decoration: none;
+    padding: 0 2px;
+    border: #333 1px solid;
+}
+#asae-pb-x a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+/* */
