@@ -8,11 +8,11 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.0         2024-05-15
+5.1         2024-05-16          [GITVERSION] v5-1
 
 Last Update:
 ------------
-- First GitHub version
+- Turned off PB
 
 Purpose:
 --------
@@ -20,7 +20,7 @@ Add ASAE EXPLORE to any site on a per-page, per-site, or per-property basis.
 
 Usage:
 ------
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore/asae-explore.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@[GITVERSION]/asae-explore.js"></script>
 
 Note: if ebBaseURL is changed, this src will change, too.
 
@@ -49,7 +49,7 @@ ASAE EXPLORE has 3 major editable parts:
 
 //////////////////////////////////////////////
 // MASTER CONTROL TO SHOW PROMO BAR: true/false
-var showPB = true;
+var showPB = false;
 //////////////////////////////////////////////
 
 //////////////////////////////////////////////
