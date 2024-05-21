@@ -8,11 +8,12 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.1         2024-05-16          [GITVERSION] v5-1
+5.2         2024-05-21          [GITVERSION] v5-2
 
 Last Update:
 ------------
 - Turned off PB
+- Turned off Search, Chatbot, and SSO
 
 Purpose:
 --------
