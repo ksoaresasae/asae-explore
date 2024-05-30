@@ -205,13 +205,13 @@ function setTransStyles(thisClick) {
     var noTrans = {"transition": "none", "-o-transition": "none", "-moz-transition": "none",  "-webkit-transition": "none"};
 
     var transModalNav = document.getElementById("asae-eb-modal-nav-container");
-    var transModalSearch = document.getElementById("asae-eb-modal-search-container");
-    var transModalChatbot = document.getElementById("asae-eb-modal-chatbot-container");
-    var transModalUser = document.getElementById("asae-eb-modal-user-container");
+    //var transModalSearch = document.getElementById("asae-eb-modal-search-container");
+    //var transModalChatbot = document.getElementById("asae-eb-modal-chatbot-container");
+    //var transModalUser = document.getElementById("asae-eb-modal-user-container");
 
     setAttributes(transModalNav, slideTrans);
-    setAttributes(transModalSearch, slideTrans);
-    setAttributes(transModalChatbot, slideTrans);
+    //setAttributes(transModalSearch, slideTrans);
+    //setAttributes(transModalChatbot, slideTrans);
     //setAttributes(transModalUser, slideTrans);
 
     if (thisClick == "navClick") {
@@ -221,12 +221,12 @@ function setTransStyles(thisClick) {
     }
     if (thisClick == "searchClick") {
         if (isOpenNav || isOpenChatbot || isOpenUser) {
-            setAttributes(transModalSearch, noTrans);
+            //setAttributes(transModalSearch, noTrans);
         }
     }
     if (thisClick == "chatbotClick") {
         if (isOpenNav || isOpenSearch || isOpenUser) {
-            setAttributes(transModalChatbot, noTrans);
+            //setAttributes(transModalChatbot, noTrans);
         }
     }
     if (thisClick == "userClick") {
@@ -296,6 +296,7 @@ function ebNavShowDescClickFunc(directClick) {
 }
 
 function ebSearchClickFunc() {
+    /*
     //console.log("ebSearchClickFunc");
     setTransStyles("searchClick");
     
@@ -319,7 +320,7 @@ function ebSearchClickFunc() {
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
-
+    */
 }
 
 function validateSearch() {
@@ -340,6 +341,7 @@ function validateSearch() {
 }
 
 function ebChatbotClickFunc() {
+    /*
     //console.log("ebChatbotClickFunc");
     setTransStyles("chatbotClick");
 
@@ -363,7 +365,7 @@ function ebChatbotClickFunc() {
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
-
+    */
 }
 
 function validateChatbot() {
@@ -384,6 +386,7 @@ function validateChatbot() {
 }
 
 function ebUserClickFunc() {
+    /*
     //console.log("ebUserClickFunc");
     setTransStyles("userClick");
 
@@ -394,20 +397,19 @@ function ebUserClickFunc() {
     // goto https://sso.asaecenter.org/
     window.location.href = 'https://sso.asaecenter.org/sso.asaecenter.org/b2c_1a_signin_no_sign_up_aptify/oauth2/v2.0/authorize?response_type=code&scope=f64cfe0a-fef2-4cff-a059-87dc4ca71a52%20profile%20email%20address%20phone&redirect_uri=' + thisRedirectURL;
     
-    /*
-    const ebUserClick = document.querySelector("#asae-eb-right-user");
-    const ebUserModal = document.querySelector("#asae-eb-modal-user-container");
+    //const ebUserClick = document.querySelector("#asae-eb-right-user");
+    //const ebUserModal = document.querySelector("#asae-eb-modal-user-container");
 
-    ebUserClick.classList.toggle("active");
-    ebUserModal.classList.toggle("active");
-    let svgparts = document.querySelectorAll('.asae-eb-user-icon');
-    for (let i = 0; i < svgparts.length; i++) {
-        svgparts[i].classList.toggle("active");
-    }
+    //ebUserClick.classList.toggle("active");
+    //ebUserModal.classList.toggle("active");
+    //let svgparts = document.querySelectorAll('.asae-eb-user-icon');
+    //for (let i = 0; i < svgparts.length; i++) {
+    //    svgparts[i].classList.toggle("active");
+    //}
 
-    setTimeout(function(){
-        document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
-    }, 1000);
+    //setTimeout(function(){
+    //    document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
+    //}, 1000);
     */
 }
 
