@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.63         2024-05-30
+5.64         2024-05-30
 Notes:
-- Disabled Search, Chatbot, and User functions so that Nav works without console logged error
+- Updating star size
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.63";
+var gitVersion = "v5.64";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
