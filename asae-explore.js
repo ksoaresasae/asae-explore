@@ -8,11 +8,12 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.3         2024-05-30          [GITVERSION] v5-3
+5.4         2024-05-30          [GITVERSION] v5-4
 
 Last Update:
 ------------
 - Replaced 3 icons with placeholders
+- Removed internal GTM
 
 Purpose:
 --------
