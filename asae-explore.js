@@ -55,7 +55,7 @@ var showPB = false;
 
 //////////////////////////////////////////////
 // MASTER BASE URL
-var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore/";
+var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@v5.5/";
 //////////////////////////////////////////////
 
 // placeholders for HTML contents
