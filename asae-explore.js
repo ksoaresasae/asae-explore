@@ -8,12 +8,11 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.5         2024-05-30          [GITVERSION] v5-5
+5.6         2024-05-30          [GITVERSION] v5-6
 
 Last Update:
 ------------
-- Removed internal GTM
-- Updated star SVG
+- Updated to 5.6
 
 Purpose:
 --------
