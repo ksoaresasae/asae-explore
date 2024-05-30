@@ -115,6 +115,13 @@ body {
 #asae-eb-right-search.active {
     background-color: #eeeeee;
 }
+#asae-eb-placeholder {
+    width: 2.2em;
+    height: 2.2em;
+}
+.asae-eb-placeholder-rect {
+    color: #000;
+}
 #asae-eb-mag {
     width: 2.2em;
     height: 2.2em;
