@@ -8,15 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.62         2024-05-30
+5.63         2024-05-30
 Notes:
-- Remove cursor pointer on nonfunctional buttons
-- Remove extra 3 placeholder SVG icons
+- Disabled Search, Chatbot, and User functions so that Nav works without console logged error
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.62";
+var gitVersion = "v5.63";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
