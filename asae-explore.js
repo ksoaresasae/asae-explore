@@ -12,7 +12,6 @@ Version:
 
 Last Update:
 ------------
-- Replaced 3 icons with placeholders
 - Removed internal GTM
 
 Purpose:
