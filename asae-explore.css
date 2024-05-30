@@ -110,7 +110,7 @@ body {
 }
 #asae-eb-right-search {
     padding: 0.5em 0.4em;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 #asae-eb-right-search.active {
     background-color: #eeeeee;
@@ -134,7 +134,7 @@ body {
 }
 #asae-eb-right-chatbot {
     padding: 0.5em 0.4em;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 #asae-eb-right-chatbot.active {
     background-color: #eeeeee;
@@ -151,7 +151,7 @@ body {
 }
 #asae-eb-right-user {
     padding: 0.5em 0.4em;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 #asae-eb-right-user.active {
     background-color: #eeeeee;

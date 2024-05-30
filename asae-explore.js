@@ -8,12 +8,22 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.61         2024-05-30
+5.62         2024-05-30
 Notes:
-- Pulled gitVersion out into its own reusable var
+- Remove cursor pointer on nonfunctional buttons
+- Remove extra 3 placeholder SVG icons
 */
 
-var gitVersion = "v5.61";
+//////////////////////////////////////////////
+// MASTER GITVERSION
+var gitVersion = "v5.62";
+
+// MASTER BASE URL
+var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
+
+// MASTER CONTROL TO SHOW PROMO BAR: true/false
+var showPB = false;
+//////////////////////////////////////////////
 
 /*
 Purpose:
@@ -48,16 +58,6 @@ ASAE EXPLORE has 3 major editable parts:
 
 **************************************************
 */
-
-//////////////////////////////////////////////
-// MASTER CONTROL TO SHOW PROMO BAR: true/false
-var showPB = false;
-//////////////////////////////////////////////
-
-//////////////////////////////////////////////
-// MASTER BASE URL
-var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
-//////////////////////////////////////////////
 
 // placeholders for HTML contents
 var asaeEB = "";
