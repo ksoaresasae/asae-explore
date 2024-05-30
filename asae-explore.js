@@ -8,12 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.6         2024-05-30          [GITVERSION] v5-6
+5.61         2024-05-30
+Notes:
+- Pulled gitVersion out into its own reusable var
+*/
 
-Last Update:
-------------
-- Updated to 5.6
+var gitVersion = "v5.61";
 
+/*
 Purpose:
 --------
 Add ASAE EXPLORE to any site on a per-page, per-site, or per-property basis.
@@ -54,7 +56,7 @@ var showPB = false;
 
 //////////////////////////////////////////////
 // MASTER BASE URL
-var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@v5.5/";
+var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
 //////////////////////////////////////////////
 
 // placeholders for HTML contents
