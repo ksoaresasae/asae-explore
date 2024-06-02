@@ -44,6 +44,7 @@ body {
     width: 100%;
     background-color: #000 !important;
     position: relative !important;
+    padding: 0;
 }
 #asae-eb-section svg {
     display: inline;
