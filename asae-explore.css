@@ -45,6 +45,9 @@ body {
     background-color: #000 !important;
     position: relative !important;
 }
+#asae-eb-section svg {
+    display: inline;
+}
 #asae-eb-row {
     display: flex;
     flex-flow: wrap;
