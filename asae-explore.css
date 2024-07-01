@@ -269,7 +269,7 @@ body {
     background-color: #fff;
     color: #bd491e;
 }
-#asae-eb-join-button a:visited {
+#asae-eb-join-button:visited {
     color: #fff;
 }
 .asae-eb-showdesc-switch {
