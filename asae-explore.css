@@ -36,7 +36,7 @@ body {
 }
 #asae-colorband {
     width: 100%;
-    background-color: #d15007;
+    background-color: #bd491e;
     line-height: 0.25em;
     max-height: 0.25em;
 }
@@ -178,7 +178,7 @@ body {
     width: 100%;
     height: 4px;
     margin: 0;
-    background-color: #d15007;
+    background-color: #bd491e;
     position: relative;
 }
 /* NAV */
@@ -236,7 +236,7 @@ body {
     text-decoration: none;
     color: #000;
     border-bottom: 1px solid;
-    border-color: #d15007;
+    border-color: #bd491e;
     font-size: 1em;
     line-height: 1.25em;
     font-weight: 600;
@@ -254,7 +254,7 @@ body {
     max-height: 100%;
 }
 #asae-eb-join-button {
-    background-color: #d15007;
+    background-color: #bd491e;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -267,7 +267,10 @@ body {
 }
 #asae-eb-join-button:hover {
     background-color: #fff;
-    color: #d15007;
+    color: #bd491e;
+}
+#asae-eb-join-button a:visited {
+    color: #fff;
 }
 .asae-eb-showdesc-switch {
     position: relative;
@@ -308,13 +311,13 @@ body {
 }
 .asae-eb-showdesc-input:checked + .asae-eb-showdesc-slider {
     background: none;
-    background-color: #d15007;
+    background-color: #bd491e;
     width: 2.2em;
     height: 1.2em;
     border-radius: 0.6em;
 }
 .asae-eb-showdesc-input:focus + .asae-eb-showdesc-slider {
-    box-shadow: 0 0 1px #d15007;
+    box-shadow: 0 0 1px #bd491e;
     background-image: none;
   }
 .asae-eb-showdesc-input:checked + .asae-eb-showdesc-slider:before {
@@ -379,7 +382,7 @@ body {
 #asae-eb-search-terms:active, #asae-eb-search-terms:focus {
     margin: 1em 0.5em 0.5em 1em;
     padding: 0.25em 0.5em;
-    border: 2px #d15007 solid !important;
+    border: 2px #bd491e solid !important;
     border-radius: 0% !important;
     background-color: #fff;
     color: #000;
@@ -396,7 +399,7 @@ body {
 #asae-eb-search-submit {
     margin: 1em 1em 0.5em 0em;
     padding: 0em 0.25em;
-    background-color: #d15007 !important;
+    background-color: #bd491e !important;
     border: 0px;
     border-radius: 0%;
     color: #fff;
@@ -465,7 +468,7 @@ body {
 #asae-eb-chatbot-terms:active, #asae-eb-chatbot-terms:focus {
     margin: 1em 0.25em 0.5em 1em;
     padding: 0.25em 0.5em;
-    border: 2px #d15007 solid !important;
+    border: 2px #bd491e solid !important;
     border-radius: 0% !important;
     background-color: #fff;
     color: #000;
@@ -560,7 +563,7 @@ body {
     margin-bottom: auto;
 }
 #asae-pb-cta {
-    background-color: #d15007;
+    background-color: #bd491e;
     text-align: center;
     display: inline-block;
     line-height: 1.25em;
@@ -579,7 +582,7 @@ body {
 }
 #asae-pb-cta a:hover {
     text-decoration: none;
-    color: #d15007;
+    color: #bd491e;
 }
 #asae-pb-x {
     font-size: 0.75em;
