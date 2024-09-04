@@ -8,15 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.70         2024-7-1
+5.75         2024-9-4
 Notes:
-- Fix Learning link
-- Fix orange color 
+- Remove AM link
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.70";
+var gitVersion = "v5.75";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
