@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.75         2024-9-4
+5.76         2024-9-6
 Notes:
-- Remove AM link
+- Update Learning description
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.75";
+var gitVersion = "v5.76";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
