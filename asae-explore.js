@@ -8,14 +8,15 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.76         2024-9-6
+5.77         2024-9-6
 Notes:
+- Update visited button color to white
 - Update Learning description
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.76";
+var gitVersion = "v5.77";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
