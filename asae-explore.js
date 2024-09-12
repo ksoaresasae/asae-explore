@@ -8,15 +8,16 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.77         2024-9-6
+5.78         2024-9-6
 Notes:
+- Hide old nav div 'eyebrow-nav-section'
 - Update visited button color to white
 - Update Learning description
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.77";
+var gitVersion = "v5.78";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
