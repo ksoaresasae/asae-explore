@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.79         2024-9-6
+5.80         2024-9-24
 Notes:
+- Changed Learning to ASAE Academy
 - Hide old nav div 'eyebrow-nav-section'
 - Update visited button color to white
 - Update Learning description
@@ -17,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.79";
+var gitVersion = "v5.80";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -29,7 +30,7 @@ var showPB = false;
 /*
 Purpose:
 --------
-Add ASAE EXPLORE to any site on a per-page, per-site, or per-property basis.
+Add ASAE EXPLORE to any site on a per-page, per-site, or per-property basis, to provide navigation among ASAE sites. 
 
 Usage:
 ------
