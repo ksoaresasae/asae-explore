@@ -8,17 +8,18 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.80         2024-9-24
+5.81         2024-9-24
 Notes:
+- hid old header bar from Foundation
 - Changed Learning to ASAE Academy
-- Hide old nav div 'eyebrow-nav-section'
+- Hid old nav div 'eyebrow-nav-section'
 - Update visited button color to white
 - Update Learning description
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.80";
+var gitVersion = "v5.81";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
