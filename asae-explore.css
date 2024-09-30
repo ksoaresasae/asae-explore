@@ -272,6 +272,9 @@ body {
 a#asae-eb-join-button:visited {
     color: #fff;
 }
+a#asae-eb-join-button:hover {
+    color: #bd491e;
+}
 .asae-eb-showdesc-switch {
     position: relative;
     display: inline-block;

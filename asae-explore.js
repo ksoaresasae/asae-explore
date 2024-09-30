@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.83         2024-9-30
+5.84         2024-9-30
 Notes:
+- add aria label to toggle link and remove toggle from tabindex
 - fix visited orange button text to stay white
 - hid old header bar from Foundation
 - Changed Learning to ASAE Academy
@@ -20,7 +21,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.83";
+var gitVersion = "v5.84";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
