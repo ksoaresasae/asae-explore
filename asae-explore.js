@@ -25,7 +25,7 @@ var gitVersion = "v5.81";
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
 
 // MASTER CONTROL TO SHOW PROMO BAR: true/false
-var showPB = false;
+var showPB = true;
 //////////////////////////////////////////////
 
 /*
