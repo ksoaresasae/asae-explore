@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.84         2024-9-30
+5.85         2024-9-30
 Notes:
 - add aria label to toggle link and remove toggle from tabindex
 - fix visited orange button text to stay white
@@ -21,7 +21,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.84";
+var gitVersion = "v5.85";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
