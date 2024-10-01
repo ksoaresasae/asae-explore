@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.86         2024-9-30
+5.87         2024-9-30
 Notes:
+- updated Usage information
 - add aria label to toggle link and remove toggle from tabindex
 - fix visited orange button text to stay white
 - hid old header bar from Foundation
@@ -21,7 +22,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.86";
+var gitVersion = "v5.87";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -37,6 +38,8 @@ Add ASAE EXPLORE to any site on a per-page, per-site, or per-property basis, to 
 
 Usage:
 ------
+<!-- ASAE Explore - CSS/JS - [GITVERSION] -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@[GITVERSION]/asae-explore.css"/>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@[GITVERSION]/asae-explore.js"></script>
 
 Note: if ebBaseURL is changed, this src will change, too.
