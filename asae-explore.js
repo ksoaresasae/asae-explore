@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.88         2024-10-22
+5.89         2024-10-22
 Notes:
+- fix active state for Academy
 - updated Usage information
 - add aria label to toggle link and remove toggle from tabindex
 - fix visited orange button text to stay white
@@ -22,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.88";
+var gitVersion = "v5.89";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -570,7 +571,7 @@ function setupEB() {
         console.log("Current page is ABSI");
         thisLink = ebabsi;
     }
-    if (window.location.href.indexOf("learning.asaecenter.org") != -1) {
+    if (window.location.href.indexOf("academy.asaecenter.org") != -1) {
         console.log("Current page is LEAR");
         thisLink = eblear;
     }
