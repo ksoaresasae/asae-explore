@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.87         2024-9-30
+5.88         2024-10-22
 Notes:
 - updated Usage information
 - add aria label to toggle link and remove toggle from tabindex
@@ -22,7 +22,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.87";
+var gitVersion = "v5.88";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -42,7 +42,7 @@ Usage:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@[GITVERSION]/asae-explore.css"/>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@[GITVERSION]/asae-explore.js"></script>
 
-Note: if ebBaseURL is changed, this src will change, too.
+Note: if thisBaseURL is changed, this src will change, too.
 
 Instructions:
 -------------
