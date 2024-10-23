@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.89         2024-10-22
+5.90         2024-10-23
 Notes:
 - fix active state for Academy
 - updated Usage information
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.89";
+var gitVersion = "v5.90";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -389,6 +389,7 @@ function validateChatbot() {
     } else {
         setAttributes(chatbotAlert, {"display": "none"});
         // goto https://chat.bettybot.ai/asae.html
+        // UAT demo https://uat-asae.velir.com/stellar
         window.location.href = 'https://chat.bettybot.ai/asae.html?prompt=' + termsChatbot;
         return false;
     }
