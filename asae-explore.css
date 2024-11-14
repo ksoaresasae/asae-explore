@@ -183,6 +183,7 @@ body {
 }
 /* NAV */
 #asae-eb-modal-nav-container {
+    visibility: hidden;
     max-width: 1200px;
     margin: auto;
     height: auto;
@@ -190,6 +191,7 @@ body {
     overflow: hidden;
 }
 #asae-eb-modal-nav-container.active {
+    visibility: visible;
     max-height: 100em;
 }
 #asae-eb-modal-nav {
@@ -242,6 +244,7 @@ body {
     font-weight: 600;
 }
 .asae-eb-link-desc {
+    visibility: hidden;
     font-size: 0.75em;
     line-height: 2em;
     font-weight: 300;
@@ -251,6 +254,7 @@ body {
     overflow: hidden;
 }
 .asae-eb-link-desc.active {
+    visibility: visible;
     max-height: 100%;
 }
 #asae-eb-join-button {
@@ -322,7 +326,7 @@ a#asae-eb-join-button:hover {
 .asae-eb-showdesc-input:focus + .asae-eb-showdesc-slider {
     box-shadow: 0 0 1px #bd491e;
     background-image: none;
-  }
+}
 .asae-eb-showdesc-input:checked + .asae-eb-showdesc-slider:before {
     -webkit-transform: translateX(1em);
     -ms-transform: translateX(1em);

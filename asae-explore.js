@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-5.90         2024-10-23
+6.0         2024-11-14
 Notes:
+- a11y fixes
 - fix active state for Academy
 - updated Usage information
 - add aria label to toggle link and remove toggle from tabindex
@@ -23,7 +24,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v5.90";
+var gitVersion = "v6.0";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -260,6 +261,11 @@ function ebNavClickFunc() {
     ebExploreASAE.classList.toggle("active");
     ebNavModal.classList.toggle("active");
 
+    //set aria-expanded value as well, for a11y
+    const expanded = ebNavClick.getAttribute('aria-expanded') === 'true';
+    ebNavClick.setAttribute('aria-expanded', !expanded);
+    //
+    
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
@@ -464,6 +470,24 @@ function setupEB() {
         if (isOpenUser) {
             ebUserClickFunc();
         } 
+    });
+    ebNavClick.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {        
+            //console.log("CLICK: nav");
+            ebNavClickFunc();
+            if (isOpenSearch) {
+                ebSearchClickFunc();
+            } 
+            if (isOpenChatbot) {
+                // INSTANTLY HIDE CHATBOT
+                //ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
+                //setAttributes(ebChatbotModal, {"display": "none"});
+                ebChatbotClickFunc();
+            } 
+            if (isOpenUser) {
+                ebUserClickFunc();
+            } 
+        }
     });
     const ebNavShowDescClick = document.querySelector("#asae-eb-showdesc-toggle");
     ebNavShowDescClick.addEventListener("click", ()=>{

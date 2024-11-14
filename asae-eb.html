@@ -11,12 +11,13 @@
 <!-- **************************************** --> 
 
 <!-- START editing at this line -->
-<div id="asae-colorband">&nbsp;</div>
-
 <section id="asae-eb-section" role="navigation" aria-label="Explore ASAE">
+
+    <div id="asae-colorband">&nbsp;</div>
+
     <div id="asae-eb-row">
         <div id="asae-eb-left">
-            <div id="asae-eb-left-nav">
+            <div id="asae-eb-left-nav" tabindex="0" role="button" aria-expanded="false">
                 <svg id="asae-eb-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.45 52.34" width="20" height="18">
                     <defs>
                         <style> .asae-star-icon { fill: #d15007; stroke-width: 0px; } </style>
@@ -70,8 +71,8 @@ viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="pres
                 <div id="asae-eb-showdesc">
                     <a href="#" id="asae-eb-showdesc-toggle" aria-label="Show or Hide Link Descriptions"></a>
                     <!-- Rounded switch -->
-                    <label class="asae-eb-showdesc-switch">
-                        <input aria-label="Show or Hide Link Descriptions" class="asae-eb-showdesc-input" type="checkbox" onclick="ebNavShowDescClickFunc(true)">
+                    <label for="asae-eb-showdesc-checkbox" class="asae-eb-showdesc-switch" tabindex="-1" aria-hidden="true">
+                        <input id="asae-eb-showdesc-checkbox" class="asae-eb-showdesc-input" type="checkbox" onclick="ebNavShowDescClickFunc(true)" tabindex="-1">
                         <span class="asae-eb-showdesc-slider round" tabindex="-1"></span>
                     </label>
                 </div>
