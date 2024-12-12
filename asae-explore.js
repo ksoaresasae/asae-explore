@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.0-alpha         2024-12-12
+7.01-alpha         2024-12-12
 Notes:
+- fixed LLM logo and added space below fields for text entry
 - enabled search and LLM
 */
 
