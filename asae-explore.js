@@ -8,15 +8,16 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.01-alpha         2024-12-12
+7.02-alpha         2024-12-12
 Notes:
+- added brief note about what Stellar is
 - fixed LLM logo and added space below fields for text entry
 - enabled search and LLM
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.01-alpha";
+var gitVersion = "v7.02-alpha";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
