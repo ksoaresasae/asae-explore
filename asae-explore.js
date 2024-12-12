@@ -8,23 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-6.0         2024-11-14
+7.0-alpha         2024-12-12
 Notes:
-- a11y fixes
-- fix active state for Academy
-- updated Usage information
-- add aria label to toggle link and remove toggle from tabindex
-- fix visited orange button text to stay white
-- hid old header bar from Foundation
-- Changed Learning to ASAE Academy
-- Hid old nav div 'eyebrow-nav-section'
-- Update visited button color to white
-- Update Learning description
+- enabled search and LLM
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v6.0";
+var gitVersion = "v7.0-alpha";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -311,7 +302,7 @@ function ebNavShowDescClickFunc(directClick) {
 }
 
 function ebSearchClickFunc() {
-    /*
+    
     //console.log("ebSearchClickFunc");
     setTransStyles("searchClick");
     
@@ -335,7 +326,7 @@ function ebSearchClickFunc() {
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
-    */
+    
 }
 
 function validateSearch() {
@@ -356,7 +347,7 @@ function validateSearch() {
 }
 
 function ebChatbotClickFunc() {
-    /*
+    
     //console.log("ebChatbotClickFunc");
     setTransStyles("chatbotClick");
 
@@ -380,7 +371,7 @@ function ebChatbotClickFunc() {
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
-    */
+    
 }
 
 function validateChatbot() {
@@ -394,9 +385,9 @@ function validateChatbot() {
         return false;
     } else {
         setAttributes(chatbotAlert, {"display": "none"});
-        // goto https://chat.bettybot.ai/asae.html
+        // general ASAE BettyBot demo https://chat.bettybot.ai/asae.html
         // UAT demo https://uat-asae.velir.com/stellar
-        window.location.href = 'https://chat.bettybot.ai/asae.html?prompt=' + termsChatbot;
+        window.location.href = 'https://www.asaecenter.org/stellar?prompt=' + termsChatbot;
         return false;
     }
 }
