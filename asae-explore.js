@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.02-alpha         2024-12-12
+7.1         2025-02-18
 Notes:
+- show Search, Bot, and User with alt titles
 - added brief note about what Stellar is
 - fixed LLM logo and added space below fields for text entry
 - enabled search and LLM
@@ -17,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.02-alpha";
+var gitVersion = "v7.1";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -387,15 +388,12 @@ function validateChatbot() {
         return false;
     } else {
         setAttributes(chatbotAlert, {"display": "none"});
-        // general ASAE BettyBot demo https://chat.bettybot.ai/asae.html
-        // UAT demo https://uat-asae.velir.com/stellar
         window.location.href = 'https://www.asaecenter.org/stellar?prompt=' + termsChatbot;
         return false;
     }
 }
 
 function ebUserClickFunc() {
-    /*
     //console.log("ebUserClickFunc");
     setTransStyles("userClick");
 
@@ -404,7 +402,8 @@ function ebUserClickFunc() {
 
     let thisRedirectURL = window.location.href;
     // goto https://sso.asaecenter.org/
-    window.location.href = 'https://sso.asaecenter.org/sso.asaecenter.org/b2c_1a_signin_no_sign_up_aptify/oauth2/v2.0/authorize?response_type=code&scope=f64cfe0a-fef2-4cff-a059-87dc4ca71a52%20profile%20email%20address%20phone&redirect_uri=' + thisRedirectURL;
+    window.location.href = 'https://www.asaecenter.org/my-profile';
+    // https://sso.asaecenter.org/sso.asaecenter.org/b2c_1a_signin_no_sign_up_aptify/oauth2/v2.0/authorize?response_type=code&scope=f64cfe0a-fef2-4cff-a059-87dc4ca71a52%20profile%20email%20address%20phone&redirect_uri=' + thisRedirectURL;
     
     //const ebUserClick = document.querySelector("#asae-eb-right-user");
     //const ebUserModal = document.querySelector("#asae-eb-modal-user-container");
@@ -419,7 +418,6 @@ function ebUserClickFunc() {
     //setTimeout(function(){
     //    document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     //}, 1000);
-    */
 }
 
 function setupEB() {
