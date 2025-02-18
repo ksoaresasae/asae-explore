@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.1         2025-02-18
+7.11         2025-02-18
 Notes:
 - show Search, Bot, and User with alt titles
 - added brief note about what Stellar is
