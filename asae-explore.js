@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.22         2025-02-27
+7.23         2025-02-27
 Notes:
 - Fix Search and Chatbot alert messages 
 - Add keyboard control for Search, Chatbot, and User
@@ -22,7 +22,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.22";
+var gitVersion = "v7.23";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -334,7 +334,21 @@ function ebSearchClickFunc() {
 
     if (isOpenSearch) {
         document.getElementById("asae-eb-search-terms").focus();
+        document.getElementById("asae-eb-search-terms").tabIndex = 1;
+        document.getElementById("asae-eb-search-submit").tabIndex = 2;
+        document.getElementById("asae-eb-right-chatbot").tabIndex = 3;
+        document.getElementById("asae-eb-right-user").tabIndex = 4;
+    } else {
+        document.getElementById("asae-eb-search-terms").tabIndex = -1;
+        document.getElementById("asae-eb-search-submit").tabIndex = -1;
+        document.getElementById("asae-eb-right-chatbot").tabIndex = 0;
+        document.getElementById("asae-eb-right-user").tabIndex = 0;
     }
+
+    //set aria-expanded value as well, for a11y
+    const expanded = ebSearchClick.getAttribute('aria-expanded') === 'true';
+    ebSearchClick.setAttribute('aria-expanded', !expanded);
+    //
 
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
@@ -379,7 +393,17 @@ function ebChatbotClickFunc() {
 
     if (isOpenChatbot) {
         document.getElementById("asae-eb-chatbot-terms").focus();
+        document.getElementById("asae-eb-chatbot-terms").tabIndex = 1;
+        document.getElementById("asae-eb-right-user").tabIndex = 2;
+    } else {
+        document.getElementById("asae-eb-chatbot-terms").tabIndex = -1;
+        document.getElementById("asae-eb-right-user").tabIndex = 0;
     }
+
+    //set aria-expanded value as well, for a11y
+    const expanded = ebChatbotClick.getAttribute('aria-expanded') === 'true';
+    ebChatbotClick.setAttribute('aria-expanded', !expanded);
+    //
 
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
