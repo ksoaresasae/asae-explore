@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.26         2025-02-27
+7.27         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.26";
+var gitVersion = "v7.27";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -121,6 +121,8 @@ function parseEBHTML() {
     body.insertBefore(ebDiv, body.firstChild);
     //console.log(" - EB HTML IS ADDED");
     setupEB();
+
+    setTabIndexes();
 }
 
 function parsePBHTML() {
