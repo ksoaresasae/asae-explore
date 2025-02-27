@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.31         2025-02-27
+7.32         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.31";
+var gitVersion = "v7.32";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -188,6 +188,12 @@ function setTabIndexes() {
         chatbotTabIndex = -1;
     }
     document.getElementById("asae-eb-chatbot-terms").tabIndex = chatbotTabIndex;
+
+    // HIDE THE SEARCH AND CHATBOT ALERTS UNTIL USER ENTRY OCCURS
+    searchAlert = document.getElementById("asae-eb-search-terms-alert");
+    setAttributes(searchAlert, {"display": "none"});
+    chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
+    setAttributes(chatbotAlert, {"display": "none"});
 
 }
 /* ---------- TABINDEX HELPERS - END ---------- */
@@ -601,8 +607,6 @@ function setupEB() {
             //if (isOpenUser) {
             //    ebUserClickFunc();
             //} 
-            searchAlert = document.getElementById("asae-eb-search-terms-alert");
-            setAttributes(searchAlert, {"display": "none"});
         }
     });
 
@@ -646,8 +650,6 @@ function setupEB() {
             //if (isOpenUser) {
             //    ebUserClickFunc();
             //} 
-            chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
-            setAttributes(chatbotAlert, {"display": "none"});
         }
     });
 
