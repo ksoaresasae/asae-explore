@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.27         2025-02-27
+7.28         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.27";
+var gitVersion = "v7.28";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -158,24 +158,36 @@ function setAttributes(el, attrs) {
 /* ---------- TABINDEX HELPERS - START ---------- */
 // USE: setTabIndexes();
 function setTabIndexes() {
-    document.getElementById("asae-eb-left-nav").tabIndex = 1;
-    document.getElementById("asae-eb-mag").tabIndex = 2;
-    document.getElementById("asae-eb-chatbot").tabIndex = 3;
-    document.getElementById("asae-eb-user").tabIndex = 4;
+    var navTabIndex = 1;
+    var searchTabIndex = 2;
+    var chatbotTabIndex = 3;
+    var userTabIndex = 4;
 
-    if (isOpenSearch) {
-        document.getElementById("asae-eb-search-terms").tabIndex = 2;
-        document.getElementById("asae-eb-search-submit").tabIndex = 2;
-    } else {
-        document.getElementById("asae-eb-search-terms").tabIndex = -1;
-        document.getElementById("asae-eb-search-submit").tabIndex = -1;
+    document.getElementById("asae-eb-left-nav").tabIndex = navTabIndex;
+    document.getElementById("asae-eb-mag").tabIndex = searchTabIndex;
+    document.getElementById("asae-eb-chatbot").tabIndex = chatbotTabIndex;
+    document.getElementById("asae-eb-user").tabIndex = userTabIndex;
+
+    if (!isOpenNav) {
+        navTabIndex = -1;
+    }
+    const div = document.querySelector('asae-eb-modal-nav');
+    const links = div.querySelectorAll('a'); // Select all a elements within the div
+    for (const link of links) {
+        link.tabIndex = navTabIndex;
     }
 
-    if (isOpenChatbot) {
-        document.getElementById("asae-eb-chatbot-terms").tabIndex = 3;
-    } else {
-        document.getElementById("asae-eb-chatbot-terms").tabIndex = -1;
+
+    if (!isOpenSearch) {
+        searchTabIndex = -1;
     }
+    document.getElementById("asae-eb-search-terms").tabIndex = searchTabIndex;
+    document.getElementById("asae-eb-search-submit").tabIndex = searchTabIndex;
+
+    if (!isOpenChatbot) {
+        chatbotTabIndex = -1;
+    }
+    document.getElementById("asae-eb-chatbot-terms").tabIndex = chatbotTabIndex;
 
 }
 /* ---------- TABINDEX HELPERS - END ---------- */
