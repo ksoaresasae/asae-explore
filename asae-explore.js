@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.30         2025-02-27
+7.31         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.30";
+var gitVersion = "v7.31";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -173,7 +173,7 @@ function setTabIndexes() {
     }
     var links = document.getElementById('asae-eb-modal-nav').getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
-        console.log(links[i]);
+        //console.log(links[i]);
         links[i].tabIndex = navTabIndex;
     }
 
@@ -585,8 +585,6 @@ function setupEB() {
     ebSearchClick.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {        
             //console.log("CLICK: search");
-            searchAlert = document.getElementById("asae-eb-search-terms-alert");
-            setAttributes(searchAlert, {"display": "none"});
             ebSearchClickFunc();
             if (isOpenNav) {
                 // INSTANTLY HIDE NAV
@@ -603,6 +601,8 @@ function setupEB() {
             //if (isOpenUser) {
             //    ebUserClickFunc();
             //} 
+            searchAlert = document.getElementById("asae-eb-search-terms-alert");
+            setAttributes(searchAlert, {"display": "none"});
         }
     });
 
@@ -630,8 +630,6 @@ function setupEB() {
     ebChatbotClick.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {        
             //console.log("CLICK: chatbot");
-            chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
-            setAttributes(chatbotAlert, {"display": "none"});
             ebChatbotClickFunc();
             if (isOpenNav) {
                 // INSTANTLY HIDE NAV
@@ -648,6 +646,8 @@ function setupEB() {
             //if (isOpenUser) {
             //    ebUserClickFunc();
             //} 
+            chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
+            setAttributes(chatbotAlert, {"display": "none"});
         }
     });
 
