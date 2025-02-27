@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.15         2025-02-27
+7.16         2025-02-27
 Notes:
 - show Search, Bot, and User with alt titles
 - added brief note about what Stellar is
@@ -18,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.15";
+var gitVersion = "v7.16";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -209,14 +209,14 @@ function setTransStyles(thisClick) {
     var noTrans = {"transition": "none", "-o-transition": "none", "-moz-transition": "none",  "-webkit-transition": "none"};
 
     var transModalNav = document.getElementById("asae-eb-modal-nav-container");
-    var transModalSearch = document.getElementById("asae-eb-modal-search-container");
-    var transModalChatbot = document.getElementById("asae-eb-modal-chatbot-container");
-    var transModalUser = document.getElementById("asae-eb-modal-user-container");
+    //var transModalSearch = document.getElementById("asae-eb-modal-search-container");
+    //var transModalChatbot = document.getElementById("asae-eb-modal-chatbot-container");
+    //var transModalUser = document.getElementById("asae-eb-modal-user-container");
 
     setAttributes(transModalNav, slideTrans);
-    setAttributes(transModalSearch, slideTrans);
-    setAttributes(transModalChatbot, slideTrans);
-    setAttributes(transModalUser, slideTrans);
+    //setAttributes(transModalSearch, slideTrans);
+    //setAttributes(transModalChatbot, slideTrans);
+    //setAttributes(transModalUser, slideTrans);
 
     if (thisClick == "navClick") {
         if (isOpenSearch || isOpenChatbot || isOpenUser) {
@@ -225,17 +225,17 @@ function setTransStyles(thisClick) {
     }
     if (thisClick == "searchClick") {
         if (isOpenNav || isOpenChatbot || isOpenUser) {
-            setAttributes(transModalSearch, noTrans);
+            //setAttributes(transModalSearch, noTrans);
         }
     }
     if (thisClick == "chatbotClick") {
         if (isOpenNav || isOpenSearch || isOpenUser) {
-            setAttributes(transModalChatbot, noTrans);
+            //setAttributes(transModalChatbot, noTrans);
         }
     }
     if (thisClick == "userClick") {
         if (isOpenNav || isOpenSearch || isOpenChatbot) {
-            setAttributes(transModalUser, noTrans);
+            //setAttributes(transModalUser, noTrans);
         }
     }
 }
@@ -397,8 +397,7 @@ function ebUserClickFunc() {
     //console.log("ebUserClickFunc");
     setTransStyles("userClick");
 
-    isOpenUser = true;
-    //!isOpenUser;
+    isOpenUser = true; // !isOpenUser;
     //console.log("isOpenUser="+isOpenUser);
 
     let thisRedirectURL = window.location.href;
