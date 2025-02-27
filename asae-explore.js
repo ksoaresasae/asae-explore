@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.32         2025-02-27
+7.33         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.32";
+var gitVersion = "v7.33";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -381,7 +381,7 @@ function ebSearchClickFunc() {
     }
 
     if (isOpenSearch) {
-        document.getElementById("asae-eb-search-terms").focus();
+        //document.getElementById("asae-eb-search-terms").focus();
     }
 
     //set aria-expanded value as well, for a11y
@@ -432,7 +432,7 @@ function ebChatbotClickFunc() {
     }
 
     if (isOpenChatbot) {
-        document.getElementById("asae-eb-chatbot-terms").focus();
+        //document.getElementById("asae-eb-chatbot-terms").focus();
     }
 
     //set aria-expanded value as well, for a11y
