@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.19         2025-02-27
+7.20         2025-02-27
 Notes:
 - show Search, Bot, and User with alt titles
 - added brief note about what Stellar is
@@ -18,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.19";
+var gitVersion = "v7.20";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -221,16 +221,22 @@ function setTransStyles(thisClick) {
     if (thisClick == "navClick") {
         if (isOpenSearch || isOpenChatbot || isOpenUser) {
             setAttributes(transModalNav, noTrans);
+        } else {
+            setAttributes(transModalNav, slideTrans);
         }
     }
     if (thisClick == "searchClick") {
         if (isOpenNav || isOpenChatbot || isOpenUser) {
             setAttributes(transModalSearch, noTrans);
+        } else {
+            setAttributes(transModalSearch, slideTrans);
         }
     }
     if (thisClick == "chatbotClick") {
         if (isOpenNav || isOpenSearch || isOpenUser) {
             setAttributes(transModalChatbot, noTrans);
+        } else {
+            setAttributes(transModalChatbot, slideTrans);
         }
     }
     if (thisClick == "userClick") {
