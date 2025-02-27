@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.16         2025-02-27
+7.17         2025-02-27
 Notes:
 - show Search, Bot, and User with alt titles
 - added brief note about what Stellar is
@@ -18,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.16";
+var gitVersion = "v7.17";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -452,34 +452,40 @@ function setupEB() {
         //console.log("CLICK: nav");
         ebNavClickFunc();
         if (isOpenSearch) {
-            ebSearchClickFunc();
+            // INSTANTLY HIDE SEARCH
+            ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
+            setAttributes(ebSearchModal, {"display": "none"});
+            //ebSearchClickFunc();
         } 
         if (isOpenChatbot) {
             // INSTANTLY HIDE CHATBOT
-            //ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-            //setAttributes(ebChatbotModal, {"display": "none"});
-            ebChatbotClickFunc();
+            ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
+            setAttributes(ebChatbotModal, {"display": "none"});
+            //ebChatbotClickFunc();
         } 
-        if (isOpenUser) {
-            ebUserClickFunc();
-        } 
+        //if (isOpenUser) {
+        //    ebUserClickFunc();
+        //} 
     });
     ebNavClick.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {        
             //console.log("CLICK: nav");
             ebNavClickFunc();
             if (isOpenSearch) {
-                ebSearchClickFunc();
+                // INSTANTLY HIDE SEARCH
+                ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
+                setAttributes(ebSearchModal, {"display": "none"});
+                //ebSearchClickFunc();
             } 
             if (isOpenChatbot) {
                 // INSTANTLY HIDE CHATBOT
-                //ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-                //setAttributes(ebChatbotModal, {"display": "none"});
-                ebChatbotClickFunc();
+                ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
+                setAttributes(ebChatbotModal, {"display": "none"});
+                //ebChatbotClickFunc();
             } 
-            if (isOpenUser) {
-                ebUserClickFunc();
-            } 
+            //if (isOpenUser) {
+            //    ebUserClickFunc();
+            //} 
         }
     });
     const ebNavShowDescClick = document.querySelector("#asae-eb-showdesc-toggle");
@@ -494,14 +500,20 @@ function setupEB() {
         //console.log("CLICK: search");
         ebSearchClickFunc();
         if (isOpenNav) {
-            ebNavClickFunc();
+            // INSTANTLY HIDE NAV
+            ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
+            setAttributes(ebNavModal, {"display": "none"});
+            //ebNavClickFunc();
         }
         if (isOpenChatbot) {
-            ebChatbotClickFunc();
+            // INSTANTLY HIDE CHATBOT
+            ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
+            setAttributes(ebChatbotModal, {"display": "none"});
+            //ebChatbotClickFunc();
         } 
-        if (isOpenUser) {
-            ebUserClickFunc();
-        } 
+        //if (isOpenUser) {
+        //    ebUserClickFunc();
+        //} 
     });
 
     // EXPLORE ASAE CHATBOT (right)
@@ -510,14 +522,20 @@ function setupEB() {
         //console.log("CLICK: chatbot");
         ebChatbotClickFunc();
         if (isOpenNav) {
-            ebNavClickFunc();
+            // INSTANTLY HIDE NAV
+            ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
+            setAttributes(ebNavModal, {"display": "none"});
+            //ebNavClickFunc();
         }
         if (isOpenSearch) {
-            ebSearchClickFunc();
+            // INSTANTLY HIDE SEARCH
+            ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
+            setAttributes(ebSearchModal, {"display": "none"});
+            //ebSearchClickFunc();
         } 
-        if (isOpenUser) {
-            ebUserClickFunc();
-        } 
+        //if (isOpenUser) {
+        //    ebUserClickFunc();
+        //} 
     });
 
     // EXPLORE ASAE USER (right)
@@ -526,13 +544,22 @@ function setupEB() {
         //console.log("CLICK: user");
         ebUserClickFunc();
         if (isOpenNav) {
-            ebNavClickFunc();
+           // INSTANTLY HIDE NAV
+           ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
+           setAttributes(ebNavModal, {"display": "none"});
+           //ebNavClickFunc();
         }
         if (isOpenSearch) {
-            ebSearchClickFunc();
+            // INSTANTLY HIDE SEARCH
+            ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
+            setAttributes(ebSearchModal, {"display": "none"});
+            //ebSearchClickFunc();
         } 
         if (isOpenChatbot) {
-            ebChatbotClickFunc();
+            // INSTANTLY HIDE CHATBOT
+            ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
+            setAttributes(ebChatbotModal, {"display": "none"});
+            //ebChatbotClickFunc();
         } 
     });
 
@@ -566,43 +593,43 @@ function setupEB() {
     const ebjoin = document.querySelector("#eb-join");
 
     if (window.location.href.indexOf("www.asaecenter.org") != -1) {
-        console.log("Current page is ASAE");
+        //console.log("Current page is ASAE");
         thisLink = ebasae;
     }
     if (window.location.href.indexOf("foundation.asaecenter.org") != -1) {
-        console.log("Current page is FOUN");
+        //console.log("Current page is FOUN");
         thisLink = ebfoun;
     }
     if (window.location.href.indexOf("collaborate.asaecenter.org") != -1) {
-        console.log("Current page is COLL");
+        //console.log("Current page is COLL");
         thisLink = ebcoll;
     }
     if (window.location.href.indexOf("careerhq.asaecenter.org") != -1) {
-        console.log("Current page is CAHQ");
+        //console.log("Current page is CAHQ");
         thisLink = ebcahq;
     }
     if (window.location.href.indexOf("associationsnow.com") != -1) {
-        console.log("Current page is ASNW");
+        //console.log("Current page is ASNW");
         thisLink = ebasnw;
     }
     if (window.location.href.indexOf("www.asaebusinesssolutions.org") != -1) {
-        console.log("Current page is ABSI");
+        //console.log("Current page is ABSI");
         thisLink = ebabsi;
     }
     if (window.location.href.indexOf("academy.asaecenter.org") != -1) {
-        console.log("Current page is LEAR");
+        //console.log("Current page is LEAR");
         thisLink = eblear;
     }
     if (window.location.href.indexOf("agi.asaecenter.org") != -1) {
-        console.log("Current page is GOVN");
+        //console.log("Current page is GOVN");
         thisLink = ebgovn;
     }
     if ((window.location.href.indexOf("mmcc.asaecenter.org") != -1) || (window.location.href.indexOf("mmct.asaecenter.org") != -1)) {
-        console.log("Current page is MMCT");
+        //console.log("Current page is MMCT");
         thisLink = ebmmct;
     }
     if (window.location.href.indexOf("annual.asaecenter.org") != -1) {
-        console.log("Current page is ANNL");
+        //console.log("Current page is ANNL");
         thisLink = ebannl;
     }
     if (1 == 2) { // never turn off JOIN button
