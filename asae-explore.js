@@ -8,8 +8,11 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.20         2025-02-27
+7.21         2025-02-27
 Notes:
+- Add keyboard control for Search, Chatbot, and User
+- Fix issue where User button turns off all SlideTrans permanently
+- toggle SlideTrans and NoTrans as needed
 - show Search, Bot, and User with alt titles
 - added brief note about what Stellar is
 - fixed LLM logo and added space below fields for text entry
@@ -18,7 +21,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.20";
+var gitVersion = "v7.21";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -219,31 +222,31 @@ function setTransStyles(thisClick) {
     //setAttributes(transModalUser, slideTrans);
 
     if (thisClick == "navClick") {
-        if (isOpenSearch || isOpenChatbot || isOpenUser) {
+        if (isOpenSearch || isOpenChatbot) { // || isOpenUser) {
             setAttributes(transModalNav, noTrans);
         } else {
             setAttributes(transModalNav, slideTrans);
         }
     }
     if (thisClick == "searchClick") {
-        if (isOpenNav || isOpenChatbot || isOpenUser) {
+        if (isOpenNav || isOpenChatbot) { // || isOpenUser) {
             setAttributes(transModalSearch, noTrans);
         } else {
             setAttributes(transModalSearch, slideTrans);
         }
     }
     if (thisClick == "chatbotClick") {
-        if (isOpenNav || isOpenSearch || isOpenUser) {
+        if (isOpenNav || isOpenSearch) { // || isOpenUser) {
             setAttributes(transModalChatbot, noTrans);
         } else {
             setAttributes(transModalChatbot, slideTrans);
         }
     }
-    if (thisClick == "userClick") {
-        if (isOpenNav || isOpenSearch || isOpenChatbot) {
+    //if (thisClick == "userClick") {
+        //if (isOpenNav || isOpenSearch || isOpenChatbot) {
             //setAttributes(transModalUser, noTrans);
-        }
-    }
+        //}
+    //}
 }
 
 function ebNavClickFunc() {
@@ -521,6 +524,27 @@ function setupEB() {
         //    ebUserClickFunc();
         //} 
     });
+    ebSearchClick.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {        
+            //console.log("CLICK: search");
+            ebSearchClickFunc();
+            if (isOpenNav) {
+                // INSTANTLY HIDE NAV
+                ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
+                setAttributes(ebNavModal, {"display": "none"});
+                ebNavClickFunc();
+            } 
+            if (isOpenChatbot) {
+                // INSTANTLY HIDE CHATBOT
+                ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
+                setAttributes(ebChatbotModal, {"display": "none"});
+                ebChatbotClickFunc();
+            } 
+            //if (isOpenUser) {
+            //    ebUserClickFunc();
+            //} 
+        }
+    });
 
     // EXPLORE ASAE CHATBOT (right)
     const ebChatbotClick = document.querySelector("#asae-eb-right-chatbot");
@@ -542,6 +566,27 @@ function setupEB() {
         //if (isOpenUser) {
         //    ebUserClickFunc();
         //} 
+    });
+    ebChatbotClick.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {        
+            //console.log("CLICK: chatbot");
+            ebChatbotClickFunc();
+            if (isOpenNav) {
+                // INSTANTLY HIDE NAV
+                ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
+                setAttributes(ebNavModal, {"display": "none"});
+                ebNavClickFunc();
+            } 
+            if (isOpenSearch) {
+                // INSTANTLY HIDE SEARCH
+                ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
+                setAttributes(ebSearchModal, {"display": "none"});
+                ebSearchClickFunc();
+            } 
+            //if (isOpenUser) {
+            //    ebUserClickFunc();
+            //} 
+        }
     });
 
     // EXPLORE ASAE USER (right)
@@ -567,6 +612,30 @@ function setupEB() {
             setAttributes(ebChatbotModal, {"display": "none"});
             ebChatbotClickFunc();
         } 
+    });
+    ebUserClick.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {        
+            //console.log("CLICK: user");
+            ebUserClickFunc();
+            if (isOpenNav) {
+                // INSTANTLY HIDE NAV
+                ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
+                setAttributes(ebNavModal, {"display": "none"});
+                ebNavClickFunc();
+            }
+            if (isOpenSearch) {
+                // INSTANTLY HIDE SEARCH
+                ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
+                setAttributes(ebSearchModal, {"display": "none"});
+                ebSearchClickFunc();
+            } 
+            if (isOpenChatbot) {
+                // INSTANTLY HIDE CHATBOT
+                ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
+                setAttributes(ebChatbotModal, {"display": "none"});
+                ebChatbotClickFunc();
+            } 
+        }
     });
 
     /* 
