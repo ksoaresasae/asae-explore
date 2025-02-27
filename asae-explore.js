@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.17         2025-02-27
+7.18         2025-02-27
 Notes:
 - show Search, Bot, and User with alt titles
 - added brief note about what Stellar is
@@ -18,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.17";
+var gitVersion = "v7.18";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -455,13 +455,13 @@ function setupEB() {
             // INSTANTLY HIDE SEARCH
             ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
             setAttributes(ebSearchModal, {"display": "none"});
-            //ebSearchClickFunc();
+            ebSearchClickFunc();
         } 
         if (isOpenChatbot) {
             // INSTANTLY HIDE CHATBOT
             ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
             setAttributes(ebChatbotModal, {"display": "none"});
-            //ebChatbotClickFunc();
+            ebChatbotClickFunc();
         } 
         //if (isOpenUser) {
         //    ebUserClickFunc();
@@ -475,13 +475,13 @@ function setupEB() {
                 // INSTANTLY HIDE SEARCH
                 ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
                 setAttributes(ebSearchModal, {"display": "none"});
-                //ebSearchClickFunc();
+                ebSearchClickFunc();
             } 
             if (isOpenChatbot) {
                 // INSTANTLY HIDE CHATBOT
                 ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
                 setAttributes(ebChatbotModal, {"display": "none"});
-                //ebChatbotClickFunc();
+                ebChatbotClickFunc();
             } 
             //if (isOpenUser) {
             //    ebUserClickFunc();
@@ -503,13 +503,13 @@ function setupEB() {
             // INSTANTLY HIDE NAV
             ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
             setAttributes(ebNavModal, {"display": "none"});
-            //ebNavClickFunc();
+            ebNavClickFunc();
         }
         if (isOpenChatbot) {
             // INSTANTLY HIDE CHATBOT
             ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
             setAttributes(ebChatbotModal, {"display": "none"});
-            //ebChatbotClickFunc();
+            ebChatbotClickFunc();
         } 
         //if (isOpenUser) {
         //    ebUserClickFunc();
@@ -525,13 +525,13 @@ function setupEB() {
             // INSTANTLY HIDE NAV
             ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
             setAttributes(ebNavModal, {"display": "none"});
-            //ebNavClickFunc();
+            ebNavClickFunc();
         }
         if (isOpenSearch) {
             // INSTANTLY HIDE SEARCH
             ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
             setAttributes(ebSearchModal, {"display": "none"});
-            //ebSearchClickFunc();
+            ebSearchClickFunc();
         } 
         //if (isOpenUser) {
         //    ebUserClickFunc();
@@ -547,19 +547,19 @@ function setupEB() {
            // INSTANTLY HIDE NAV
            ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
            setAttributes(ebNavModal, {"display": "none"});
-           //ebNavClickFunc();
+           ebNavClickFunc();
         }
         if (isOpenSearch) {
             // INSTANTLY HIDE SEARCH
             ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
             setAttributes(ebSearchModal, {"display": "none"});
-            //ebSearchClickFunc();
+            ebSearchClickFunc();
         } 
         if (isOpenChatbot) {
             // INSTANTLY HIDE CHATBOT
             ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
             setAttributes(ebChatbotModal, {"display": "none"});
-            //ebChatbotClickFunc();
+            ebChatbotClickFunc();
         } 
     });
 
