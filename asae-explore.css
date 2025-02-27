@@ -382,7 +382,7 @@ a#asae-eb-join-button:hover {
     border-radius: 0%;
     background-color: #fff;
     color: #000;
-    height: 2.5em;
+    height: 3.5em;
     width: 75%;
     float: left;
 }
@@ -393,14 +393,14 @@ a#asae-eb-join-button:hover {
     border-radius: 0% !important;
     background-color: #fff;
     color: #000;
-    height: 2.5em;
+    height: 3.5em;
     width: 75%;
     float: left;
 }
 #asae-eb-search-terms-alert {
     color: #ff0000;
     margin: 0.5em 0 0.5em 1.2em;
-    font-size: 0.75em;
+    font-size: 1em;
     display: none;
 }
 #asae-eb-search-submit {
@@ -411,8 +411,8 @@ a#asae-eb-join-button:hover {
     border-radius: 0%;
     color: #fff;
     content: '\25BA';
-    height: 2.5em;
-    width: 2.5em;
+    height: 3.5em;
+    width: 3.5em;
 }
 #asae-eb-search-submit:hover {
     background-color: #000 !important;
@@ -468,7 +468,7 @@ a#asae-eb-join-button:hover {
     border-radius: 0%;
     background-color: #fff;
     color: #000;
-    height: 2em;
+    height: 3.5em;
     width: 90%;
     float: left;
 }
@@ -479,14 +479,14 @@ a#asae-eb-join-button:hover {
     border-radius: 0% !important;
     background-color: #fff;
     color: #000;
-    height: 2em;
+    height: 3.5em;
     width: 90%;
     float: left;
 }
 #asae-eb-chatbot-terms-alert {
     color: #ff0000;
     margin: 0.5em 0 0.5em 1.2em;
-    font-size: 0.75em;
+    font-size: 1em;
     display: none;
 }
 #asae-eb-chatbot-hi {
