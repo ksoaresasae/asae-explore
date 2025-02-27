@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.25         2025-02-27
+7.26         2025-02-27
 Notes:
+- Added tabindex helper function
 - Fix Search and Chatbot alert messages 
 - Add keyboard control for Search, Chatbot, and User
 - Fix issue where User button turns off all SlideTrans permanently
@@ -22,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.25";
+var gitVersion = "v7.26";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -152,6 +153,32 @@ function setAttributes(el, attrs) {
 }
 /* ---------- CSS HELPERS - END ---------- */
 
+/* ---------- TABINDEX HELPERS - START ---------- */
+// USE: setTabIndexes();
+function setTabIndexes() {
+    document.getElementById("asae-eb-left-nav").tabIndex = 1;
+    document.getElementById("asae-eb-mag").tabIndex = 2;
+    document.getElementById("asae-eb-chatbot").tabIndex = 3;
+    document.getElementById("asae-eb-user").tabIndex = 4;
+
+    if (isOpenSearch) {
+        document.getElementById("asae-eb-search-terms").tabIndex = 2;
+        document.getElementById("asae-eb-search-submit").tabIndex = 2;
+    } else {
+        document.getElementById("asae-eb-search-terms").tabIndex = -1;
+        document.getElementById("asae-eb-search-submit").tabIndex = -1;
+    }
+
+    if (isOpenChatbot) {
+        document.getElementById("asae-eb-chatbot-terms").tabIndex = 3;
+    } else {
+        document.getElementById("asae-eb-chatbot-terms").tabIndex = -1;
+    }
+
+}
+/* ---------- TABINDEX HELPERS - END ---------- */
+
+
 /* ---------- COOKIE HELPERS - START ----------*/
 function doesCookieExist(cname) {
     var status = false;
@@ -274,6 +301,7 @@ function ebNavClickFunc() {
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
 
+    setTabIndexes();
 }
 
 function ebNavShowDescClickFunc(directClick) {
@@ -334,16 +362,6 @@ function ebSearchClickFunc() {
 
     if (isOpenSearch) {
         document.getElementById("asae-eb-search-terms").focus();
-        document.getElementById("asae-eb-search-terms").tabIndex = 1;
-        document.getElementById("asae-eb-search-submit").tabIndex = 2;
-        document.getElementById("asae-eb-chatbot").tabIndex = 3;
-        document.getElementById("asae-eb-user").tabIndex = 4;
-        document.getElementById("asae-eb-chatbot-terms").tabIndex = -1;
-    } else {
-        document.getElementById("asae-eb-search-terms").tabIndex = -1;
-        document.getElementById("asae-eb-search-submit").tabIndex = -1;
-        document.getElementById("asae-eb-chatbot").tabIndex = 0;
-        document.getElementById("asae-eb-user").tabIndex = 0;
     }
 
     //set aria-expanded value as well, for a11y
@@ -355,6 +373,7 @@ function ebSearchClickFunc() {
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
     
+    setTabIndexes();
 }
 
 function validateSearch() {
@@ -394,13 +413,6 @@ function ebChatbotClickFunc() {
 
     if (isOpenChatbot) {
         document.getElementById("asae-eb-chatbot-terms").focus();
-        document.getElementById("asae-eb-chatbot-terms").tabIndex = 1;
-        document.getElementById("asae-eb-user").tabIndex = 2;
-        document.getElementById("asae-eb-search-terms").tabIndex = -1;
-        document.getElementById("asae-eb-search-submit").tabIndex = -1;
-    } else {
-        document.getElementById("asae-eb-chatbot-terms").tabIndex = -1;
-        document.getElementById("asae-eb-user").tabIndex = 0;
     }
 
     //set aria-expanded value as well, for a11y
@@ -411,6 +423,8 @@ function ebChatbotClickFunc() {
     setTimeout(function(){
         document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     }, 1000);
+
+    setTabIndexes();
     
 }
 
@@ -457,6 +471,8 @@ function ebUserClickFunc() {
     //setTimeout(function(){
     //    document.getElementById("asae-eb-id").scrollIntoView({ behavior: "smooth" });
     //}, 1000);
+
+    setTabIndexes();
 }
 
 function setupEB() {
