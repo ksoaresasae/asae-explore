@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.29         2025-02-27
+7.30         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.29";
+var gitVersion = "v7.30";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -171,11 +171,10 @@ function setTabIndexes() {
     if (!isOpenNav) {
         navTabIndex = -1;
     }
-    const div = document.querySelector('asae-eb-modal-nav');
-    const links = div.querySelectorAll('a'); // Select all a elements within the div
-    for (const link of links) {
-        console.log(link);
-        link.tabIndex = navTabIndex;
+    var links = document.getElementById('asae-eb-modal-nav').getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+        console.log(links[i]);
+        links[i].tabIndex = navTabIndex;
     }
 
 
