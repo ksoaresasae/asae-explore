@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.21         2025-02-27
+7.22         2025-02-27
 Notes:
+- Fix Search and Chatbot alert messages 
 - Add keyboard control for Search, Chatbot, and User
 - Fix issue where User button turns off all SlideTrans permanently
 - toggle SlideTrans and NoTrans as needed
@@ -21,7 +22,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.21";
+var gitVersion = "v7.22";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -527,6 +528,8 @@ function setupEB() {
     ebSearchClick.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {        
             //console.log("CLICK: search");
+            searchAlert = document.getElementById("asae-eb-search-terms-alert");
+            setAttributes(searchAlert, {"display": "none"});
             ebSearchClickFunc();
             if (isOpenNav) {
                 // INSTANTLY HIDE NAV
@@ -570,6 +573,8 @@ function setupEB() {
     ebChatbotClick.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {        
             //console.log("CLICK: chatbot");
+            chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
+            setAttributes(chatbotAlert, {"display": "none"});
             ebChatbotClickFunc();
             if (isOpenNav) {
                 // INSTANTLY HIDE NAV
