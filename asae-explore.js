@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.24         2025-02-27
+7.25         2025-02-27
 Notes:
 - Fix Search and Chatbot alert messages 
 - Add keyboard control for Search, Chatbot, and User
@@ -22,7 +22,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.24";
+var gitVersion = "v7.25";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -336,14 +336,14 @@ function ebSearchClickFunc() {
         document.getElementById("asae-eb-search-terms").focus();
         document.getElementById("asae-eb-search-terms").tabIndex = 1;
         document.getElementById("asae-eb-search-submit").tabIndex = 2;
-        document.getElementById("asae-eb-right-chatbot").tabIndex = 3;
-        document.getElementById("asae-eb-right-user").tabIndex = 4;
+        document.getElementById("asae-eb-chatbot").tabIndex = 3;
+        document.getElementById("asae-eb-user").tabIndex = 4;
         document.getElementById("asae-eb-chatbot-terms").tabIndex = -1;
     } else {
         document.getElementById("asae-eb-search-terms").tabIndex = -1;
         document.getElementById("asae-eb-search-submit").tabIndex = -1;
-        document.getElementById("asae-eb-right-chatbot").tabIndex = 0;
-        document.getElementById("asae-eb-right-user").tabIndex = 0;
+        document.getElementById("asae-eb-chatbot").tabIndex = 0;
+        document.getElementById("asae-eb-user").tabIndex = 0;
     }
 
     //set aria-expanded value as well, for a11y
@@ -395,12 +395,12 @@ function ebChatbotClickFunc() {
     if (isOpenChatbot) {
         document.getElementById("asae-eb-chatbot-terms").focus();
         document.getElementById("asae-eb-chatbot-terms").tabIndex = 1;
-        document.getElementById("asae-eb-right-user").tabIndex = 2;
+        document.getElementById("asae-eb-user").tabIndex = 2;
         document.getElementById("asae-eb-search-terms").tabIndex = -1;
         document.getElementById("asae-eb-search-submit").tabIndex = -1;
     } else {
         document.getElementById("asae-eb-chatbot-terms").tabIndex = -1;
-        document.getElementById("asae-eb-right-user").tabIndex = 0;
+        document.getElementById("asae-eb-user").tabIndex = 0;
     }
 
     //set aria-expanded value as well, for a11y
