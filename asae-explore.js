@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.37         2025-02-27
+7.38         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.37";
+var gitVersion = "v7.38";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -84,7 +84,7 @@ function loadEBHTML() {
     ebhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             //ebhttp.responseText has HTML content
-            asaeEB = ebhttp.responseText;
+            asaeEB = ebhttp.responseText + "<!-- ASAE Explore " + gitVersion + " -->";
             //console.log(" - EB IS OK!");
             parseEBHTML();
             loadPBHTML();
@@ -794,7 +794,7 @@ function closePB() {
     pbID = document.getElementById("asae-pb-id");
     setAttributes(pbID, {"display": "none"});
     
-    setCookie('pb-show',false,1); // expire in 1 day; set to 30 for production
+    setCookie('pb-show',false,30); // expire in days; set to 30 for production
 }
 
 (function() {

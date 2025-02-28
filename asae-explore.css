@@ -395,6 +395,7 @@ a#asae-eb-join-button:hover {
     color: #000;
     height: 3.5em;
     width: 75%;
+    max-width: 1200px;
     float: left;
 }
 #asae-eb-search-terms-alert {
@@ -470,6 +471,7 @@ a#asae-eb-join-button:hover {
     color: #000;
     height: 3.5em;
     width: 90%;
+    max-width: 1200px;
     float: left;
 }
 #asae-eb-chatbot-terms:active, #asae-eb-chatbot-terms:focus {
