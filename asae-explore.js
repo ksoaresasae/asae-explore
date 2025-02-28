@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.38         2025-02-27
+7.39         2025-02-27
 Notes:
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
@@ -23,7 +23,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.38";
+var gitVersion = "v7.39";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
