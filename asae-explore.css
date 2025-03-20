@@ -591,6 +591,7 @@ a#asae-eb-join-button:hover {
 }
 #asae-pb-cta:hover {
     background-color: #fff;
+    color: #bd491e;
 }
 #asae-pb-cta a:hover {
     text-decoration: none;
