@@ -532,12 +532,10 @@ a#asae-eb-join-button:hover {
     line-height: 1em !important;
 }
 #asae-pb-id a:hover {
-    background-color: #fff;
     color: #bd491e;
 }
 #asae-pb-id a:visited {
     color: #fff;
-    background-color: #bd491e;
 }
 #asae-pb-section {
     width: 100%;
