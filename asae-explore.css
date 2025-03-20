@@ -531,8 +531,13 @@ a#asae-eb-join-button:hover {
     font-size: 16px !important;
     line-height: 1em !important;
 }
+#asae-pb-id a:hover {
+    background-color: #fff;
+    color: #bd491e;
+}
 #asae-pb-id a:visited {
     color: #fff;
+    background-color: #bd491e;
 }
 #asae-pb-section {
     width: 100%;
@@ -551,7 +556,7 @@ a#asae-eb-join-button:hover {
 #asae-pb-left {
     display: flex;
     flex-flow: wrap;
-    width: 50%;
+    width: 75%;
     margin-top: auto;
     margin-bottom: auto;
     line-height: 1em;
@@ -570,7 +575,7 @@ a#asae-eb-join-button:hover {
 #asae-pb-right {
     display: flex;
     flex-flow: wrap;
-    width: 50%;
+    width: 25%;
     margin-top: auto;
     margin-bottom: auto;
 }
