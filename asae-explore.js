@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.45         2025-03-20
+7.46         2025-03-31
 Notes:
+- Control toggles for Search and Chatbot
 - Added tabindex helper function
 - Fix Search and Chatbot alert messages 
 - Add keyboard control for Search, Chatbot, and User
@@ -23,7 +24,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.45";
+var gitVersion = "v7.46";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -31,10 +32,10 @@ var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitV
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 // MASTER CONTROLS: true/false
-var showPB = true;        // SHOW PROMO BAR
+var showPB = false;        // SHOW PROMO BAR
 var showSearch = false;   // SHOW SEARCH ICON
-var showChatbot = false;  // SHOW CHATBOT ICON
-var showUser = true;     // SHOW USER ICON - SHOULD ALWAYS BE ON!
+var showChatbot = true;  // SHOW CHATBOT ICON
+// USER ICON - ALWAYS ON
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
@@ -129,6 +130,8 @@ function parseEBHTML() {
     setupEB();
 
     setTabIndexes();
+
+    showHideButtons();
 }
 
 function parsePBHTML() {
@@ -204,6 +207,21 @@ function setTabIndexes() {
 }
 /* ---------- TABINDEX HELPERS - END ---------- */
 
+/* ---------- SHOW/HIDE BUTTONS HELPERS - START ---------- */
+// USE: showHideButtons();
+function showHideButtons() {
+    searchIcon = document.getElementById("asae-eb-right-search");
+    if (!showSearch) {
+        setAttributes(searchIcon, {"display": "none"});
+        searchIcon.tabIndex = -1;
+    }
+    chatbotIcon = document.getElementById("asae-eb-right-chatbot");
+    if (!showChatbot) {
+        setAttributes(chatbotIcon, {"display": "none"});
+        chatbotIcon.tabIndex = -1;
+    }
+}
+/* ---------- SHOW/HIDE BUTTONS HELPERS - END ---------- */
 
 /* ---------- COOKIE HELPERS - START ----------*/
 function doesCookieExist(cname) {
