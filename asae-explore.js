@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.48         2025-03-31
+7.49         2025-03-31
 Notes:
 - Control toggles for Search and Chatbot
 - Added tabindex helper function
@@ -24,7 +24,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.48";
+var gitVersion = "v7.49";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -33,8 +33,8 @@ var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitV
 //////////////////////////////////////////////
 // MASTER CONTROLS: true/false
 var showPB = false;        // SHOW PROMO BAR
-var showSearch = false;   // SHOW SEARCH ICON
-var showChatbot = false;  // SHOW CHATBOT ICON
+var showSearch = true;   // SHOW SEARCH ICON
+var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON - ALWAYS ON
 //////////////////////////////////////////////
 //////////////////////////////////////////////
