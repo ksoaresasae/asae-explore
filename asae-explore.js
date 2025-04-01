@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.50         2025-03-31
+7.51         2025-03-31
 Notes:
 - Turn on Chatbot but keep Search off until AddSearch mod happens
 - Control toggles for Search and Chatbot
@@ -25,7 +25,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.50";
+var gitVersion = "v7.51";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
