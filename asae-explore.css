@@ -263,16 +263,17 @@ body {
     text-align: center;
     text-decoration: none !important;
     display: inline-block;
-    font-size: 1em;
+    font-size: 0.85em !important;
     text-transform: uppercase;
     line-height: 1.5em;
     color: #fff !important;
-    font-weight: 700;
+    font-weight: 600 !important;
     padding: 0.2em 1em 0.2em 1em;
 }
 .asae-eb-reg-button:hover {
     background-color: #fff !important;
     color: #bd491e !important;
+    text-decoration: none !important;
 }
 
 #asae-eb-join-button {
