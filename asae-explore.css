@@ -257,6 +257,24 @@ body {
     visibility: visible;
     max-height: 100%;
 }
+
+.asae-eb-reg-button {
+    background-color: #bd491e;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.2em 1em 0.2em 1em;
+}
+.asae-eb-reg-button:hover {
+    background-color: #fff;
+    color: #bd491e;
+}
+
 #asae-eb-join-button {
     background-color: #bd491e;
     text-align: center;

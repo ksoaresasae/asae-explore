@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.51         2025-03-31
+7.52         2025-04-01
 Notes:
+- Added in-line reg buttons for events
 - Turn on Chatbot but keep Search off until AddSearch mod happens
 - Control toggles for Search and Chatbot
 - Added tabindex helper function
@@ -25,7 +26,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.51";
+var gitVersion = "v7.52";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
