@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.63         2025-04-03 
+7.64         2025-04-03 
 Notes:
 - turning on PB for alert messaging (timed - see alertTimer() function below)
 - Added in-line reg buttons for events
@@ -17,7 +17,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.63";
+var gitVersion = "v7.64";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -30,8 +30,8 @@ var showSearch = false;   // SHOW SEARCH ICON
 var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
-const alertStartDate = new Date("2025-04-03 15:45:01");
-const alertEndDate = new Date("2025-04-13 15:49:59");
+const alertStartDate = new Date("2025-04-03 15:55:01");
+const alertEndDate = new Date("2025-04-13 15:58:59");
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
@@ -267,17 +267,18 @@ function getCookie(cname) {
 /* ---------- ALERT HELPER - START ---------- */
 // USE: alertTimer();
 function alertTimer() {
+    console.log('Current datetime between alert datetimes?');
     if (isCurrentDateBetween(alertStartDate,alertEndDate)) {
-        console.log('Current datetime between alert datetimes? YES');
+        console.log(' - YES');
         showPB = true;
     } else {
-        console.log('Current datetime between alert datetimes? NO');
+        console.log(' - NO');
         showPB = false;
     }
 }
 function isCurrentDateBetween(startDate, endDate) {
     const currentDate = new Date();
-    console.log('Current datetime: ' . currentDate);
+    console.log('Current datetime: ' + currentDate);
     // Check if the current date is greater than or equal to the start date
     // and less than or equal to the end date
     return currentDate >= startDate && currentDate <= endDate;
