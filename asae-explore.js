@@ -8,25 +8,16 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.59         2025-04-03
+7.60         2025-04-03
 Notes:
+- turning on PB for alert messaging (timed - see alertTimer() function below)
 - Added in-line reg buttons for events
 - Turn on Chatbot but keep Search off until AddSearch mod happens
-- Control toggles for Search and Chatbot
-- Added tabindex helper function
-- Fix Search and Chatbot alert messages 
-- Add keyboard control for Search, Chatbot, and User
-- Fix issue where User button turns off all SlideTrans permanently
-- toggle SlideTrans and NoTrans as needed
-- show Search, Bot, and User with alt titles
-- added brief note about what Stellar is
-- fixed LLM logo and added space below fields for text entry
-- enabled search and LLM
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.59";
+var gitVersion = "v7.60";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -34,10 +25,13 @@ var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitV
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 // MASTER CONTROLS: true/false
-var showPB = true;        // SHOW PROMO BAR
+var showPB = true;        // SHOW PROMO BAR - NOTE ALSO CONTROLLED BY alertTimer FUNCTION
 var showSearch = false;   // SHOW SEARCH ICON
 var showChatbot = true;  // SHOW CHATBOT ICON
-// USER ICON - ALWAYS ON
+// USER ICON IS ALWAYS ON
+// BELOW ARE RELATED TO alertTimer FUNCTION
+var alertStartDate = '2025-04-11T00:00:01';
+var alertEndDate = '2025-04-13T23:59:59';
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
@@ -111,6 +105,7 @@ function loadPBHTML() {
         if (this.readyState == 4 && this.status == 200) {
             //pbhttp.responseText has HTML content
             asaePB = pbhttp.responseText;
+            alertTimer();
             //console.log(" - PB IS OK!");
             parsePBHTML();
         }
@@ -268,6 +263,17 @@ function getCookie(cname) {
     return "";
 }
 /* ---------- COOKIE HELPERS - END ----------*/
+
+/* ---------- ALERT HELPER - START ---------- */
+// USE: alertTimer();
+function alertTimer() {
+    if (isCurrentDateBetween(alertStartDate,alertEndDate)) {
+        showPB = true;
+    } else {
+        showPB = false;
+    }
+}
+/* ---------- ALERT HELPER - END ---------- */
 
 function setTransStyles(thisClick) {
     // SET TRANSITIONS FOR MODALS
