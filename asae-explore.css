@@ -639,9 +639,9 @@ a#asae-eb-join-button:hover {
 
 #asae-pb-alert {
     text-align: center;
-    color: #000;
-    font-weight: 700;
-    background-color: #fff;
+    color: #bd491e;
+    font-weight: 800;
+    padding: 0.25em;
 }
 
 /* */
