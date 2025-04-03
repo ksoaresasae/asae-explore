@@ -560,10 +560,10 @@ a#asae-eb-join-button:hover {
     width: 100%;
     position: relative !important;
     padding: 2px;
-    background-color: #eee !important;
+    background-color: #bd491e !important;
 }
 #asae-pb-row {
-    background-color: #ecdfff !important;
+    /* background-color: #ecdfff !important; */
     display: flex;
     flex-flow: wrap;
     max-width: 1200px;
@@ -639,9 +639,10 @@ a#asae-eb-join-button:hover {
 
 #asae-pb-alert {
     text-align: center;
-    color: #bd491e;
-    font-weight: 800;
+    color: #fff;
+    font-weight: 700;
     padding: 0.25em;
+    line-height: 1.2em;
 }
 
 /* */
