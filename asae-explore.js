@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.60         2025-04-03
+7.61         2025-04-03 
 Notes:
 - turning on PB for alert messaging (timed - see alertTimer() function below)
 - Added in-line reg buttons for events
@@ -17,7 +17,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.60";
+var gitVersion = "v7.61";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -30,7 +30,7 @@ var showSearch = false;   // SHOW SEARCH ICON
 var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
-var alertStartDate = '2025-04-11T00:00:01';
+var alertStartDate = '2025-04-03T15:30:01';
 var alertEndDate = '2025-04-13T23:59:59';
 //////////////////////////////////////////////
 //////////////////////////////////////////////
