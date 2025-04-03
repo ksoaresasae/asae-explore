@@ -566,7 +566,7 @@ a#asae-eb-join-button:hover {
     background-color: #ecdfff !important;
     display: flex;
     flex-flow: wrap;
-    max-width: 700px;
+    max-width: 1200px;
     margin: auto;
     padding: 0.25em 0.5em 0.25em 0.75em;
 }
@@ -635,6 +635,13 @@ a#asae-eb-join-button:hover {
 #asae-pb-x a:visited {
     color: #333;
     text-decoration: none;
+}
+
+#asae-pb-alert {
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+    background-color: #fff;
 }
 
 /* */
