@@ -643,6 +643,7 @@ a#asae-eb-join-button:hover {
     font-weight: 700;
     padding: 0.25em;
     line-height: 1.2em;
+    width: 100%;
 }
 
 /* */
