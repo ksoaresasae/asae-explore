@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.66         2025-04-03 
+7.67         2025-04-03 
 Notes:
 - turning on PB for alert messaging (timed - see alertTimer() function below)
 - Added in-line reg buttons for events
@@ -17,7 +17,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.66";
+var gitVersion = "v7.67";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
