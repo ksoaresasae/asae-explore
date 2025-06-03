@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.73         2025-06-03
+7.74         2025-06-03
 Notes:
 - Change wording to "More from ASAE"
 - turning on PB for alert messaging (timed - see alertTimer() function below)
@@ -18,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.73";
+var gitVersion = "v7.74";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
