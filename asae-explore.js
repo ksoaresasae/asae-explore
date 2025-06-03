@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.67         2025-04-03 
+7.69         2025-06-03
 Notes:
+- Change wording to "More from ASAE"
 - turning on PB for alert messaging (timed - see alertTimer() function below)
 - Added in-line reg buttons for events
 - Turn on Chatbot but keep Search off until AddSearch mod happens
@@ -17,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.68";
+var gitVersion = "v7.69";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
