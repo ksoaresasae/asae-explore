@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.71         2025-06-03
+7.72         2025-06-03
 Notes:
 - Change wording to "More from ASAE"
 - turning on PB for alert messaging (timed - see alertTimer() function below)
@@ -18,7 +18,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.71";
+var gitVersion = "v7.72";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -354,6 +354,10 @@ function ebNavClickFunc() {
     ebNavClick.classList.toggle("active");
     ebExploreASAE.classList.toggle("active");
     ebNavModal.classList.toggle("active");
+    let svgparts = document.querySelectorAll('.asae-eb-switcher-icon');
+    for (let i = 0; i < svgparts.length; i++) {
+        svgparts[i].classList.toggle("active");
+    }
 
     //set aria-expanded value as well, for a11y
     const expanded = ebNavClick.getAttribute('aria-expanded') === 'true';

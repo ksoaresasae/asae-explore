@@ -81,11 +81,24 @@ body {
     vertical-align: text-bottom;
     padding: 0 0 0.1em 0.5em;
 }
+#asae-eb-switcher {
+    color: #fff;
+    /* height: 1em; */
+    vertical-align: text-bottom;
+    padding: 0 0 0 0.5em;
+}
+.asae-eb-switcher-icon {
+    color: #fff;
+}
+.asae-eb-switcher-icon.active {
+    color: #000;
+}
 #asae-eb-explore-asae {
     color: #fff;
-    font-size: 0.75em;
-    padding: 0 0 0 0.25em;
-    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 0 0 0 0.5em;
+    /* text-transform: uppercase; */
+    vertical-align: text-bottom;
 }
 #asae-eb-explore-asae.active {
     color: #000;
