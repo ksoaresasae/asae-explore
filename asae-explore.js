@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.74         2025-06-03
+7.75         2025-07-08
 Notes:
+- Added Solution Providers HQ
 - Change wording to "More from ASAE"
 - turning on PB for alert messaging (timed - see alertTimer() function below)
 - Added in-line reg buttons for events
@@ -18,7 +19,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.74";
+var gitVersion = "v7.75";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -268,18 +269,18 @@ function getCookie(cname) {
 /* ---------- ALERT HELPER - START ---------- */
 // USE: alertTimer();
 function alertTimer() {
-    console.log('Current datetime between alert datetimes?');
+    // console.log('Current datetime between alert datetimes?');
     if (isCurrentDateBetween(alertStartDate,alertEndDate)) {
-        console.log(' - YES');
+        // console.log(' - YES');
         showPB = true;
     } else {
-        console.log(' - NO');
+        // console.log(' - NO');
         showPB = false;
     }
 }
 function isCurrentDateBetween(startDate, endDate) {
     const currentDate = new Date();
-    console.log('Current datetime: ' + currentDate);
+    // console.log('Current datetime: ' + currentDate);
     // Check if the current date is greater than or equal to the start date
     // and less than or equal to the end date
     return currentDate >= startDate && currentDate <= endDate;
@@ -761,6 +762,7 @@ function setupEB() {
     eb-absi - ASAE Business Solutions
     eb-lear - Learning
     eb-govn - Association Governance Institute
+    eb-solu - Soluntion Providers HQ
     eb-mmct - MMC+Tech Conference
     eb-annl - Annual Meeting
     eb-join - Join
@@ -774,6 +776,7 @@ function setupEB() {
     const ebabsi = document.querySelector("#eb-absi");
     const eblear = document.querySelector("#eb-lear");
     const ebgovn = document.querySelector("#eb-govn");
+    const ebsolu = document.querySelector("#eb-solu");
     const ebmmct = document.querySelector("#eb-mmct");
     const ebannl = document.querySelector("#eb-annl");
     const ebjoin = document.querySelector("#eb-join");
@@ -809,6 +812,10 @@ function setupEB() {
     if (window.location.href.indexOf("agi.asaecenter.org") != -1) {
         //console.log("Current page is GOVN");
         thisLink = ebgovn;
+    }
+    if (window.location.href.indexOf("solutionshq.asaecenter.org") != -1) {
+        //console.log("Current page is SOLU");
+        thisLink = ebsolu;
     }
     if ((window.location.href.indexOf("mmcc.asaecenter.org") != -1) || (window.location.href.indexOf("mmct.asaecenter.org") != -1)) {
         //console.log("Current page is MMCT");
