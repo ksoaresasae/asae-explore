@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.75         2025-07-08
+7.76         2025-07-08
 Notes:
+- Update AM to 2026 Indy and remove reg button
 - Added Solution Providers HQ
 - Change wording to "More from ASAE"
 - turning on PB for alert messaging (timed - see alertTimer() function below)
@@ -19,7 +20,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.75";
+var gitVersion = "v7.76";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
