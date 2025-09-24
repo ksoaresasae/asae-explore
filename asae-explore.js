@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.78         2025-09-23
+7.79         2025-09-23
 Notes:
 - Added announcement for Sept 29-Oct 1, 2025, infrastructure launch (SSO+Portal+Store)
 - Update AM to 2026 Indy and remove reg button
@@ -21,7 +21,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.78";
+var gitVersion = "v7.79";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -34,8 +34,8 @@ var showSearch = false;   // SHOW SEARCH ICON
 var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
-const alertStartDate = new Date("2025-04-11 00:00:01");
-const alertEndDate = new Date("2025-04-13 23:59:59");
+const alertStartDate = new Date("2025-09-23 00:00:01");
+const alertEndDate = new Date("2025-10-01 23:59:59");
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
