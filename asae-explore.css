@@ -675,7 +675,7 @@ a#asae-eb-join-button:hover {
     color: #ccc;
 }
 
-#asae-pb-alert p {
+#asae-pb-alert p, #asae-pb-alert strong {
     color: #fff;
 }
 
