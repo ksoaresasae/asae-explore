@@ -8,8 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.76         2025-07-08
+7.78         2025-09-23
 Notes:
+- Added announcement for Sept 29-Oct 1, 2025, infrastructure launch (SSO+Portal+Store)
 - Update AM to 2026 Indy and remove reg button
 - Added Solution Providers HQ
 - Change wording to "More from ASAE"
@@ -20,7 +21,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.76";
+var gitVersion = "v7.78";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

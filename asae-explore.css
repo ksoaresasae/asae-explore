@@ -654,10 +654,25 @@ a#asae-eb-join-button:hover {
 #asae-pb-alert {
     text-align: center;
     color: #fff;
-    font-weight: 700;
+    font-weight: 400;
     padding: 0.25em;
     line-height: 1.2em;
     width: 100%;
+}
+
+#asae-pb-alert-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: larger;
+    padding-top: 0.5em;
+    padding-bottom: 0.25em;
+}
+#asae-pb-alert a {
+    color: #fff;
+    text-decoration: underline;
+}
+#asae-pb-alert a:hover {
+    color: #ccc;
 }
 
 /* */
