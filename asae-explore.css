@@ -679,4 +679,31 @@ a#asae-eb-join-button:hover {
     color: #fff;
 }
 
+/* Fixes for new WooCommerece store 2026-09-30 */
+@media (min-width: 640px){
+  .woocommerce > #asae-pb-id {
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px){
+  .woocommerce > #asae-pb-id {
+     max-width: 100%;
+  }
+}
+@media (min-width: 1024px){
+  .woocommerce > #asae-pb-id {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1280px){
+  .woocommerce > #asae-pb-id {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1536px){
+  .woocommerce > #asae-pb-id {
+    max-width: 100%;
+	}
+}
+
 /* */
