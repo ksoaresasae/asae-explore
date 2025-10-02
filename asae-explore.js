@@ -8,9 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.88         2025-10-01
+7.89         2025-10-02
 Notes:
-- INFRASTRUCTURE LAUNCH
+- INFRASTRUCTURE LAUNCH with extended PB display
 - (Re)Showing announcement
 - Added announcement for Sept 29-Oct 1, 2025, infrastructure launch (SSO+Portal+Store)
 - Update AM to 2026 Indy and remove reg button
@@ -37,7 +37,7 @@ var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
 const alertStartDate = new Date("2025-09-23 00:00:01");
-const alertEndDate = new Date("2025-10-01 23:59:59");
+const alertEndDate = new Date("2025-10-14 23:59:59");
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
