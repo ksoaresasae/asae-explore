@@ -8,22 +8,16 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.90         2025-10-02
+7.91         2025-10-02
 Notes:
+- Update link for My Account
 - INFRASTRUCTURE LAUNCH with extended PB display
-- (Re)Showing announcement
 - Added announcement for Sept 29-Oct 1, 2025, infrastructure launch (SSO+Portal+Store)
-- Update AM to 2026 Indy and remove reg button
-- Added Solution Providers HQ
-- Change wording to "More from ASAE"
-- turning on PB for alert messaging (timed - see alertTimer() function below)
-- Added in-line reg buttons for events
-- Turn on Chatbot but keep Search off until AddSearch mod happens
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.90";
+var gitVersion = "v7.91";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -526,7 +520,7 @@ function ebUserClickFunc() {
     let thisRedirectURL = window.location.href;
     // goto https://sso.asaecenter.org/
     if (isOpenUser) {
-        window.location.href = 'https://my.asaecenter.org/my-account/dashboard/';
+        window.location.href = 'https://asae-login.wicketcloud.com/login?service=https://my.asaecenter.org/my-account/&locale=en';
     }
     // https://sso.asaecenter.org/sso.asaecenter.org/b2c_1a_signin_no_sign_up_aptify/oauth2/v2.0/authorize?response_type=code&scope=f64cfe0a-fef2-4cff-a059-87dc4ca71a52%20profile%20email%20address%20phone&redirect_uri=' + thisRedirectURL;
     
