@@ -706,4 +706,11 @@ a#asae-eb-join-button:hover {
 	}
 }
 
+@media only screen and (max-width: 400px) {
+    #asae-eb-right { 
+        min-width:auto; 
+    }
+} 
+
+
 /* */

@@ -8,7 +8,7 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.91         2025-10-02
+7.92         2025-10-06
 Notes:
 - Update link for My Account
 - INFRASTRUCTURE LAUNCH with extended PB display
@@ -17,7 +17,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.91";
+var gitVersion = "v7.92";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
