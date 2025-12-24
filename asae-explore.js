@@ -8,9 +8,9 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.100         2025-12-22
+7.101         2025-12-24
 Notes:
-- Remove Alert
+- Office Closure Alert
 - Change button to just JOIN
 - Shorter PB with link to Updates
 - Update link for My Account
@@ -20,7 +20,7 @@ Notes:
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.100";
+var gitVersion = "v7.101";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -33,8 +33,8 @@ var showSearch = false;   // SHOW SEARCH ICON
 var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
-const alertStartDate = new Date("2025-09-23 00:00:01");
-const alertEndDate = new Date("2025-09-25 23:59:59");
+const alertStartDate = new Date("2025-12-24 00:00:01");
+const alertEndDate = new Date("2026-01-02 23:59:59");
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
