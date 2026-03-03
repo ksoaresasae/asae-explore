@@ -8,20 +8,15 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.105         2026-02-26
+7.106         2026-03-03
 Notes:
+- updating alert for move
 - Making a version without any alert, for use on sig events sites
-- Office Closure Alert
-- Change button to just JOIN
-- Shorter PB with link to Updates
-- Update link for My Account
-- INFRASTRUCTURE LAUNCH with extended PB display
-- Added announcement for Sept 29-Oct 1, 2025, infrastructure launch (SSO+Portal+Store)
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.105";
+var gitVersion = "v7.106";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -35,7 +30,7 @@ var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
 const alertStartDate = new Date("2026-02-20 00:00:01");
-const alertEndDate = new Date("2026-02-20 23:59:59");
+const alertEndDate = new Date("2026-03-09 23:59:59");
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
