@@ -8,15 +8,15 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.106         2026-03-03
+7.107         2026-03-09
 Notes:
-- updating alert for move
+- updating alert for move; revised for day 1
 - Making a version without any alert, for use on sig events sites
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.106";
+var gitVersion = "v7.107";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -30,7 +30,7 @@ var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
 const alertStartDate = new Date("2026-02-20 00:00:01");
-const alertEndDate = new Date("2026-03-09 23:59:59");
+const alertEndDate = new Date("2026-03-20 23:59:59");
 //////////////////////////////////////////////
 //////////////////////////////////////////////
 
