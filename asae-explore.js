@@ -8,15 +8,15 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version: 
 ------------
-7.107         2026-03-09
+7.108         2026-03-10
 Notes:
-- updating alert for move; revised for day 1
+- updating alert for move; revised for day 1; updated day 2
 - Making a version without any alert, for use on sig events sites
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.107";
+var gitVersion = "v7.108";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
