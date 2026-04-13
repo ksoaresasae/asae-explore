@@ -452,11 +452,11 @@ a#asae-eb-join-button:hover {
 #asae-eb-modal-search #global-searchfield-container input[type="search"] {
     flex: 1;
     min-width: 0;
-    height: 3em;
-    box-sizing: border-box;
-    padding: 0 1em;
+    height: 3em !important;
+    box-sizing: border-box !important;
+    padding: 0 1em !important;
     border: 1px #666 solid;
-    border-radius: 0;
+    border-radius: 0 !important;
     font-size: 1em;
     font-family: Arial,Helvetica,sans-serif;
 }
@@ -507,7 +507,7 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-modal-chatbot-container.active {
     visibility: visible;
-    max-height: 10em;
+    max-height: 8em;
     transition: max-height 0.3s ease-out, visibility 0s 0s;
 }
 #asae-eb-modal-chatbot {
@@ -528,7 +528,7 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-chatbot-terms {
     display: block;
-    margin: 1em auto 0.5em auto;
+    margin: 0.5em auto 0.5em auto;
     padding: 0.25em 0.5em;
     border: 1px #666 solid;
     border-radius: 0;
@@ -553,7 +553,7 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-chatbot-hi {
     width: 100%;
-    padding: 1em 1em 0em 2em;
+    padding: 0.75em 1em 0em 1em;
     font-family: Arial,Helvetica,sans-serif !important;
     font-size: 0.5em;
     display: flex;
@@ -571,7 +571,7 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-chatbot-partner {
     width: 100%;
-    padding: 0 1em 0.5em 2em;
+    padding: 0 1em 0.25em 2em;
     font-family: Arial,Helvetica,sans-serif !important;
     font-size: 0.5em;
 }

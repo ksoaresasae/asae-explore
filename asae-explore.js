@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.9           2026-04-13
+8.10          2026-04-13
 Notes:
-- fix search field/button alignment, chatbot text wrap indent, chatbot panel dead space
+- override AddSearch SDK styles for search alignment; tighten chatbot panel spacing
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.9";
+var gitVersion = "v8.10";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
