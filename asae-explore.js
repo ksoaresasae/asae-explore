@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.14          2026-04-13
+8.15          2026-04-13
 Notes:
-- revert px heights (WCAG), collapse search-field-wrapper, match padding for alignment
+- search field/button gap, fix link description clipping and line-height
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.14";
+var gitVersion = "v8.15";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
