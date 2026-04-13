@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.0           2026-04-13
+8.1           2026-04-13
 Notes:
-- v8.0 branch: added demo.html page for previewing Explore Bar via jsDelivr
+- fix demo.html to render via raw.githack.com with absolute jsDelivr URLs for assets
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.0";
+var gitVersion = "v8.1";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
