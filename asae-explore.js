@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.12          2026-04-13
+8.13          2026-04-13
 Notes:
-- hide placeholder SVG, fix search field/button alignment with flex stretch
+- fix search field/button height mismatch caused by different font-size em calculations
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.12";
+var gitVersion = "v8.13";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

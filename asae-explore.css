@@ -446,12 +446,12 @@ a#asae-eb-join-button:hover {
 #asae-eb-modal-search #global-searchfield-container input[type="search"] {
     flex: 1;
     min-width: 0;
-    height: 3em !important;
+    height: 48px !important;
     box-sizing: border-box !important;
     padding: 0 1em 0 2.5em !important;
     border: 1px #666 solid;
     border-radius: 0 !important;
-    font-size: 1em;
+    font-size: 16px !important;
     font-family: Arial,Helvetica,sans-serif;
 }
 #asae-eb-modal-search #global-searchfield-container input[type="search"]::placeholder {
@@ -467,10 +467,10 @@ a#asae-eb-join-button:hover {
     border: none !important;
     border-radius: 0 !important;
     color: #fff !important;
-    height: 3em !important;
+    height: 48px !important;
     box-sizing: border-box !important;
     padding: 0 1.5em !important;
-    font-size: 1em;
+    font-size: 16px !important;
     font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
