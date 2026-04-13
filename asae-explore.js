@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.13          2026-04-13
+8.14          2026-04-13
 Notes:
-- fix search field/button height mismatch caused by different font-size em calculations
+- revert px heights (WCAG), collapse search-field-wrapper, match padding for alignment
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.13";
+var gitVersion = "v8.14";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
