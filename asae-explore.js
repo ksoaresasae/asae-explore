@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.7           2026-04-13
+8.8           2026-04-13
 Notes:
-- fix desktop gap under active nav button; fix mobile text wrap on More from ASAE
+- fix Firefox arrow bg, search field/button height, chatbot centering, placeholder contrast
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.7";
+var gitVersion = "v8.8";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

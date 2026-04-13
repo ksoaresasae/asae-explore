@@ -141,6 +141,7 @@ body {
     color: #000;
     opacity: 75%;
     content: '\25B2';
+    background: transparent;
 }
 #asae-eb-left-nav {
     display: flex;
@@ -444,11 +445,17 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-modal-search #global-searchfield-container input[type="search"] {
     flex: 1;
-    padding: 0.75em 1em;
+    min-width: 0;
+    height: 3em;
+    box-sizing: border-box;
+    padding: 0 1em;
     border: 1px #666 solid;
     border-radius: 0;
     font-size: 1em;
     font-family: Arial,Helvetica,sans-serif;
+}
+#asae-eb-modal-search #global-searchfield-container input[type="search"]::placeholder {
+    color: #767676;
 }
 #asae-eb-modal-search #global-searchfield-container input[type="search"]:focus {
     border: 2px #bd491e solid;
@@ -459,7 +466,9 @@ a#asae-eb-join-button:hover {
     background-color: #bd491e;
     border: none;
     color: #fff;
-    padding: 0.75em 1.5em;
+    height: 3em;
+    box-sizing: border-box;
+    padding: 0 1.5em;
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
@@ -508,29 +517,25 @@ a#asae-eb-join-button:hover {
 #asae-eb-chatbot-form {
     width: 100%;
 }
+#asae-eb-chatbot-terms::placeholder {
+    color: #767676;
+}
 #asae-eb-chatbot-terms {
-    margin: 1em 0.25em 0.5em 1em;
+    display: block;
+    margin: 1em auto 0.5em auto;
     padding: 0.25em 0.5em;
     border: 1px #666 solid;
-    border-radius: 0%;
+    border-radius: 0;
     background-color: #fff;
     color: #000;
     height: 3.5em;
     width: 90%;
     max-width: 1200px;
-    float: left;
+    box-sizing: border-box;
 }
 #asae-eb-chatbot-terms:active, #asae-eb-chatbot-terms:focus {
-    margin: 1em 0.25em 0.5em 1em;
-    padding: 0.25em 0.5em;
     border: 2px #bd491e solid !important;
-    border-radius: 0% !important;
-    background-color: #fff;
-    color: #000;
-    height: 3.5em;
-    width: 90%;
-    max-width: 1200px;
-    float: left;
+    border-radius: 0 !important;
     outline: 2px solid #bd491e;
     outline-offset: 2px;
 }
@@ -549,7 +554,7 @@ a#asae-eb-join-button:hover {
 #asae-eb-chatbot-hi-text {
     font-size: 2em;
     vertical-align: bottom;
-    line-height: 2;
+    line-height: 1.3;
     padding: 0 0 0 0.5em;
 }
 #asae-eb-chatbot-hi-image {
