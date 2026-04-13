@@ -441,7 +441,13 @@ a#asae-eb-join-button:hover {
 #asae-eb-modal-search #global-searchfield-container .addsearch-searchfield {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 100%;
+}
+#asae-eb-modal-search #global-searchfield-container .search-field-wrapper {
+    flex: 1;
+    min-width: 0;
+    display: flex;
 }
 #asae-eb-modal-search #global-searchfield-container input[type="search"] {
     flex: 1;
@@ -501,7 +507,7 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-modal-chatbot-container.active {
     visibility: visible;
-    max-height: 15em;
+    max-height: 10em;
     transition: max-height 0.3s ease-out, visibility 0s 0s;
 }
 #asae-eb-modal-chatbot {
@@ -550,20 +556,22 @@ a#asae-eb-join-button:hover {
     padding: 1em 1em 0em 2em;
     font-family: Arial,Helvetica,sans-serif !important;
     font-size: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 #asae-eb-chatbot-hi-text {
     font-size: 2em;
-    vertical-align: bottom;
     line-height: 1.3;
     padding: 0 0 0 0.5em;
 }
 #asae-eb-chatbot-hi-image {
     height: 4em;
-    float: left;
+    flex-shrink: 0;
 }
 #asae-eb-chatbot-partner {
     width: 100%;
-    padding: 0 1em 1.5em 2em;
+    padding: 0 1em 0.5em 2em;
     font-family: Arial,Helvetica,sans-serif !important;
     font-size: 0.5em;
 }

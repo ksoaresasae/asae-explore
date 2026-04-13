@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.8           2026-04-13
+8.9           2026-04-13
 Notes:
-- fix Firefox arrow bg, search field/button height, chatbot centering, placeholder contrast
+- fix search field/button alignment, chatbot text wrap indent, chatbot panel dead space
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.8";
+var gitVersion = "v8.9";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
