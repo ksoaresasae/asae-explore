@@ -74,7 +74,8 @@ body {
 }
 #asae-eb-row {
     display: flex;
-    flex-flow: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
     max-width: 1200px;
     margin: auto;
 }
@@ -86,15 +87,16 @@ body {
 }
 #asae-eb-left {
     display: flex;
-    min-width: 50%;
+    flex: 1;
+    min-width: 0;
     color: #fff;
     line-height: 1.5;
     font-weight: 600 !important;
 }
 #asae-eb-right {
     display: flex;
+    flex-shrink: 0;
     justify-content: flex-end;
-    min-width: 50%;
     color: #fff;
     font-size: 1em !important;
     font-weight: 600 !important;
@@ -718,11 +720,6 @@ a#asae-eb-join-button:hover {
 	}
 }
 
-@media only screen and (max-width: 400px) {
-    #asae-eb-right { 
-        min-width:auto; 
-    }
-} 
 
 
 /* */

@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.5           2026-04-13
+8.6           2026-04-13
 Notes:
-- fix search panel transition timing (max-height 50em -> 6em)
+- fix mobile layout: toolbar icons no longer wrap to second line
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.5";
+var gitVersion = "v8.6";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
