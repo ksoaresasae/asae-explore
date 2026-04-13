@@ -415,7 +415,7 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-modal-search-container.active {
     visibility: visible;
-    max-height: 50em;
+    max-height: 6em;
     overflow: visible;
     transition: max-height 0.3s ease-out, visibility 0s 0s;
 }
