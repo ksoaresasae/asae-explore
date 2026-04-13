@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.10          2026-04-13
+8.11          2026-04-13
 Notes:
-- override AddSearch SDK styles for search alignment; tighten chatbot panel spacing
+- fix Firefox arrow compositing, search field/button alignment, search icon overlap
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.10";
+var gitVersion = "v8.11";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

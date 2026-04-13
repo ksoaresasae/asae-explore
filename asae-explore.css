@@ -129,8 +129,7 @@ body {
     color: #000;
 }
 #asae-eb-explore-asae::after {
-    color: #fff;
-    opacity: 75%;
+    color: #bfbfbf;
     content: '\25BC';
     cursor: pointer;
     font-size: 0.6em;
@@ -138,10 +137,8 @@ body {
     vertical-align: middle;
 }
 #asae-eb-explore-asae.active::after {
-    color: #000;
-    opacity: 75%;
+    color: #3b3b3b;
     content: '\25B2';
-    background: transparent;
 }
 #asae-eb-left-nav {
     display: flex;
@@ -454,7 +451,7 @@ a#asae-eb-join-button:hover {
     min-width: 0;
     height: 3em !important;
     box-sizing: border-box !important;
-    padding: 0 1em !important;
+    padding: 0 1em 0 2.5em !important;
     border: 1px #666 solid;
     border-radius: 0 !important;
     font-size: 1em;
@@ -469,12 +466,13 @@ a#asae-eb-join-button:hover {
     outline-offset: 2px;
 }
 #asae-eb-modal-search #global-searchfield-container button {
-    background-color: #bd491e;
-    border: none;
-    color: #fff;
-    height: 3em;
-    box-sizing: border-box;
-    padding: 0 1.5em;
+    background-color: #bd491e !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+    height: 3em !important;
+    box-sizing: border-box !important;
+    padding: 0 1.5em !important;
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
@@ -482,7 +480,7 @@ a#asae-eb-join-button:hover {
     letter-spacing: 1px;
 }
 #asae-eb-modal-search #global-searchfield-container button:hover {
-    background-color: #000;
+    background-color: #000 !important;
 }
 #asae-eb-modal-search #global-autocomplete-container {
     width: 100%;
