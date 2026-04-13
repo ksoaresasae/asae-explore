@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.6           2026-04-13
+8.7           2026-04-13
 Notes:
-- fix mobile layout: toolbar icons no longer wrap to second line
+- fix desktop gap under active nav button; fix mobile text wrap on More from ASAE
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.6";
+var gitVersion = "v8.7";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
