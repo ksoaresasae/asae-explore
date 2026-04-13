@@ -49,6 +49,29 @@ body {
 #asae-eb-section svg {
     display: inline;
 }
+/* Focus indicators for keyboard navigation (WCAG 2.4.7) */
+#asae-eb-left-nav:focus-visible {
+    outline: 2px solid #bd491e;
+    outline-offset: -2px;
+}
+#asae-eb-mag:focus-visible,
+#asae-eb-chatbot:focus-visible,
+#asae-eb-user:focus-visible {
+    outline: 2px solid #bd491e;
+    outline-offset: 2px;
+}
+.asae-eb-link-name a:focus-visible {
+    outline: 2px solid #bd491e;
+    outline-offset: 2px;
+}
+#asae-eb-showdesc-toggle:focus-visible {
+    outline: 2px solid #bd491e;
+    outline-offset: 2px;
+}
+#asae-eb-join-button:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
 #asae-eb-row {
     display: flex;
     flex-flow: wrap;
@@ -109,7 +132,7 @@ body {
     opacity: 75%;
     content: '\25BC';
     cursor: pointer;
-    font-size: em;
+    font-size: 0.6em;
     padding: 0 0 0 0.5em;
     vertical-align: middle;
 }
@@ -426,7 +449,8 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-modal-search #global-searchfield-container input[type="search"]:focus {
     border: 2px #bd491e solid;
-    outline: none;
+    outline: 2px solid #bd491e;
+    outline-offset: 2px;
 }
 #asae-eb-modal-search #global-searchfield-container button {
     background-color: #bd491e;
@@ -504,6 +528,8 @@ a#asae-eb-join-button:hover {
     width: 90%;
     max-width: 1200px;
     float: left;
+    outline: 2px solid #bd491e;
+    outline-offset: 2px;
 }
 #asae-eb-chatbot-terms-alert {
     color: #ff0000;

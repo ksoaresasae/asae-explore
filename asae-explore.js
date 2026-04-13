@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.3           2026-04-13
+8.4           2026-04-13
 Notes:
-- integrate AddSearch: dynamic script/CSS loading, autocomplete in Explore Bar search panel
+- WCAG 2.2 AA compliance fixes across all files
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.3";
+var gitVersion = "v8.4";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -206,39 +206,42 @@ function closeModalInstant(modalSelector, toggleFunc) {
 /* ---------- TABINDEX HELPERS - START ---------- */
 // USE: setTabIndexes();
 function setTabIndexes() {
-    var navTabIndex = 1;
-    var searchTabIndex = 2;
-    var chatbotTabIndex = 3;
-    var userTabIndex = 4;
+    // Use 0 (natural DOM order) for visible interactive elements, -1 for hidden
+    var navTabIndex = 0;
+    var searchTabIndex = 0;
+    var chatbotTabIndex = 0;
+    var userTabIndex = 0;
 
     document.getElementById("asae-eb-left-nav").tabIndex = navTabIndex;
     document.getElementById("asae-eb-mag").tabIndex = searchTabIndex;
     document.getElementById("asae-eb-chatbot").tabIndex = chatbotTabIndex;
     document.getElementById("asae-eb-user").tabIndex = userTabIndex;
 
-    if (!isOpenNav) {
-        navTabIndex = -1;
-    }
+    // Nav modal content: only tabbable when open
+    var navContentTabIndex = isOpenNav ? 0 : -1;
     var links = document.getElementById('asae-eb-modal-nav').getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
-        //console.log(links[i]);
-        links[i].tabIndex = navTabIndex;
+        links[i].tabIndex = navContentTabIndex;
     }
 
-
-    if (!isOpenSearch) {
-        searchTabIndex = -1;
-    }
-    // AddSearch manages its own tabindex; guard legacy elements
+    // Search modal: AddSearch manages its own inputs; guard legacy elements
+    var searchContentTabIndex = isOpenSearch ? 0 : -1;
     var searchTermsEl = document.getElementById("asae-eb-search-terms");
     var searchSubmitEl = document.getElementById("asae-eb-search-submit");
-    if (searchTermsEl) searchTermsEl.tabIndex = searchTabIndex;
-    if (searchSubmitEl) searchSubmitEl.tabIndex = searchTabIndex;
-
-    if (!isOpenChatbot) {
-        chatbotTabIndex = -1;
+    if (searchTermsEl) searchTermsEl.tabIndex = searchContentTabIndex;
+    if (searchSubmitEl) searchSubmitEl.tabIndex = searchContentTabIndex;
+    // Also manage AddSearch inputs within the search container
+    var searchContainer = document.getElementById("asae-eb-modal-search-container");
+    if (searchContainer) {
+        var searchInputs = searchContainer.querySelectorAll('input, button, a');
+        for (var i = 0; i < searchInputs.length; i++) {
+            searchInputs[i].tabIndex = searchContentTabIndex;
+        }
     }
-    document.getElementById("asae-eb-chatbot-terms").tabIndex = chatbotTabIndex;
+
+    // Chatbot modal content: only tabbable when open
+    var chatbotContentTabIndex = isOpenChatbot ? 0 : -1;
+    document.getElementById("asae-eb-chatbot-terms").tabIndex = chatbotContentTabIndex;
 
     // HIDE THE SEARCH AND CHATBOT ALERTS UNTIL USER ENTRY OCCURS
     var searchAlert = document.getElementById("asae-eb-search-terms-alert");
@@ -730,8 +733,7 @@ function setupEB() {
         thisLink.addEventListener("click", e => {
             e.preventDefault();
         })
-        thisLink.style.color = "#d15007";
-        thisLink.style.opacity = "70%";
+        thisLink.style.color = "#bd491e";
         thisLink.style.cursor = "default";    
     }
 
@@ -747,8 +749,13 @@ function closePB() {
     setCookie('pb-show',false,30); // expire in days; set to 30 for production
 }
 
-(function() {
-    document.addEventListener("DOMContentLoaded", function() { 
-        // currently not in use 
-    })
-}) ()
+/* ---------- KEYBOARD HELPERS - START ---------- */
+// Escape key closes any open modal
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        if (isOpenNav) ebNavClickFunc();
+        if (isOpenSearch) ebSearchClickFunc();
+        if (isOpenChatbot) ebChatbotClickFunc();
+    }
+});
+/* ---------- KEYBOARD HELPERS - END ---------- */

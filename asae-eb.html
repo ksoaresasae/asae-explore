@@ -11,9 +11,9 @@
 <!-- **************************************** --> 
 
 <!-- START editing at this line -->
-<section id="asae-eb-section" role="navigation" aria-label="Explore ASAE">
+<nav id="asae-eb-section" aria-label="Explore ASAE">
 
-    <div id="asae-colorband">&nbsp;</div>
+    <div id="asae-colorband" aria-hidden="true">&nbsp;</div>
 
     <div id="asae-eb-row">
         <div id="asae-eb-left">
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div id="asae-eb-right">
-            <svg id="asae-eb-placeholder" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 200 200">
+            <svg id="asae-eb-placeholder" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 200 200" aria-hidden="true">
             <defs>
                 <style> .asae-eb-placeholder-rect { fill: #000; stroke-width: 0px; } </style>
             </defs>
@@ -59,7 +59,7 @@ viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="pres
             </div>
             <div id="asae-eb-right-chatbot">
                 <svg version="1.1" id="asae-eb-chatbot" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve" tabindex="0" role="button" aria-expanded="false">
-                <title>Stellar LLM</title>
+                <title>Ask Stellar</title>
                 <defs>
                     <style> .asae-eb-chatbot-icon { fill: #ffffff; stroke-width: 0px; } .asae-eb-chatbot-icon.active { fill: #000000; stroke-width: 0px; } </style>
                 </defs>
@@ -170,7 +170,7 @@ viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="pres
                     <span id="asae-eb-chatbot-hi-text">Hi, I'm Stellar, ASAE's AI-powered Large Language Model!</span> 
                 </span>
                 <form id="asae-eb-chatbot-form" action="#" onsubmit="return validateChatbot()" method="GET">
-                    <input type="search" id="asae-eb-chatbot-terms" name="Input" placeholder="How can I help you? (Hit Enter to chat)"><br/>
+                    <input type="search" id="asae-eb-chatbot-terms" name="Input" placeholder="How can I help you? (Hit Enter to chat)" aria-label="Ask Stellar a question"><br/>
                     <span id="asae-eb-chatbot-terms-alert">Please begin by asking me a question.</span>
                 </form>
                 <span id="asae-eb-chatbot-partner">
@@ -182,7 +182,7 @@ viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="pres
         </div>
         <!-- MODAL: USER -->
     </div>
-</section>
+</nav>
 
 <!-- STOP editing at this line -->
 
