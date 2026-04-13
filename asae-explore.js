@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.4           2026-04-13
+8.5           2026-04-13
 Notes:
-- WCAG 2.2 AA compliance fixes across all files
+- fix search panel transition timing (max-height 50em -> 6em)
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.4";
+var gitVersion = "v8.5";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
