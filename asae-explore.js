@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.1           2026-04-13
+8.2           2026-04-13
 Notes:
-- fix demo.html to render via raw.githack.com with absolute jsDelivr URLs for assets
+- fix setAttributes bug, improve expand/collapse transitions, remove setTransStyles
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.1";
+var gitVersion = "v8.2";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -150,12 +150,20 @@ var isOpenUser =  false;
 var directClick = false;
 
 /* ---------- CSS HELPERS - START ---------- */
-// USE: setAttributes(elem, {"src": "http://example.com/something.jpeg", "height": "100%", ...});
+// USE: setAttributes(elem, {"display": "none", "visibility": "hidden", ...});
 function setAttributes(el, attrs) {
     for(var key in attrs) {
-        //console.log("setAttribute: " + key + ": " + attrs[key]);
-        el.setAttribute('style', key + ": " + attrs[key]);
+        el.style.setProperty(key, attrs[key]);
     }
+}
+
+// Instantly close a modal panel without animation, then call its toggle function to reset state
+function closeModalInstant(modalSelector, toggleFunc) {
+    var el = document.querySelector(modalSelector);
+    el.style.transition = 'none';
+    toggleFunc();
+    el.offsetHeight; // force reflow so the instant collapse applies
+    el.style.transition = ''; // restore CSS transitions for next use
 }
 /* ---------- CSS HELPERS - END ---------- */
 
@@ -283,63 +291,7 @@ function isCurrentDateBetween(startDate, endDate) {
 }
 /* ---------- ALERT HELPER - END ---------- */
 
-function setTransStyles(thisClick) {
-    // SET TRANSITIONS FOR MODALS
-    // Use these transition effects:
-    // -webkit-transition: 0.5s linear;
-    // -moz-transition: 0.5s linear;
-    // -o-transition: 0.5s linear;
-    // transition: 0.5s linear;
-    var slideTrans = {"transition": "0.5s linear", "-o-transition": "0.5s linear", "-moz-transition": "0.5s linear",  "-webkit-transition": "0.5s linear"};
-
-    //   --- OR ---
-    // -webkit-transition: none;
-    // -moz-transition: none;
-    // -o-transition: none;
-    // transition: none;
-    var noTrans = {"transition": "none", "-o-transition": "none", "-moz-transition": "none",  "-webkit-transition": "none"};
-
-    var transModalNav = document.getElementById("asae-eb-modal-nav-container");
-    var transModalSearch = document.getElementById("asae-eb-modal-search-container");
-    var transModalChatbot = document.getElementById("asae-eb-modal-chatbot-container");
-    //var transModalUser = document.getElementById("asae-eb-modal-user-container");
-
-    setAttributes(transModalNav, slideTrans);
-    setAttributes(transModalSearch, slideTrans);
-    setAttributes(transModalChatbot, slideTrans);
-    //setAttributes(transModalUser, slideTrans);
-
-    if (thisClick == "navClick") {
-        if (isOpenSearch || isOpenChatbot) { // || isOpenUser) {
-            setAttributes(transModalNav, noTrans);
-        } else {
-            setAttributes(transModalNav, slideTrans);
-        }
-    }
-    if (thisClick == "searchClick") {
-        if (isOpenNav || isOpenChatbot) { // || isOpenUser) {
-            setAttributes(transModalSearch, noTrans);
-        } else {
-            setAttributes(transModalSearch, slideTrans);
-        }
-    }
-    if (thisClick == "chatbotClick") {
-        if (isOpenNav || isOpenSearch) { // || isOpenUser) {
-            setAttributes(transModalChatbot, noTrans);
-        } else {
-            setAttributes(transModalChatbot, slideTrans);
-        }
-    }
-    //if (thisClick == "userClick") {
-        //if (isOpenNav || isOpenSearch || isOpenChatbot) {
-            //setAttributes(transModalUser, noTrans);
-        //}
-    //}
-}
-
 function ebNavClickFunc() {
-    //console.log("ebNavClickFunc")
-    setTransStyles("navClick");
 
     isOpenNav = !isOpenNav;
     //console.log("isOpenNav="+isOpenNav);
@@ -407,10 +359,6 @@ function ebNavShowDescClickFunc(directClick) {
 }
 
 function ebSearchClickFunc() {
-    
-    //console.log("ebSearchClickFunc");
-    setTransStyles("searchClick");
-    
     isOpenSearch = !isOpenSearch;
     //console.log("isOpenSearch="+isOpenSearch);
     
@@ -458,10 +406,6 @@ function validateSearch() {
 }
 
 function ebChatbotClickFunc() {
-    
-    //console.log("ebChatbotClickFunc");
-    setTransStyles("chatbotClick");
-
     isOpenChatbot = !isOpenChatbot;
     //console.log("isOpenChatbot="+isOpenChatbot);
     
@@ -509,8 +453,6 @@ function validateChatbot() {
 }
 
 function ebUserClickFunc() {
-    //console.log("ebUserClickFunc");
-    setTransStyles("userClick");
 
     isOpenUser = true; // !isOpenUser;
     //console.log("isOpenUser="+isOpenUser);
@@ -566,43 +508,23 @@ function setupEB() {
     // EXPLORE ASAE NAV (left)
     const ebNavClick = document.querySelector("#asae-eb-left-nav");
     ebNavClick.addEventListener("click", ()=>{
-        //console.log("CLICK: nav");
         ebNavClickFunc();
         if (isOpenSearch) {
-            // INSTANTLY HIDE SEARCH
-            ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
-            setAttributes(ebSearchModal, {"display": "none"});
-            ebSearchClickFunc();
-        } 
+            closeModalInstant("#asae-eb-modal-search-container", ebSearchClickFunc);
+        }
         if (isOpenChatbot) {
-            // INSTANTLY HIDE CHATBOT
-            ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-            setAttributes(ebChatbotModal, {"display": "none"});
-            ebChatbotClickFunc();
-        } 
-        //if (isOpenUser) {
-        //    ebUserClickFunc();
-        //} 
+            closeModalInstant("#asae-eb-modal-chatbot-container", ebChatbotClickFunc);
+        }
     });
     ebNavClick.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {        
-            //console.log("CLICK: nav");
+        if (event.key === 'Enter') {
             ebNavClickFunc();
             if (isOpenSearch) {
-                // INSTANTLY HIDE SEARCH
-                ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
-                setAttributes(ebSearchModal, {"display": "none"});
-                ebSearchClickFunc();
-            } 
+                closeModalInstant("#asae-eb-modal-search-container", ebSearchClickFunc);
+            }
             if (isOpenChatbot) {
-                // INSTANTLY HIDE CHATBOT
-                ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-                setAttributes(ebChatbotModal, {"display": "none"});
-                ebChatbotClickFunc();
-            } 
-            //if (isOpenUser) {
-            //    ebUserClickFunc();
-            //} 
+                closeModalInstant("#asae-eb-modal-chatbot-container", ebChatbotClickFunc);
+            }
         }
     });
     const ebNavShowDescClick = document.querySelector("#asae-eb-showdesc-toggle");
@@ -614,135 +536,75 @@ function setupEB() {
     // EXPLORE ASAE SEARCH (right)
     const ebSearchClick = document.querySelector("#asae-eb-right-search");
     ebSearchClick.addEventListener("click", ()=>{
-        //console.log("CLICK: search");
         ebSearchClickFunc();
         if (isOpenNav) {
-            // INSTANTLY HIDE NAV
-            ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
-            setAttributes(ebNavModal, {"display": "none"});
-            ebNavClickFunc();
+            closeModalInstant("#asae-eb-modal-nav-container", ebNavClickFunc);
         }
         if (isOpenChatbot) {
-            // INSTANTLY HIDE CHATBOT
-            ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-            setAttributes(ebChatbotModal, {"display": "none"});
-            ebChatbotClickFunc();
-        } 
-        //if (isOpenUser) {
-        //    ebUserClickFunc();
-        //} 
+            closeModalInstant("#asae-eb-modal-chatbot-container", ebChatbotClickFunc);
+        }
     });
     ebSearchClick.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {        
-            //console.log("CLICK: search");
+        if (event.key === 'Enter') {
             ebSearchClickFunc();
             if (isOpenNav) {
-                // INSTANTLY HIDE NAV
-                ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
-                setAttributes(ebNavModal, {"display": "none"});
-                ebNavClickFunc();
-            } 
+                closeModalInstant("#asae-eb-modal-nav-container", ebNavClickFunc);
+            }
             if (isOpenChatbot) {
-                // INSTANTLY HIDE CHATBOT
-                ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-                setAttributes(ebChatbotModal, {"display": "none"});
-                ebChatbotClickFunc();
-            } 
-            //if (isOpenUser) {
-            //    ebUserClickFunc();
-            //} 
+                closeModalInstant("#asae-eb-modal-chatbot-container", ebChatbotClickFunc);
+            }
         }
     });
 
     // EXPLORE ASAE CHATBOT (right)
     const ebChatbotClick = document.querySelector("#asae-eb-right-chatbot");
     ebChatbotClick.addEventListener("click", ()=>{
-        //console.log("CLICK: chatbot");
         ebChatbotClickFunc();
         if (isOpenNav) {
-            // INSTANTLY HIDE NAV
-            ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
-            setAttributes(ebNavModal, {"display": "none"});
-            ebNavClickFunc();
+            closeModalInstant("#asae-eb-modal-nav-container", ebNavClickFunc);
         }
         if (isOpenSearch) {
-            // INSTANTLY HIDE SEARCH
-            ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
-            setAttributes(ebSearchModal, {"display": "none"});
-            ebSearchClickFunc();
-        } 
-        //if (isOpenUser) {
-        //    ebUserClickFunc();
-        //} 
+            closeModalInstant("#asae-eb-modal-search-container", ebSearchClickFunc);
+        }
     });
     ebChatbotClick.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {        
-            //console.log("CLICK: chatbot");
+        if (event.key === 'Enter') {
             ebChatbotClickFunc();
             if (isOpenNav) {
-                // INSTANTLY HIDE NAV
-                ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
-                setAttributes(ebNavModal, {"display": "none"});
-                ebNavClickFunc();
-            } 
+                closeModalInstant("#asae-eb-modal-nav-container", ebNavClickFunc);
+            }
             if (isOpenSearch) {
-                // INSTANTLY HIDE SEARCH
-                ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
-                setAttributes(ebSearchModal, {"display": "none"});
-                ebSearchClickFunc();
-            } 
-            //if (isOpenUser) {
-            //    ebUserClickFunc();
-            //} 
+                closeModalInstant("#asae-eb-modal-search-container", ebSearchClickFunc);
+            }
         }
     });
 
     // EXPLORE ASAE USER (right)
     const ebUserClick = document.querySelector("#asae-eb-right-user");
     ebUserClick.addEventListener("click", ()=>{
-        //console.log("CLICK: user");
         ebUserClickFunc();
         if (isOpenNav) {
-           // INSTANTLY HIDE NAV
-           ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
-           setAttributes(ebNavModal, {"display": "none"});
-           ebNavClickFunc();
+            closeModalInstant("#asae-eb-modal-nav-container", ebNavClickFunc);
         }
         if (isOpenSearch) {
-            // INSTANTLY HIDE SEARCH
-            ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
-            setAttributes(ebSearchModal, {"display": "none"});
-            ebSearchClickFunc();
-        } 
+            closeModalInstant("#asae-eb-modal-search-container", ebSearchClickFunc);
+        }
         if (isOpenChatbot) {
-            // INSTANTLY HIDE CHATBOT
-            ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-            setAttributes(ebChatbotModal, {"display": "none"});
-            ebChatbotClickFunc();
-        } 
+            closeModalInstant("#asae-eb-modal-chatbot-container", ebChatbotClickFunc);
+        }
     });
     ebUserClick.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {        
-            //console.log("CLICK: user");
+        if (event.key === 'Enter') {
             ebUserClickFunc();
             if (isOpenNav) {
-                // INSTANTLY HIDE NAV
-                ebNavModal = document.querySelector("#asae-eb-modal-nav-container");
-                setAttributes(ebNavModal, {"display": "none"});
-                ebNavClickFunc();
+                closeModalInstant("#asae-eb-modal-nav-container", ebNavClickFunc);
             }
             if (isOpenSearch) {
-                // INSTANTLY HIDE SEARCH
-                ebSearchModal = document.querySelector("#asae-eb-modal-search-container");
-                setAttributes(ebSearchModal, {"display": "none"});
-                ebSearchClickFunc();
-            } 
+                closeModalInstant("#asae-eb-modal-search-container", ebSearchClickFunc);
+            }
             if (isOpenChatbot) {
-                // INSTANTLY HIDE CHATBOT
-                ebChatbotModal = document.querySelector("#asae-eb-modal-chatbot-container");
-                setAttributes(ebChatbotModal, {"display": "none"});
-                ebChatbotClickFunc();
-            } 
+                closeModalInstant("#asae-eb-modal-chatbot-container", ebChatbotClickFunc);
+            }
         }
     });
 

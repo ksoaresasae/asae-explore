@@ -203,10 +203,12 @@ body {
     height: auto;
     max-height: 0px;
     overflow: hidden;
+    transition: max-height 0.3s ease-in, visibility 0s 0.3s;
 }
 #asae-eb-modal-nav-container.active {
     visibility: visible;
-    max-height: 100em;
+    max-height: 55em;
+    transition: max-height 0.4s ease-out, visibility 0s 0s;
 }
 #asae-eb-modal-nav {
     max-width: 1200px;
@@ -266,10 +268,12 @@ body {
     height: auto;
     max-height: 0px;
     overflow: hidden;
+    transition: max-height 0.2s ease-in, visibility 0s 0.2s;
 }
 .asae-eb-link-desc.active {
     visibility: visible;
-    max-height: 100%;
+    max-height: 3em;
+    transition: max-height 0.3s ease-out, visibility 0s 0s;
 }
 
 .asae-eb-reg-button {
@@ -378,20 +382,18 @@ a#asae-eb-join-button:hover {
 }
 /* SEARCH */
 #asae-eb-modal-search-container {
+    visibility: hidden;
     max-width: 1200px;
     margin: auto;
     height: auto;
     max-height: 0px;
     overflow: hidden;
-    /* --- transition effects --- */
-    -webkit-transition: 0.5s linear;
-    -moz-transition: 0.5s linear;
-    -o-transition: 0.5s linear;
-    transition: 0.5s linear;
-    /* --- transition effects --- */
+    transition: max-height 0.3s ease-in, visibility 0s 0.3s;
 }
 #asae-eb-modal-search-container.active {
+    visibility: visible;
     max-height: 10em;
+    transition: max-height 0.3s ease-out, visibility 0s 0s;
 }
 #asae-eb-modal-search {
     max-width: 1200px;
@@ -468,20 +470,18 @@ a#asae-eb-join-button:hover {
 }
 /* CHATBOT */
 #asae-eb-modal-chatbot-container {
+    visibility: hidden;
     max-width: 1200px;
     margin: auto;
     height: auto;
     max-height: 0px;
     overflow: hidden;
-    /* --- transition effects --- */
-    -webkit-transition: 0.5s linear;
-    -moz-transition: 0.5s linear;
-    -o-transition: 0.5s linear;
-    transition: 0.5s linear;
-    /* --- transition effects --- */
+    transition: max-height 0.3s ease-in, visibility 0s 0.3s;
 }
 #asae-eb-modal-chatbot-container.active {
-    max-height: 30em;
+    visibility: visible;
+    max-height: 15em;
+    transition: max-height 0.3s ease-out, visibility 0s 0s;
 }
 #asae-eb-modal-chatbot {
     max-width: 1200px;
