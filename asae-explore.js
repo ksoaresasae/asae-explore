@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.2           2026-04-13
+8.3           2026-04-13
 Notes:
-- fix setAttributes bug, improve expand/collapse transitions, remove setTransStyles
+- integrate AddSearch: dynamic script/CSS loading, autocomplete in Explore Bar search panel
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.2";
+var gitVersion = "v8.3";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -24,7 +24,7 @@ var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitV
 //////////////////////////////////////////////
 // MASTER CONTROLS: true/false
 var showPB = true;        // SHOW PROMO BAR - STILL CONTROLLED BY DATETIME AND THE alertTimer FUNCTION
-var showSearch = false;   // SHOW SEARCH ICON
+var showSearch = true;    // SHOW SEARCH ICON
 var showChatbot = true;  // SHOW CHATBOT ICON
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
@@ -32,6 +32,9 @@ const alertStartDate = new Date("2026-04-09 00:00:01");
 const alertEndDate = new Date("2026-04-09 23:59:59");
 //////////////////////////////////////////////
 //////////////////////////////////////////////
+
+// SEARCH RESULTS PAGE URL (used by AddSearch "Show all results")
+window.searchResultsPageUrl = "https://www.asaecenter.org/globalsearch";
 
 /*
 Purpose:
@@ -112,6 +115,34 @@ function loadPBHTML() {
     pbhttp.send();    
 }
 
+/* ---------- DYNAMIC LOADING HELPERS - START ---------- */
+function loadCSS(href) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+}
+
+function loadScript(src, callback) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.onload = callback || function(){};
+    document.head.appendChild(script);
+}
+
+function loadSearchDependencies() {
+    // Load CSS for AddSearch
+    loadCSS("https://cdn.jsdelivr.net/npm/addsearch-search-ui@0.10/dist/addsearch-search-ui.min.css");
+    loadCSS(thisBaseURL + "ui.min.css");
+    // Load JS in sequence: client SDK -> UI SDK -> our config
+    loadScript("https://cdn.jsdelivr.net/npm/addsearch-js-client@0.8/dist/addsearch-js-client.min.js", function() {
+        loadScript("https://cdn.jsdelivr.net/npm/addsearch-search-ui@0.10/dist/addsearch-search-ui.min.js", function() {
+            loadScript(thisBaseURL + "ui.min.js");
+        });
+    });
+}
+/* ---------- DYNAMIC LOADING HELPERS - END ---------- */
+
 // populate HTML into divs
 function parseEBHTML() {
     // add EXPLORE BAR (eb)
@@ -127,6 +158,11 @@ function parseEBHTML() {
     setTabIndexes();
 
     showHideButtons();
+
+    // Load AddSearch after DOM containers exist
+    if (showSearch) {
+        loadSearchDependencies();
+    }
 }
 
 function parsePBHTML() {
@@ -193,8 +229,11 @@ function setTabIndexes() {
     if (!isOpenSearch) {
         searchTabIndex = -1;
     }
-    document.getElementById("asae-eb-search-terms").tabIndex = searchTabIndex;
-    document.getElementById("asae-eb-search-submit").tabIndex = searchTabIndex;
+    // AddSearch manages its own tabindex; guard legacy elements
+    var searchTermsEl = document.getElementById("asae-eb-search-terms");
+    var searchSubmitEl = document.getElementById("asae-eb-search-submit");
+    if (searchTermsEl) searchTermsEl.tabIndex = searchTabIndex;
+    if (searchSubmitEl) searchSubmitEl.tabIndex = searchTabIndex;
 
     if (!isOpenChatbot) {
         chatbotTabIndex = -1;
@@ -202,10 +241,10 @@ function setTabIndexes() {
     document.getElementById("asae-eb-chatbot-terms").tabIndex = chatbotTabIndex;
 
     // HIDE THE SEARCH AND CHATBOT ALERTS UNTIL USER ENTRY OCCURS
-    searchAlert = document.getElementById("asae-eb-search-terms-alert");
-    setAttributes(searchAlert, {"display": "none"});
-    chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
-    setAttributes(chatbotAlert, {"display": "none"});
+    var searchAlert = document.getElementById("asae-eb-search-terms-alert");
+    if (searchAlert) setAttributes(searchAlert, {"display": "none"});
+    var chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
+    if (chatbotAlert) setAttributes(chatbotAlert, {"display": "none"});
 
 }
 /* ---------- TABINDEX HELPERS - END ---------- */
@@ -399,8 +438,7 @@ function validateSearch() {
         return false;
     } else {
         setAttributes(searchAlert, {"display": "none"});
-        // goto https://www.asaecenter.org/federatedsearch
-        window.location.href = 'https://www.asaecenter.org/federatedsearch?query=' + termsSearch;
+        window.location.href = 'https://www.asaecenter.org/globalsearch?search=' + termsSearch;
         return false;
     }
 }
