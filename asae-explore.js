@@ -6,17 +6,16 @@ ASAE:       https://www.asaecenter.org
 Developer:  Keith M. Soares - https://keithmsoares.com
 ******************************************************
 
-Version: 
+Version:
 ------------
-7.110         2026-04-09
+8.0           2026-04-13
 Notes:
-- updating alert for move; revised for day 1; updated day 2
-- Making a version without any alert, for use on sig events sites
+- v8.0 branch: added demo.html page for previewing Explore Bar via jsDelivr
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v7.110";
+var gitVersion = "v8.0";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
