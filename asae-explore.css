@@ -158,11 +158,7 @@ body {
     background-color: #eeeeee;
 }
 #asae-eb-placeholder {
-    width: 2.2em;
-    height: 2.2em;
-}
-.asae-eb-placeholder-rect {
-    color: #000;
+    display: none;
 }
 #asae-eb-mag {
     width: 2.2em;
@@ -438,13 +434,14 @@ a#asae-eb-join-button:hover {
 #asae-eb-modal-search #global-searchfield-container .addsearch-searchfield {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
 }
 #asae-eb-modal-search #global-searchfield-container .search-field-wrapper {
     flex: 1;
     min-width: 0;
     display: flex;
+    align-items: stretch;
 }
 #asae-eb-modal-search #global-searchfield-container input[type="search"] {
     flex: 1;

@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.11          2026-04-13
+8.12          2026-04-13
 Notes:
-- fix Firefox arrow compositing, search field/button alignment, search icon overlap
+- hide placeholder SVG, fix search field/button alignment with flex stretch
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.11";
+var gitVersion = "v8.12";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
