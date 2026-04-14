@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.21          2026-04-14
+8.22          2026-04-14
 Notes:
-- add ASK button to chatbot, reduce bottom spacing, match search modal layout
+- add "For ASAE members only" text under chatbot input
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.21";
+var gitVersion = "v8.22";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

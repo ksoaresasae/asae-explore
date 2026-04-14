@@ -593,7 +593,7 @@ a#asae-eb-join-button:hover {
     padding: 0.5em 1em 0.75em 1em;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: stretch;
     gap: 0.5em;
 }
@@ -638,9 +638,16 @@ a#asae-eb-join-button:hover {
 #asae-eb-chatbot-submit:hover {
     background-color: #000 !important;
 }
+#asae-eb-chatbot-members-only {
+    width: 100%;
+    font-size: 0.75em;
+    color: #666;
+    padding: 0.25em 0 0 0;
+}
 #asae-eb-chatbot-terms-alert {
+    width: 100%;
     color: #ff0000;
-    margin: 0.5em 0 0.5em 1.2em;
+    margin: 0;
     font-size: 1em;
     display: none;
 }
