@@ -52,7 +52,7 @@ body {
 #asae-eb-mag,
 #asae-eb-chatbot,
 #asae-eb-user {
-    display: block !important;
+    display: inline-block !important;
     max-width: none !important;
     max-height: none !important;
     overflow: visible !important;
