@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.4           2026-04-14
+9.5           2026-04-14
 Notes:
-- match top and bottom orange lines at 2px
+- move shadow and Join outside 800px nav to get full-width orange line
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.4";
+var gitVersion = "v9.5";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
