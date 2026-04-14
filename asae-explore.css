@@ -47,7 +47,10 @@ body {
     padding: 0;
 }
 #asae-eb-section svg {
-    display: inline;
+    display: block !important;
+    max-width: none !important;
+    max-height: none !important;
+    overflow: visible !important;
 }
 /* Focus indicators for keyboard navigation (WCAG 2.4.7) */
 #asae-eb-left-nav:focus-visible {
