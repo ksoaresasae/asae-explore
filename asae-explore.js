@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.15          2026-04-14
+9.16          2026-04-14
 Notes:
-- all 7 logo icons use absolute jsDelivr URLs via image element
+- load logos directly via thisBaseURL, no SVG wrappers needed
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.15";
+var gitVersion = "v9.16";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -157,6 +157,11 @@ function parseEBHTML() {
     var icons = ebDiv.querySelectorAll('[data-icon]');
     for (var i = 0; i < icons.length; i++) {
         icons[i].src = thisBaseURL + 'icons/' + icons[i].getAttribute('data-icon');
+    }
+    // Populate logo src attributes from CDN root
+    var logos = ebDiv.querySelectorAll('[data-logo]');
+    for (var i = 0; i < logos.length; i++) {
+        logos[i].src = thisBaseURL + logos[i].getAttribute('data-logo');
     }
 
     setupEB();
