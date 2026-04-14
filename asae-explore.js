@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.21          2026-04-14
+9.22          2026-04-14
 Notes:
-- use real Solution Providers HQ logo
+- dynamic Quick Links: 2 curated + up to 2 from localStorage visit history
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.21";
+var gitVersion = "v9.22";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -163,6 +163,10 @@ function parseEBHTML() {
     for (var i = 0; i < logos.length; i++) {
         logos[i].src = thisBaseURL + logos[i].getAttribute('data-logo');
     }
+
+    // Track this site visit and populate Quick Links
+    ebTrackVisit();
+    ebPopulateQuickLinks();
 
     setupEB();
 
@@ -345,6 +349,149 @@ function isCurrentDateBetween(startDate, endDate) {
     return currentDate >= startDate && currentDate <= endDate;
 }
 /* ---------- ALERT HELPER - END ---------- */
+
+/* ---------- QUICK LINKS - START ---------- */
+// Site registry: metadata for all nav grid sites
+var ebSiteRegistry = {
+    "eb-coll": { href: "https://collaborate.asaecenter.org/?asaeexplore=1", logo: "collaborate-logo.svg", label: "Collaborate", desc: "ASAE's online member community forum" },
+    "eb-cahq": { href: "https://careerhq.asaecenter.org/?asaeexplore=1", logo: "achq-logo.svg", label: "CareerHQ", desc: "For association job seekers and employers" },
+    "eb-asae": { href: "https://www.asaecenter.org/?asaeexplore=1", logo: "asae-logo-color.svg", label: "ASAE", desc: "The Center for Association Excellence" },
+    "eb-absi": { href: "https://www.asaebusinesssolutions.org/?asaeexplore=1", logo: "absi.svg", label: "ASAE Business Solutions", desc: "Insurance, retirement, investments, and more" },
+    "eb-foun": { href: "https://foundation.asaecenter.org/?asaeexplore=1", logo: "asae%20foundation.svg", label: "ASAE Research Foundation", desc: "Advancing knowledge in association management" },
+    "eb-asnw": { href: "https://associationsnow.com/?asaeexplore=1", logo: "an-logo.svg", label: "Associations Now", desc: "News, insight, and analysis for association leaders" },
+    "eb-lear": { href: "https://academy.asaecenter.org/?asaeexplore=1", logo: "ASAE_Academy Logo Stacked COLOR.svg", label: "ASAE Academy", desc: "Professional training for the association industry" },
+    "eb-govn": { href: "https://agi.asaecenter.org/?asaeexplore=1", logo: "agi-diamond.svg", label: "AGI", desc: "Excellence in governance practices for associations" },
+    "eb-solu": { href: "https://solutionshq.asaecenter.org/?asaeexplore=1", logo: "solutionshq-logo.svg", label: "Solution Providers HQ", desc: "Connecting associations with trusted partners and services" },
+    "eb-mmct": { href: "https://mmct.asaecenter.org/?asaeexplore=1", logo: "mmct-logo-k.svg", label: "MMC +Tech", desc: "May 28-29, 2026 | Washington, DC" },
+    "eb-annl": { href: "https://annual.asaecenter.org/?asaeexplore=1", logo: "annual logo.svg", label: "Annual Meeting", desc: "August 15-18, 2026 | Indianapolis, IN" }
+};
+
+// Curated quick links (always shown first)
+var ebCuratedQuickLinks = ["eb-coll", "eb-cahq"];
+
+// Track current site visit in localStorage
+function ebTrackVisit() {
+    var siteMap = {
+        "www.asaecenter.org": "eb-asae",
+        "foundation.asaecenter.org": "eb-foun",
+        "collaborate.asaecenter.org": "eb-coll",
+        "careerhq.asaecenter.org": "eb-cahq",
+        "associationsnow.com": "eb-asnw",
+        "www.asaebusinesssolutions.org": "eb-absi",
+        "academy.asaecenter.org": "eb-lear",
+        "agi.asaecenter.org": "eb-govn",
+        "solutionshq.asaecenter.org": "eb-solu",
+        "mmcc.asaecenter.org": "eb-mmct",
+        "mmct.asaecenter.org": "eb-mmct",
+        "annual.asaecenter.org": "eb-annl"
+    };
+    var currentHost = window.location.hostname;
+    var siteId = siteMap[currentHost];
+    if (!siteId) return;
+    try {
+        var visits = JSON.parse(localStorage.getItem('eb-visits') || '{}');
+        visits[siteId] = (visits[siteId] || 0) + 1;
+        localStorage.setItem('eb-visits', JSON.stringify(visits));
+    } catch(e) {}
+}
+
+// Get top visited sites from localStorage, excluding curated and current site
+function ebGetTopVisited(exclude, count) {
+    try {
+        var visits = JSON.parse(localStorage.getItem('eb-visits') || '{}');
+        var sorted = Object.keys(visits)
+            .filter(function(id) { return exclude.indexOf(id) === -1 && ebSiteRegistry[id]; })
+            .sort(function(a, b) { return visits[b] - visits[a]; });
+        return sorted.slice(0, count);
+    } catch(e) {
+        return [];
+    }
+}
+
+// Build a Quick Link HTML element
+function ebBuildQuickLink(siteId, suffix) {
+    var site = ebSiteRegistry[siteId];
+    if (!site) return null;
+    var a = document.createElement('a');
+    a.id = siteId + (suffix || '-ql');
+    a.href = site.href;
+    a.target = '_blank';
+    a.className = 'asae-eb-grid-item';
+    a.setAttribute('aria-label', site.label + ' - opens in new tab');
+
+    var img = document.createElement('img');
+    img.src = thisBaseURL + site.logo;
+    img.className = 'asae-eb-grid-icon';
+    img.alt = '';
+
+    var label = document.createElement('span');
+    label.className = 'asae-eb-grid-label';
+    label.textContent = site.label;
+
+    var desc = document.createElement('span');
+    desc.className = 'asae-eb-link-desc';
+    desc.textContent = site.desc;
+
+    a.appendChild(img);
+    a.appendChild(label);
+    a.appendChild(desc);
+    return a;
+}
+
+// Populate the Quick Links grid
+function ebPopulateQuickLinks() {
+    var grid = document.getElementById('asae-eb-quick-links-grid');
+    if (!grid) return;
+
+    // Determine current site to exclude from dynamic slots
+    var currentSiteId = null;
+    var currentHost = window.location.hostname;
+    var hostMap = {
+        "www.asaecenter.org": "eb-asae",
+        "foundation.asaecenter.org": "eb-foun",
+        "collaborate.asaecenter.org": "eb-coll",
+        "careerhq.asaecenter.org": "eb-cahq",
+        "associationsnow.com": "eb-asnw",
+        "www.asaebusinesssolutions.org": "eb-absi",
+        "academy.asaecenter.org": "eb-lear",
+        "agi.asaecenter.org": "eb-govn",
+        "solutionshq.asaecenter.org": "eb-solu",
+        "mmcc.asaecenter.org": "eb-mmct",
+        "mmct.asaecenter.org": "eb-mmct",
+        "annual.asaecenter.org": "eb-annl"
+    };
+    currentSiteId = hostMap[currentHost];
+
+    // 1. Add curated links (skip if it's the current site)
+    var added = [];
+    for (var i = 0; i < ebCuratedQuickLinks.length; i++) {
+        var id = ebCuratedQuickLinks[i];
+        if (id === currentSiteId) continue;
+        var el = ebBuildQuickLink(id, '-ql');
+        if (el) {
+            grid.appendChild(el);
+            added.push(id);
+        }
+    }
+
+    // 2. Add up to 2 dynamic links from visit history
+    var exclude = added.concat(ebCuratedQuickLinks);
+    if (currentSiteId) exclude.push(currentSiteId);
+    var dynamic = ebGetTopVisited(exclude, 2);
+    for (var i = 0; i < dynamic.length; i++) {
+        var el = ebBuildQuickLink(dynamic[i], '-ql-dyn');
+        if (el) {
+            grid.appendChild(el);
+            added.push(dynamic[i]);
+        }
+    }
+
+    // Hide Quick Links section if empty
+    if (added.length === 0) {
+        document.getElementById('asae-eb-quick-links').style.display = 'none';
+    }
+}
+/* ---------- QUICK LINKS - END ---------- */
 
 function ebNavClickFunc() {
 

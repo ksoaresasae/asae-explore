@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASAE Explore Bar - Demo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@v9.21/asae-explore.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@v9.22/asae-explore.css"/>
     <style>
         body { font-family: Arial, Helvetica, sans-serif; }
         .demo-content { max-width: 800px; margin: 2em auto; padding: 0 1em; }
@@ -15,14 +15,49 @@
 </head>
 <body>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@v9.21/asae-explore.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@v9.22/asae-explore.js"></script>
 
 <div class="demo-content">
     <h1>ASAE Explore Bar Demo</h1>
-    <div class="demo-version">Version: v9.21</div>
+    <div class="demo-version">Version: v9.22</div>
     <p>This page demonstrates the ASAE Explore Bar. The black bar above with "More from ASAE" is the Explore Bar. Click it to expand the navigation links. The icons on the right provide access to search, the Stellar chatbot, and user login.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <h2>Quick Links Test Controls</h2>
+    <p>Since this demo runs on a single domain, use these controls to simulate visits to ASAE sites. After seeding visits, reload the page to see dynamic Quick Links appear.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5em; margin:1em 0;">
+        <button onclick="seedVisits('eb-lear',10)">Seed: Academy (10)</button>
+        <button onclick="seedVisits('eb-govn',8)">Seed: AGI (8)</button>
+        <button onclick="seedVisits('eb-asnw',5)">Seed: Assoc Now (5)</button>
+        <button onclick="seedVisits('eb-annl',3)">Seed: Annual (3)</button>
+        <button onclick="seedVisits('eb-mmct',2)">Seed: MMCT (2)</button>
+        <button onclick="seedVisits('eb-asae',7)">Seed: ASAE (7)</button>
+        <button onclick="clearVisits()" style="background:#c00;color:#fff;">Clear All Visits</button>
+    </div>
+    <div id="visit-status" style="font-size:0.85em; color:#666; margin:0.5em 0;"></div>
+    <script>
+        function seedVisits(siteId, count) {
+            var visits = JSON.parse(localStorage.getItem('eb-visits') || '{}');
+            visits[siteId] = (visits[siteId] || 0) + count;
+            localStorage.setItem('eb-visits', JSON.stringify(visits));
+            showVisitStatus();
+        }
+        function clearVisits() {
+            localStorage.removeItem('eb-visits');
+            showVisitStatus();
+        }
+        function showVisitStatus() {
+            var visits = JSON.parse(localStorage.getItem('eb-visits') || '{}');
+            var keys = Object.keys(visits);
+            if (keys.length === 0) {
+                document.getElementById('visit-status').textContent = 'No visit history. Quick Links will show curated links only.';
+            } else {
+                var parts = keys.map(function(k) { return k + ': ' + visits[k]; });
+                document.getElementById('visit-status').textContent = 'Current visits: ' + parts.join(', ') + ' — Reload page to update Quick Links.';
+            }
+        }
+        showVisitStatus();
+    </script>
 </div>
 
 </body>
