@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.22          2026-04-14
+8.23          2026-04-14
 Notes:
-- add "For ASAE members only" text under chatbot input
+- fix chatbot alert to appear between form and members-only text
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.22";
+var gitVersion = "v8.23";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -486,7 +486,7 @@ function validateChatbot() {
     //document.getElementById("asae-eb-chatbot-terms").value = termsChatbot;
     chatbotAlert = document.getElementById("asae-eb-chatbot-terms-alert");
     if (termsChatbot == "") {
-        setAttributes(chatbotAlert, {"display": "inline-block"});
+        setAttributes(chatbotAlert, {"display": "block"});
         return false;
     } else {
         setAttributes(chatbotAlert, {"display": "none"});
