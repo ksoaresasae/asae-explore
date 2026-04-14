@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.20          2026-04-14
+9.21          2026-04-14
 Notes:
-- fix nav overflow when descriptions toggled on
+- use real Solution Providers HQ logo
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.20";
+var gitVersion = "v9.21";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
