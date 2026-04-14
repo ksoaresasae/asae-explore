@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.14          2026-04-14
+9.15          2026-04-14
 Notes:
-- embed real logos for AGI, Academy, Annual, MMCT via image reference
+- all 7 logo icons use absolute jsDelivr URLs via image element
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.14";
+var gitVersion = "v9.15";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
