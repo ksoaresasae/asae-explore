@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.28          2026-04-14
+8.29          2026-04-14
 Notes:
-- change icon SVGs to inline-block to prevent wrapping to new line
+- add !important to placeholder SVG display:none to prevent host override
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.28";
+var gitVersion = "v8.29";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

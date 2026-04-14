@@ -166,7 +166,7 @@ body {
     background-color: #eeeeee;
 }
 #asae-eb-placeholder {
-    display: none;
+    display: none !important;
 }
 #asae-eb-mag {
     width: 35px !important;
