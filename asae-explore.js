@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.23          2026-04-14
+9.24          2026-04-14
 Notes:
-- add drop shadow to all three modal panels when active
+- move nav shadow to inner 800px element instead of 1200px container
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.23";
+var gitVersion = "v9.24";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

@@ -247,6 +247,8 @@ body {
     visibility: visible;
     max-height: 120em;
     transition: max-height 0.5s ease-out, visibility 0s 0s;
+}
+#asae-eb-modal-nav-container.active #asae-eb-modal-nav {
     box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 #asae-eb-modal-nav {
