@@ -492,6 +492,55 @@ a#asae-eb-join-button:hover {
     max-height: 400px;
     overflow-y: auto;
 }
+/* Autocomplete: Show All Results button */
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results span {
+    background-color: #bd491e;
+    border-radius: 0;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.75em 1.5em;
+}
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results:hover span {
+    background-color: #000;
+}
+/* Autocomplete: suggestion links */
+#asae-eb-modal-search #global-autocomplete-container .adds-suggestion {
+    color: #0056b3;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#asae-eb-modal-search #global-autocomplete-container .adds-suggestion:hover {
+    color: #003580;
+}
+/* Autocomplete: result titles */
+#asae-eb-modal-search #global-autocomplete-container .adds-hit-title {
+    text-align: left;
+}
+/* Autocomplete: word overflow */
+#asae-eb-modal-search #global-autocomplete-container .adds-hit-bottom {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+/* Autocomplete: mobile - stack thumbnail above text */
+@media screen and (max-width: 767px) {
+    #asae-eb-modal-search #global-autocomplete-container .adds-hit > .adds-hit-wrapper {
+        flex-direction: column !important;
+    }
+    #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-hit-top {
+        margin-right: 0 !important;
+        margin-bottom: 0.5em;
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+    }
+    #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-hit-bottom {
+        max-width: 100% !important;
+        padding: 0;
+    }
+}
 /* CHATBOT */
 #asae-eb-modal-chatbot-container {
     visibility: hidden;
