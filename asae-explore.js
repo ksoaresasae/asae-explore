@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.17          2026-04-14
+9.18          2026-04-14
 Notes:
-- fix broken ABSI/Foundation logos, increase icons to 70px
+- simplify AGI logo to just the blue diamond mark
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.17";
+var gitVersion = "v9.18";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
