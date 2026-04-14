@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.9           2026-04-14
+9.10          2026-04-14
 Notes:
-- constrain nav orange terminator to 800px to match modal width
+- white background icons, embed ASAE logo SVG, subtle icon shadow
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.9";
+var gitVersion = "v9.10";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
