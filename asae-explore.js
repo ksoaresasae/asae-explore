@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.12          2026-04-14
+9.13          2026-04-14
 Notes:
-- remove icon borders, add drop shadow, increase icons to 58px
+- fix icon double-border, restore ASAE tagline, full-bleed white rect
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.12";
+var gitVersion = "v9.13";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
