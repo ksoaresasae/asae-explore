@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.6           2026-04-14
+9.7           2026-04-14
 Notes:
-- revert shadow/Join move, add full-width orange line at bottom of modal
+- constrain bottom orange line to modal width, grey internal dividers
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.6";
+var gitVersion = "v9.7";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
