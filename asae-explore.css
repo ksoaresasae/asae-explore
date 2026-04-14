@@ -226,8 +226,8 @@ body {
 /* NAV */
 #asae-eb-modal-nav-container {
     visibility: hidden;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 800px;
+    margin: 0;
     height: auto;
     max-height: 0px;
     overflow: hidden;
@@ -237,12 +237,9 @@ body {
     visibility: visible;
     max-height: 60em;
     transition: max-height 0.4s ease-out, visibility 0s 0s;
-    background-color: #eee;
 }
 #asae-eb-modal-nav {
-    max-width: 800px;
     width: 100%;
-    margin: 0 auto;
     background-color: #eee;
     color: #000;
     text-align: left;
@@ -275,11 +272,11 @@ body {
     padding: 0.25em 0;
 }
 .asae-eb-nav-section-label {
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #666;
+    color: #444;
     padding: 0.5em 0.5em 0.25em 0.5em;
     border-bottom: 1px solid #ddd;
     margin-bottom: 0.5em;
@@ -331,17 +328,17 @@ body {
     border-radius: 10px;
 }
 .asae-eb-grid-label {
-    font-size: 0.8em;
+    font-size: 0.85em;
     font-weight: 600;
     line-height: 1.2;
     color: #000;
 }
 .asae-eb-link-desc {
     visibility: hidden;
-    font-size: 0.65em;
+    font-size: 0.75em;
     line-height: 1.3;
-    font-weight: 300;
-    color: #555;
+    font-weight: 400;
+    color: #444;
     width: 100%;
     height: auto;
     max-height: 0px;
@@ -356,7 +353,7 @@ body {
 /* Join button */
 .asae-eb-nav-join {
     text-align: center;
-    padding: 0.75em 0 0.25em 0;
+    padding: 0.75em 0 1em 0;
 }
 #asae-eb-join-button {
     display: inline-block;

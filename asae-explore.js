@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.1           2026-04-14
+9.2           2026-04-14
 Notes:
-- constrain nav width, tighten grid spacing, fix Join button, improve placeholder icons
+- narrow and left-align modal, WCAG contrast/size fixes, content label updates
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.1";
+var gitVersion = "v9.2";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
