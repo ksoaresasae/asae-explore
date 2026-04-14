@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.10          2026-04-14
+9.11          2026-04-14
 Notes:
-- white background icons, embed ASAE logo SVG, subtle icon shadow
+- embed real ABSI and Foundation logos into icon SVGs
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.10";
+var gitVersion = "v9.11";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
