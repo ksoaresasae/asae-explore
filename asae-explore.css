@@ -544,11 +544,19 @@ a#asae-eb-join-button:hover {
     #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-main-image {
         width: auto !important;
         min-width: 0 !important;
+        background-image: none !important;
+    }
+    #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-main-image:before {
+        display: none !important;
+    }
+    #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-main-image > .adds-aspect {
+        position: static !important;
     }
     #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-main-image img {
         width: auto !important;
         max-width: 100%;
-        height: auto;
+        height: auto !important;
+        position: static !important;
     }
     #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-hit-bottom {
         max-width: 100% !important;
