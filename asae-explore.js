@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.19          2026-04-14
+8.20          2026-04-14
 Notes:
-- remove tiling background-image on autocomplete result thumbnails
+- balance chatbot modal vertical spacing
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.19";
+var gitVersion = "v8.20";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
