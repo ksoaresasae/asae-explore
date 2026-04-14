@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.16          2026-04-14
+9.17          2026-04-14
 Notes:
-- load logos directly via thisBaseURL, no SVG wrappers needed
+- fix broken ABSI/Foundation logos, increase icons to 70px
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.16";
+var gitVersion = "v9.17";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
