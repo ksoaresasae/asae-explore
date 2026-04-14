@@ -355,8 +355,7 @@ body {
 /* Join button */
 .asae-eb-nav-join {
     text-align: left;
-    padding: 1em 0 0.5em 2em;
-    background-color: #eee;
+    padding: 1em 0 0.5em 0.5em;
 }
 #asae-eb-join-button {
     display: inline-block;
