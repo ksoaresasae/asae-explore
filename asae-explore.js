@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.7           2026-04-14
+9.8           2026-04-14
 Notes:
-- constrain bottom orange line to modal width, grey internal dividers
+- move orange terminator outside nav content div, flush to container edge
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.7";
+var gitVersion = "v9.8";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
