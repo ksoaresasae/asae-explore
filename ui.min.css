@@ -1,16 +1,11 @@
-/*! v1.3 */
-body * {
+/*! v1.3-scoped */
+#asae-eb-modal-search *,
+#searchresults-container * {
     box-sizing: border-box;
 }
-body {
-    font-family:
-        Myriad Pro,
-        sans-serif;
-    margin: 0;
-    padding: 0;
-}
-body a {
-    color: inherit !important;
+#asae-eb-modal-search a,
+#searchresults-container a {
+    color: inherit;
 }
 .adds-components {
     display: flex;
@@ -801,69 +796,76 @@ body a {
     height: 48px;
     padding: 0 10px;
 }
-.adds-search-results-link {
+#asae-eb-modal-search .adds-search-results-link,
+#searchresults-container .adds-search-results-link {
     width: 100% !important;
 }
-.adds-hit,
-.adds-search-results-link {
+#asae-eb-modal-search .adds-hit,
+#asae-eb-modal-search .adds-search-results-link,
+#searchresults-container .adds-hit,
+#searchresults-container .adds-search-results-link {
     text-decoration: none !important;
 }
-.adds-hit-wrapper {
+#asae-eb-modal-search .adds-hit-wrapper,
+#searchresults-container .adds-hit-wrapper {
     padding: 5px;
 }
 #global-autocomplete-container .addsearch-autocomplete .adds-suggestions-main-wrapper {
     padding: 1em;
 }
-.addsearch-autocomplete ul {
+#asae-eb-modal-search .addsearch-autocomplete ul,
+#searchresults-container .addsearch-autocomplete ul {
     border: none !important;
 }
-.adds-hit-wrapper span {
+#asae-eb-modal-search .adds-hit-wrapper span,
+#searchresults-container .adds-hit-wrapper span {
     color: #00a8c3;
     font-size: 18px;
 }
-.adds-header {
-    height: 100px !important;
-}
-.adds-header ul {
-    list-style-type: none !important;
-}
-.adds-tag-name {
+#asae-eb-modal-search .adds-tag-name,
+#searchresults-container .adds-tag-name {
     color: #000 !important;
     font-size: 11px !important;
     font-weight: 700 !important;
     margin-left: 8px !important;
 }
-.showAllBtn {
+#asae-eb-modal-search .showAllBtn,
+#searchresults-container .showAllBtn {
     border: none;
     display: flex;
     justify-content: center;
     padding: 1em 0;
-    text-align: -webkit-center;
 }
-.btn {
+#asae-eb-modal-search .btn,
+#searchresults-container .btn {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-.btn.all-results {
+#asae-eb-modal-search .btn.all-results,
+#searchresults-container .btn.all-results {
     align-self: center;
     border: none;
     display: flex;
     padding: 0;
 }
-.btn.all-results span {
+#asae-eb-modal-search .btn.all-results span,
+#searchresults-container .btn.all-results span {
     background-color: #10559a;
     border-radius: 5px;
     color: #fff;
     padding: 1em;
 }
-.btn.all-results:hover {
+#asae-eb-modal-search .btn.all-results:hover,
+#searchresults-container .btn.all-results:hover {
     border-color: #00a8c3;
 }
-.btn.all-results:hover span {
+#asae-eb-modal-search .btn.all-results:hover span,
+#searchresults-container .btn.all-results:hover span {
     background-color: #00a8c3;
 }
-.adds-url {
+#asae-eb-modal-search .adds-url,
+#searchresults-container .adds-url {
     color: #ccc;
     font-size: 16px;
     font-style: italic;
@@ -883,7 +885,7 @@ body a {
     border-color: #dcdcdc !important;
     color: #fff !important;
 }
-.adds-header {
+#searchresults-container .adds-header {
     align-items: center;
     background-color: #fff;
     border-bottom: 1px solid hsla(0, 0%, 86%, 0.5);
@@ -897,27 +899,27 @@ body a {
     top: 0;
     z-index: 100;
 }
-.adds-header .adds-header-wrapper {
+#searchresults-container .adds-header .adds-header-wrapper {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
     max-width: 1400px;
     width: 100%;
 }
-.adds-header .adds-logo {
+#searchresults-container .adds-header .adds-logo {
     padding: 0 1em;
 }
-.adds-header .adds-nav {
+#searchresults-container .adds-header .adds-nav {
     align-items: center;
     display: flex;
     flex-direction: row;
     margin: 0 auto;
 }
-.adds-header .adds-nav a {
+#searchresults-container .adds-header .adds-nav a {
     padding: 0 1em;
     text-decoration: none;
 }
-.adds-header .adds-nav a:hover {
+#searchresults-container .adds-header .adds-nav a:hover {
     text-decoration: underline;
 }
 @media screen and (max-width: 767px) {

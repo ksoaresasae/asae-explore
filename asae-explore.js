@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.23          2026-04-14
+8.24          2026-04-14
 Notes:
-- fix chatbot alert to appear between form and members-only text
+- scope all CSS to prevent style leakage onto host sites
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.23";
+var gitVersion = "v8.24";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
