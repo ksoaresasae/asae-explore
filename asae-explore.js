@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.24          2026-04-14
+9.25          2026-04-14
 Notes:
-- move nav shadow to inner 800px element instead of 1200px container
+- single full-width shadow on #asae-eb-modals instead of per-modal shadows
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.24";
+var gitVersion = "v9.25";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
