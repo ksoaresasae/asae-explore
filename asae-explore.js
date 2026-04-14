@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.22          2026-04-14
+9.23          2026-04-14
 Notes:
-- dynamic Quick Links: 2 curated + up to 2 from localStorage visit history
+- add drop shadow to all three modal panels when active
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.22";
+var gitVersion = "v9.23";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
