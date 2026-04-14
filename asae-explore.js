@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.20          2026-04-14
+8.21          2026-04-14
 Notes:
-- balance chatbot modal vertical spacing
+- add ASK button to chatbot, reduce bottom spacing, match search modal layout
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.20";
+var gitVersion = "v8.21";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -242,6 +242,8 @@ function setTabIndexes() {
     // Chatbot modal content: only tabbable when open
     var chatbotContentTabIndex = isOpenChatbot ? 0 : -1;
     document.getElementById("asae-eb-chatbot-terms").tabIndex = chatbotContentTabIndex;
+    var chatbotSubmitEl = document.getElementById("asae-eb-chatbot-submit");
+    if (chatbotSubmitEl) chatbotSubmitEl.tabIndex = chatbotContentTabIndex;
 
     // HIDE THE SEARCH AND CHATBOT ALERTS UNTIL USER ENTRY OCCURS
     var searchAlert = document.getElementById("asae-eb-search-terms-alert");

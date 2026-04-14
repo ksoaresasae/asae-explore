@@ -590,28 +590,53 @@ a#asae-eb-join-button:hover {
 }
 #asae-eb-chatbot-form {
     width: 100%;
+    padding: 0.5em 1em 0.75em 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0.5em;
 }
 #asae-eb-chatbot-terms::placeholder {
     color: #767676;
 }
 #asae-eb-chatbot-terms {
-    display: block;
-    margin: 0.5em auto 1em auto;
-    padding: 0.25em 0.5em;
+    flex: 1;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0.75em 1em !important;
     border: 1px #666 solid;
     border-radius: 0;
     background-color: #fff;
     color: #000;
-    height: 3.5em;
-    width: 90%;
-    max-width: 1200px;
     box-sizing: border-box;
+    font-size: 1em;
+    font-family: Arial,Helvetica,sans-serif;
+    height: auto;
 }
 #asae-eb-chatbot-terms:active, #asae-eb-chatbot-terms:focus {
     border: 2px #bd491e solid !important;
     border-radius: 0 !important;
     outline: 2px solid #bd491e;
     outline-offset: 2px;
+}
+#asae-eb-chatbot-submit {
+    background-color: #bd491e !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0.75em 1.5em !important;
+    font-size: 1em !important;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: auto !important;
+}
+#asae-eb-chatbot-submit:hover {
+    background-color: #000 !important;
 }
 #asae-eb-chatbot-terms-alert {
     color: #ff0000;
