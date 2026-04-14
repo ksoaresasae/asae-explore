@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.15          2026-04-13
+8.16          2026-04-14
 Notes:
-- search field/button gap, fix link description clipping and line-height
+- fix Join button color overridden by ui.min.css; white on orange passes WCAG AA (5.1:1)
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.15";
+var gitVersion = "v8.16";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
