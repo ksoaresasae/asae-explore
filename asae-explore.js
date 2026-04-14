@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.0           2026-04-14
+9.1           2026-04-14
 Notes:
-- icon grid nav layout with Quick Links, Organizations, Platforms, Events sections
+- constrain nav width, tighten grid spacing, fix Join button, improve placeholder icons
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.0";
+var gitVersion = "v9.1";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
