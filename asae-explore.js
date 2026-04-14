@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.8           2026-04-14
+9.9           2026-04-14
 Notes:
-- move orange terminator outside nav content div, flush to container edge
+- constrain nav orange terminator to 800px to match modal width
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.8";
+var gitVersion = "v9.9";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
