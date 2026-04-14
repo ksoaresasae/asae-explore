@@ -226,8 +226,8 @@ body {
 /* NAV */
 #asae-eb-modal-nav-container {
     visibility: hidden;
-    max-width: 800px;
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
     height: auto;
     max-height: 0px;
     overflow: hidden;
@@ -239,7 +239,7 @@ body {
     transition: max-height 0.4s ease-out, visibility 0s 0s;
 }
 #asae-eb-modal-nav {
-    width: 100%;
+    max-width: 800px;
     background-color: #eee;
     color: #000;
     text-align: left;
@@ -329,8 +329,9 @@ body {
 }
 .asae-eb-grid-label {
     font-size: 0.85em;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
+    letter-spacing: 0.02em;
     color: #000;
 }
 .asae-eb-link-desc {
@@ -352,8 +353,8 @@ body {
 }
 /* Join button */
 .asae-eb-nav-join {
-    text-align: center;
-    padding: 0.75em 0 1em 0;
+    text-align: left;
+    padding: 1em 0 0.5em 0.5em;
 }
 #asae-eb-join-button {
     display: inline-block;

@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.2           2026-04-14
+9.3           2026-04-14
 Notes:
-- narrow and left-align modal, WCAG contrast/size fixes, content label updates
+- align modal to More from ASAE button, section renames, Join after divider
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.2";
+var gitVersion = "v9.3";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
