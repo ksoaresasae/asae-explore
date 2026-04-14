@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.26          2026-04-14
+8.27          2026-04-14
 Notes:
-- override host site SVG constraints so toolbar icons render at full size
+- target only right-side icon SVGs for host site override, not all SVGs
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.26";
+var gitVersion = "v8.27";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

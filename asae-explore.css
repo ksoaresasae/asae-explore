@@ -47,6 +47,11 @@ body {
     padding: 0;
 }
 #asae-eb-section svg {
+    display: inline;
+}
+#asae-eb-mag,
+#asae-eb-chatbot,
+#asae-eb-user {
     display: block !important;
     max-width: none !important;
     max-height: none !important;
