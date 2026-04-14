@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.11          2026-04-14
+9.12          2026-04-14
 Notes:
-- embed real ABSI and Foundation logos into icon SVGs
+- remove icon borders, add drop shadow, increase icons to 58px
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.11";
+var gitVersion = "v9.12";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
