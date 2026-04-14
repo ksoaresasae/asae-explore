@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.24          2026-04-14
+8.25          2026-04-14
 Notes:
-- scope all CSS to prevent style leakage onto host sites
+- fix toolbar icon sizes to not shrink on host sites with smaller font-size
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.24";
+var gitVersion = "v8.25";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
