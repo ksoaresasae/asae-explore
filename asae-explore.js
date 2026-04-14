@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.13          2026-04-14
+9.14          2026-04-14
 Notes:
-- fix icon double-border, restore ASAE tagline, full-bleed white rect
+- embed real logos for AGI, Academy, Annual, MMCT via image reference
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.13";
+var gitVersion = "v9.14";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
