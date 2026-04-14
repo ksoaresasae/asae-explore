@@ -86,71 +86,113 @@ viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="pres
             <div id="asae-eb-modal-nav">
                 <div id="asae-eb-showdesc">
                     <a href="#" id="asae-eb-showdesc-toggle" aria-label="Show or Hide Link Descriptions"></a>
-                    <!-- Rounded switch -->
                     <label for="asae-eb-showdesc-checkbox" class="asae-eb-showdesc-switch" tabindex="-1" aria-hidden="true">
                         <input id="asae-eb-showdesc-checkbox" class="asae-eb-showdesc-input" type="checkbox" onclick="ebNavShowDescClickFunc(true)" tabindex="-1">
                         <span class="asae-eb-showdesc-slider round" tabindex="-1"></span>
                     </label>
                 </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-asae" href="https://www.asaecenter.org/?asaeexplore=1" target="_blank" title="ASAE" aria-label="ASAE - opens in new tab">ASAE</a></div>
-                    <div class="asae-eb-link-desc">The Center for Association Excellence</div>
+
+                <!-- QUICK LINKS -->
+                <div class="asae-eb-nav-section" id="asae-eb-quick-links">
+                    <div class="asae-eb-nav-section-label">Quick Links</div>
+                    <div class="asae-eb-nav-grid">
+                        <a id="eb-coll-ql" href="https://collaborate.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="Collaborate - opens in new tab">
+                            <img src="" data-icon="eb-icon-coll.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">Collaborate</span>
+                            <span class="asae-eb-link-desc">ASAE's online member community forum</span>
+                        </a>
+                        <a id="eb-cahq-ql" href="https://careerhq.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="CareerHQ - opens in new tab">
+                            <img src="" data-icon="eb-icon-cahq.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">CareerHQ</span>
+                            <span class="asae-eb-link-desc">For association job seekers and employers</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-foun" href="https://foundation.asaecenter.org/?asaeexplore=1" target="_blank" title="ASAE Research Foundation" aria-label="ASAE Research Foundation - opens in new tab">ASAE Research Foundation</a></div>
-                    <div class="asae-eb-link-desc">Advancing knowledge in association management</div>
+
+                <!-- ORGANIZATIONS -->
+                <div class="asae-eb-nav-section">
+                    <div class="asae-eb-nav-section-label">Organizations</div>
+                    <div class="asae-eb-nav-grid">
+                        <a id="eb-asae" href="https://www.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="ASAE - opens in new tab">
+                            <img src="" data-icon="eb-icon-asae.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">ASAE</span>
+                            <span class="asae-eb-link-desc">The Center for Association Excellence</span>
+                        </a>
+                        <a id="eb-absi" href="https://www.asaebusinesssolutions.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="ASAE Business Solutions - opens in new tab">
+                            <img src="" data-icon="eb-icon-absi.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">ASAE Business Solutions</span>
+                            <span class="asae-eb-link-desc">Insurance, retirement, investments, and more</span>
+                        </a>
+                        <a id="eb-foun" href="https://foundation.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="ASAE Research Foundation - opens in new tab">
+                            <img src="" data-icon="eb-icon-foun.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">ASAE Research Foundation</span>
+                            <span class="asae-eb-link-desc">Advancing knowledge in association management</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-coll" href="https://collaborate.asaecenter.org/?asaeexplore=1" target="_blank" title="Collaborate" aria-label="Collaborate - opens in new tab">Collaborate</a></div>
-                    <div class="asae-eb-link-desc">ASAE's online member community forum</div>
+
+                <!-- PLATFORMS -->
+                <div class="asae-eb-nav-section">
+                    <div class="asae-eb-nav-section-label">Platforms</div>
+                    <div class="asae-eb-nav-grid">
+                        <a id="eb-coll" href="https://collaborate.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="Collaborate - opens in new tab">
+                            <img src="" data-icon="eb-icon-coll.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">Collaborate</span>
+                            <span class="asae-eb-link-desc">ASAE's online member community forum</span>
+                        </a>
+                        <a id="eb-cahq" href="https://careerhq.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="CareerHQ - opens in new tab">
+                            <img src="" data-icon="eb-icon-cahq.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">CareerHQ</span>
+                            <span class="asae-eb-link-desc">For association job seekers and employers</span>
+                        </a>
+                        <a id="eb-asnw" href="https://associationsnow.com/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="Associations Now - opens in new tab">
+                            <img src="" data-icon="eb-icon-asnw.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">Associations Now</span>
+                            <span class="asae-eb-link-desc">News, insight, and analysis for association leaders</span>
+                        </a>
+                        <a id="eb-lear" href="https://academy.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="ASAE Academy - opens in new tab">
+                            <img src="" data-icon="eb-icon-lear.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">ASAE Academy</span>
+                            <span class="asae-eb-link-desc">Professional training for the association industry</span>
+                        </a>
+                        <a id="eb-govn" href="https://agi.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="Association Governance Institute - opens in new tab">
+                            <img src="" data-icon="eb-icon-govn.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">AGI</span>
+                            <span class="asae-eb-link-desc">Excellence in governance practices for associations</span>
+                        </a>
+                        <a id="eb-solu" href="https://solutionshq.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="Solution Providers HQ - opens in new tab">
+                            <img src="" data-icon="eb-icon-solu.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">Solution Providers HQ</span>
+                            <span class="asae-eb-link-desc">Connecting associations with trusted partners and services</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-cahq" href="https://careerhq.asaecenter.org/?asaeexplore=1" target="_blank" title="CareerHQ" aria-label="CareerHQ - opens in new tab">CareerHQ</a></div>
-                    <div class="asae-eb-link-desc">For association job seekers and employers</div>
+
+                <!-- EVENTS -->
+                <div class="asae-eb-nav-section">
+                    <div class="asae-eb-nav-section-label">Events</div>
+                    <div class="asae-eb-nav-grid">
+                        <a id="eb-mmct" href="https://mmct.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="MMC +Tech Conference - opens in new tab">
+                            <img src="" data-icon="eb-icon-mmct.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">MMC +Tech</span>
+                            <span class="asae-eb-link-desc">May 28-29, 2026 | Washington, DC</span>
+                        </a>
+                        <a id="eb-annl" href="https://annual.asaecenter.org/?asaeexplore=1" target="_blank" class="asae-eb-grid-item" aria-label="Annual Meeting & Exposition - opens in new tab">
+                            <img src="" data-icon="eb-icon-annl.svg" class="asae-eb-grid-icon" alt="">
+                            <span class="asae-eb-grid-label">Annual Meeting</span>
+                            <span class="asae-eb-link-desc">August 15-18, 2026 | Indianapolis, IN</span>
+                        </a>
+                    </div>
                 </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-asnw" href="https://associationsnow.com/?asaeexplore=1" target="_blank" title="Associations Now" aria-label="Associations Now - opens in new tab">Associations Now</a></div>
-                    <div class="asae-eb-link-desc">News, insight, and analysis for association leaders</div>
+
+                <!-- JOIN -->
+                <div class="asae-eb-nav-section asae-eb-nav-join">
+                    <a id="asae-eb-join-button" href="https://my.asaecenter.org/select-a-membership-type/?asaeexplore=1" target="_blank" aria-label="Join ASAE - opens in new tab">
+                        <img src="" data-icon="eb-icon-join.svg" class="asae-eb-grid-icon" alt="">
+                        <span class="asae-eb-grid-label">Join ASAE</span>
+                    </a>
                 </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-absi" href="https://www.asaebusinesssolutions.org/?asaeexplore=1" target="_blank" title="ASAE Business Solutions (ABSI)" aria-label="ASAE Business Solutions (ABSI) - opens in new tab">ASAE Business Solutions (ABSI)</a></div>
-                    <div class="asae-eb-link-desc">Insurance, retirement, investments, and more</div>
-                </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-lear" href="https://academy.asaecenter.org/?asaeexplore=1" target="_blank" title="ASAE Academy" aria-label="ASAE Academy - opens in new tab">ASAE Academy</a></div>
-                    <div class="asae-eb-link-desc">Professional training for the association industry</div>
-                </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-govn" href="https://agi.asaecenter.org/?asaeexplore=1" target="_blank" title="Association Governance Institute (AGI)" aria-label="Associations Governance Institute (AGI) - opens in new tab">Association Governance Institute (AGI)</a></div>
-                    <div class="asae-eb-link-desc">Excellence in governance practices for associations</div>
-                </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-solu" href="https://solutionshq.asaecenter.org/?asaeexplore=1" target="_blank" title="Solution Providers HQ" aria-label="Solution Providers HQ - opens in new tab">Solution Providers HQ</a></div>
-                    <div class="asae-eb-link-desc">Connecting associations with trusted partners, technology, services, and destinations.</div>
-                </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-mmct" href="https://mmct.asaecenter.org/?asaeexplore=1" target="_blank" title="MMC +Tech Conference" aria-label="MMC +Tech Conference - opens in new tab">MMC +Tech Conference</a></div>
-                    <div class="asae-eb-link-desc">May 28-29, 2026 | Washington, DC</div>
-                </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <div class="asae-eb-link-name"><a id="eb-annl" href="https://annual.asaecenter.org/?asaeexplore=1" target="_blank" title="Annual Meeting & Exposition" aria-label="Annual Meeting & Exposition - opens in new tab">Annual Meeting & Exposition</a></div>
-                    <div class="asae-eb-link-desc">August 15-18, 2026 | Indianapolis, IN</div>
-                </div>
-                <div class="asae-eb-break"></div>
-                <div class="asae-eb-link">
-                    <a id="asae-eb-join-button" href="https://my.asaecenter.org/select-a-membership-type/?asaeexplore=1" target="_blank" title="Join" aria-label="Join - opens in new tab">Join</a>
-                </div>
+
                 <div class="asae-eb-modal-shadow"></div>
             </div>
         </div>

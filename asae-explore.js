@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.29          2026-04-14
+9.0           2026-04-14
 Notes:
-- add !important to placeholder SVG display:none to prevent host override
+- icon grid nav layout with Quick Links, Organizations, Platforms, Events sections
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.29";
+var gitVersion = "v9.0";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -153,6 +153,12 @@ function parseEBHTML() {
     ebDiv.innerHTML = asaeEB;
     body.insertBefore(ebDiv, body.firstChild);
     //console.log(" - EB HTML IS ADDED");
+    // Populate icon src attributes from CDN
+    var icons = ebDiv.querySelectorAll('[data-icon]');
+    for (var i = 0; i < icons.length; i++) {
+        icons[i].src = thisBaseURL + 'icons/' + icons[i].getAttribute('data-icon');
+    }
+
     setupEB();
 
     setTabIndexes();
@@ -668,75 +674,34 @@ function setupEB() {
     eb-annl - Annual Meeting
     eb-join - Join
     */
-    var thisLink = null;
-    const ebasae = document.querySelector("#eb-asae");
-    const ebfoun = document.querySelector("#eb-foun");
-    const ebcoll = document.querySelector("#eb-coll");
-    const ebcahq = document.querySelector("#eb-cahq");
-    const ebasnw = document.querySelector("#eb-asnw");
-    const ebabsi = document.querySelector("#eb-absi");
-    const eblear = document.querySelector("#eb-lear");
-    const ebgovn = document.querySelector("#eb-govn");
-    const ebsolu = document.querySelector("#eb-solu");
-    const ebmmct = document.querySelector("#eb-mmct");
-    const ebannl = document.querySelector("#eb-annl");
-    const ebjoin = document.querySelector("#eb-join");
+    // Map hostnames to link ID prefixes (matches both grid and quick link instances)
+    var siteMap = {
+        "www.asaecenter.org": "eb-asae",
+        "foundation.asaecenter.org": "eb-foun",
+        "collaborate.asaecenter.org": "eb-coll",
+        "careerhq.asaecenter.org": "eb-cahq",
+        "associationsnow.com": "eb-asnw",
+        "www.asaebusinesssolutions.org": "eb-absi",
+        "academy.asaecenter.org": "eb-lear",
+        "agi.asaecenter.org": "eb-govn",
+        "solutionshq.asaecenter.org": "eb-solu",
+        "mmcc.asaecenter.org": "eb-mmct",
+        "mmct.asaecenter.org": "eb-mmct",
+        "annual.asaecenter.org": "eb-annl"
+    };
 
-    if (window.location.href.indexOf("www.asaecenter.org") != -1) {
-        //console.log("Current page is ASAE");
-        thisLink = ebasae;
-    }
-    if (window.location.href.indexOf("foundation.asaecenter.org") != -1) {
-        //console.log("Current page is FOUN");
-        thisLink = ebfoun;
-    }
-    if (window.location.href.indexOf("collaborate.asaecenter.org") != -1) {
-        //console.log("Current page is COLL");
-        thisLink = ebcoll;
-    }
-    if (window.location.href.indexOf("careerhq.asaecenter.org") != -1) {
-        //console.log("Current page is CAHQ");
-        thisLink = ebcahq;
-    }
-    if (window.location.href.indexOf("associationsnow.com") != -1) {
-        //console.log("Current page is ASNW");
-        thisLink = ebasnw;
-    }
-    if (window.location.href.indexOf("www.asaebusinesssolutions.org") != -1) {
-        //console.log("Current page is ABSI");
-        thisLink = ebabsi;
-    }
-    if (window.location.href.indexOf("academy.asaecenter.org") != -1) {
-        //console.log("Current page is LEAR");
-        thisLink = eblear;
-    }
-    if (window.location.href.indexOf("agi.asaecenter.org") != -1) {
-        //console.log("Current page is GOVN");
-        thisLink = ebgovn;
-    }
-    if (window.location.href.indexOf("solutionshq.asaecenter.org") != -1) {
-        //console.log("Current page is SOLU");
-        thisLink = ebsolu;
-    }
-    if ((window.location.href.indexOf("mmcc.asaecenter.org") != -1) || (window.location.href.indexOf("mmct.asaecenter.org") != -1)) {
-        //console.log("Current page is MMCT");
-        thisLink = ebmmct;
-    }
-    if (window.location.href.indexOf("annual.asaecenter.org") != -1) {
-        //console.log("Current page is ANNL");
-        thisLink = ebannl;
-    }
-    if (1 == 2) { // never turn off JOIN button
-        thisLink = ebjoin;
-    }
+    var currentHost = window.location.hostname;
+    var disableId = siteMap[currentHost];
 
-    if (thisLink !== null) {
-        console.log("Disabling " + thisLink);
-        thisLink.addEventListener("click", e => {
-            e.preventDefault();
-        })
-        thisLink.style.color = "#bd491e";
-        thisLink.style.cursor = "default";    
+    if (disableId) {
+        // Disable all matching links (grid item + quick link duplicate)
+        var linksToDisable = document.querySelectorAll('[id^="' + disableId + '"]');
+        for (var i = 0; i < linksToDisable.length; i++) {
+            var link = linksToDisable[i];
+            link.addEventListener("click", function(e) { e.preventDefault(); });
+            link.style.opacity = "0.5";
+            link.style.cursor = "default";
+        }
     }
 
     // hide div until loaded
