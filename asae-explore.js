@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.19          2026-04-14
+9.20          2026-04-14
 Notes:
-- use real Collaborate logo in both Quick Links and Member Resources
+- fix nav overflow when descriptions toggled on
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.19";
+var gitVersion = "v9.20";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

@@ -245,8 +245,8 @@ body {
 }
 #asae-eb-modal-nav-container.active {
     visibility: visible;
-    max-height: 60em;
-    transition: max-height 0.4s ease-out, visibility 0s 0s;
+    max-height: 120em;
+    transition: max-height 0.5s ease-out, visibility 0s 0s;
 }
 #asae-eb-modal-nav {
     max-width: 800px;
@@ -363,7 +363,7 @@ body {
 }
 .asae-eb-link-desc.active {
     visibility: visible;
-    max-height: 6em;
+    max-height: 10em;
     transition: max-height 0.3s ease-out, visibility 0s 0s;
 }
 /* Join button */
