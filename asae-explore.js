@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.18          2026-04-14
+9.19          2026-04-14
 Notes:
-- simplify AGI logo to just the blue diamond mark
+- use real Collaborate logo in both Quick Links and Member Resources
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.18";
+var gitVersion = "v9.19";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
