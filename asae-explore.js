@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.17          2026-04-14
+8.18          2026-04-14
 Notes:
-- fix autocomplete mobile layout, title alignment, suggestion link styling
+- style result titles as links, limit image width to source on mobile
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.17";
+var gitVersion = "v8.18";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

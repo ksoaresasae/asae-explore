@@ -518,6 +518,11 @@ a#asae-eb-join-button:hover {
 /* Autocomplete: result titles */
 #asae-eb-modal-search #global-autocomplete-container .adds-hit-title {
     text-align: left;
+    color: #0056b3 !important;
+    text-decoration: underline;
+}
+#asae-eb-modal-search #global-autocomplete-container .adds-hit-wrapper:hover .adds-hit-title {
+    color: #003580 !important;
 }
 /* Autocomplete: word overflow */
 #asae-eb-modal-search #global-autocomplete-container .adds-hit-bottom {
@@ -533,8 +538,17 @@ a#asae-eb-join-button:hover {
         margin-right: 0 !important;
         margin-bottom: 0.5em;
         max-width: 100%;
-        min-width: 100%;
-        width: 100%;
+        min-width: 0;
+        width: auto;
+    }
+    #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-main-image {
+        width: auto !important;
+        min-width: 0 !important;
+    }
+    #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-main-image img {
+        width: auto !important;
+        max-width: 100%;
+        height: auto;
     }
     #asae-eb-modal-search #global-autocomplete-container .adds-hit .adds-hit-bottom {
         max-width: 100% !important;
