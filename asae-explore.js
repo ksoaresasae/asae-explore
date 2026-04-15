@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.31          2026-04-15
+8.32          2026-04-15
 Notes:
-- fix Show All Results button clipping by removing top padding
+- remove z-index:9999 from #asae-eb-id to avoid host site conflicts
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.31";
+var gitVersion = "v8.32";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
