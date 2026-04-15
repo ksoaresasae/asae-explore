@@ -489,9 +489,13 @@ a#asae-eb-join-button:hover {
 #asae-eb-modal-search #global-searchfield-container button:hover {
     background-color: #000 !important;
 }
+#asae-eb-modal-search #global-searchfield-container button::before,
 #asae-eb-modal-search #global-searchfield-container button::after,
+#asae-eb-chatbot-submit::before,
 #asae-eb-chatbot-submit::after,
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results span::before,
 #asae-eb-modal-search #global-autocomplete-container .btn.all-results span::after,
+#asae-eb-join-button::before,
 #asae-eb-join-button::after {
     content: none !important;
 }

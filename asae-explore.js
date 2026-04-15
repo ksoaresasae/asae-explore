@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.33          2026-04-15
+8.34          2026-04-15
 Notes:
-- suppress host site ::after arrow injection on Explore Bar buttons
+- also suppress ::before pseudo-elements on Explore Bar buttons
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.33";
+var gitVersion = "v8.34";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
