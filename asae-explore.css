@@ -27,6 +27,7 @@ body {
     width: 100% !important;
     margin: 0 !important;
     position: relative !important;
+    z-index: 9999 !important;
     font-family: Arial,Helvetica,sans-serif !important;
     font-size: 16px !important;
     line-height: 1em !important;
@@ -497,8 +498,11 @@ a#asae-eb-join-button:hover {
 #asae-eb-modal-search #global-autocomplete-container .addsearch-autocomplete {
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    max-height: 400px;
+    max-height: 60vh;
     overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    left: 0;
 }
 /* Autocomplete: Show All Results button */
 #asae-eb-modal-search #global-autocomplete-container .btn.all-results span {
