@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.34          2026-04-15
+8.35          2026-04-15
 Notes:
-- also suppress ::before pseudo-elements on Explore Bar buttons
+- fix Show All Results arrow, chatbot greeting alignment
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.34";
+var gitVersion = "v8.35";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

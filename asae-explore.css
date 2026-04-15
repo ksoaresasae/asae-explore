@@ -493,6 +493,8 @@ a#asae-eb-join-button:hover {
 #asae-eb-modal-search #global-searchfield-container button::after,
 #asae-eb-chatbot-submit::before,
 #asae-eb-chatbot-submit::after,
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results::before,
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results::after,
 #asae-eb-modal-search #global-autocomplete-container .btn.all-results span::before,
 #asae-eb-modal-search #global-autocomplete-container .btn.all-results span::after,
 #asae-eb-join-button::before,
@@ -681,12 +683,12 @@ a#asae-eb-join-button:hover {
     font-size: 0.5em;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
 }
 #asae-eb-chatbot-hi-text {
     font-size: 2em;
     line-height: 1.3;
-    padding: 0 0 0 0.5em;
+    padding: 0 0 0 0.75em;
 }
 #asae-eb-chatbot-hi-image {
     height: 4em;
