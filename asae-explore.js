@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-8.30          2026-04-15
+8.31          2026-04-15
 Notes:
-- fix search autocomplete clipping on asaecenter.org
+- fix Show All Results button clipping by removing top padding
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v8.30";
+var gitVersion = "v8.31";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
