@@ -8,14 +8,14 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.25          2026-04-14
+9.26          2026-04-16
 Notes:
-- single full-width shadow on #asae-eb-modals instead of per-modal shadows
+- merge main v8.35 fixes into v9-dev
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.25";
+var gitVersion = "v9.26";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";

@@ -533,6 +533,18 @@ body {
 #asae-eb-modal-search #global-searchfield-container button:hover {
     background-color: #000 !important;
 }
+#asae-eb-modal-search #global-searchfield-container button::before,
+#asae-eb-modal-search #global-searchfield-container button::after,
+#asae-eb-chatbot-submit::before,
+#asae-eb-chatbot-submit::after,
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results::before,
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results::after,
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results span::before,
+#asae-eb-modal-search #global-autocomplete-container .btn.all-results span::after,
+#asae-eb-join-button::before,
+#asae-eb-join-button::after {
+    content: none !important;
+}
 #asae-eb-modal-search #global-autocomplete-container {
     width: 100%;
     position: relative;
@@ -541,8 +553,11 @@ body {
 #asae-eb-modal-search #global-autocomplete-container .addsearch-autocomplete {
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    max-height: 400px;
+    max-height: 60vh;
     overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    left: 0;
 }
 /* Autocomplete: Show All Results button */
 #asae-eb-modal-search #global-autocomplete-container .btn.all-results span {
@@ -553,7 +568,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 0.75em 1.5em;
+    padding: 0em 1.5em 0.75em 1.5em !important;
 }
 #asae-eb-modal-search #global-autocomplete-container .btn.all-results:hover span {
     background-color: #000;
@@ -712,12 +727,12 @@ body {
     font-size: 0.5em;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
 }
 #asae-eb-chatbot-hi-text {
     font-size: 2em;
     line-height: 1.3;
-    padding: 0 0 0 0.5em;
+    padding: 0 0 0 0.75em;
 }
 #asae-eb-chatbot-hi-image {
     height: 4em;
