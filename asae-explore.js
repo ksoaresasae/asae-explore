@@ -8,14 +8,15 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.26          2026-04-16
+9.27          2026-10-21
 Notes:
-- merge main v8.35 fixes into v9-dev
+- MMC+Tech and Annual Meeting dates/locations updated to 2027
+- Quick Links hidden (showQuickLinks = false)
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.26";
+var gitVersion = "v9.27";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
@@ -26,6 +27,7 @@ var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitV
 var showPB = true;        // SHOW PROMO BAR - STILL CONTROLLED BY DATETIME AND THE alertTimer FUNCTION
 var showSearch = true;    // SHOW SEARCH ICON
 var showChatbot = true;  // SHOW CHATBOT ICON
+var showQuickLinks = false; // SHOW QUICK LINKS SECTION IN THE EXPLORE MENU
 // USER ICON IS ALWAYS ON
 // BELOW ARE RELATED TO alertTimer FUNCTION
 const alertStartDate = new Date("2026-04-09 00:00:01");
@@ -362,8 +364,8 @@ var ebSiteRegistry = {
     "eb-lear": { href: "https://academy.asaecenter.org/?asaeexplore=1", logo: "ASAE_Academy Logo Stacked COLOR.svg", label: "ASAE Academy", desc: "Professional training for the association industry" },
     "eb-govn": { href: "https://agi.asaecenter.org/?asaeexplore=1", logo: "agi-diamond.svg", label: "AGI", desc: "Excellence in governance practices for associations" },
     "eb-solu": { href: "https://solutionshq.asaecenter.org/?asaeexplore=1", logo: "solutionshq-logo.svg", label: "Solution Providers HQ", desc: "Connecting associations with trusted partners and services" },
-    "eb-mmct": { href: "https://mmct.asaecenter.org/?asaeexplore=1", logo: "mmct-logo-k.svg", label: "MMC +Tech", desc: "May 28-29, 2026 | Washington, DC" },
-    "eb-annl": { href: "https://annual.asaecenter.org/?asaeexplore=1", logo: "annual logo.svg", label: "Annual Meeting", desc: "August 15-18, 2026 | Indianapolis, IN" }
+    "eb-mmct": { href: "https://mmct.asaecenter.org/?asaeexplore=1", logo: "mmct-logo-k.svg", label: "MMC +Tech", desc: "May 10-11, 2027 | Washington, DC" },
+    "eb-annl": { href: "https://annual.asaecenter.org/?asaeexplore=1", logo: "annual logo.svg", label: "Annual Meeting", desc: "August 7-10, 2027 | Charlotte, NC" }
 };
 
 // Curated quick links (always shown first)
@@ -442,6 +444,12 @@ function ebBuildQuickLink(siteId, suffix) {
 function ebPopulateQuickLinks() {
     var grid = document.getElementById('asae-eb-quick-links-grid');
     if (!grid) return;
+
+    // Master control: hide the whole section
+    if (!showQuickLinks) {
+        document.getElementById('asae-eb-quick-links').style.display = 'none';
+        return;
+    }
 
     // Determine current site to exclude from dynamic slots
     var currentSiteId = null;
