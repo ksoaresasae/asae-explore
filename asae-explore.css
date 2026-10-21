@@ -299,18 +299,8 @@ body {
 }
 .asae-eb-nav-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.25em;
-}
-@media screen and (max-width: 767px) {
-    .asae-eb-nav-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .asae-eb-nav-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 .asae-eb-grid-item {
     display: flex;
@@ -342,6 +332,13 @@ body {
     padding: 6px;
     box-sizing: border-box;
     object-fit: contain;
+}
+@media screen and (min-width: 768px) {
+    .asae-eb-grid-icon {
+        width: 88px !important;
+        height: 88px !important;
+        padding: 8px;
+    }
 }
 .asae-eb-grid-label {
     font-size: 0.85em;

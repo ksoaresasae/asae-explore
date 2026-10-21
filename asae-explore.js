@@ -8,15 +8,15 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.27          2026-10-21
+9.28          2026-10-21
 Notes:
-- MMC+Tech and Annual Meeting dates/locations updated to 2027
-- Quick Links hidden (showQuickLinks = false)
+- Nav grid 3 across at all widths (phones were 2, desktop 4)
+- Grid icons 88px at 768px+ (70px on phones)
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.27";
+var gitVersion = "v9.28";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
