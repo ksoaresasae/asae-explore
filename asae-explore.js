@@ -8,15 +8,18 @@ Developer:  Keith M. Soares - https://keithmsoares.com
 
 Version:
 ------------
-9.28          2026-10-21
+9.29          2026-10-29
 Notes:
-- Nav grid 3 across at all widths (phones were 2, desktop 4)
-- Grid icons 88px at 768px+ (70px on phones)
+- Search no longer runs on page load. The results-page search UI was started
+  on every page with matchAllQuery on, so each page view ran a match-all
+  search and recorded it in AddSearch analytics. matchAllQuery is off, and that
+  UI starts only where #searchresults-container exists. The bar dropdown is
+  unchanged.
 */
 
 //////////////////////////////////////////////
 // MASTER GITVERSION
-var gitVersion = "v9.28";
+var gitVersion = "v9.29";
 
 // MASTER BASE URL
 var thisBaseURL = "https://cdn.jsdelivr.net/gh/ksoaresasae/asae-explore@" + gitVersion + "/";
